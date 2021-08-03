@@ -1,0 +1,18 @@
+2021-08-03T11:40:36+00:00 CRITICAL Uncaught RuntimeException: Impossible de demander des actions. Erreur de la base de données. in C:\laragon\www\E-Commerce\wp-content\plugins\woocommerce\packages\action-scheduler\classes\data-stores\ActionScheduler_DBStore.php:694
+Stack trace:
+#0 C:\laragon\www\E-Commerce\wp-content\plugins\woocommerce\packages\action-scheduler\classes\data-stores\ActionScheduler_DBStore.php(617): ActionScheduler_DBStore->claim_actions(0, 25, NULL, Array, '')
+#1 C:\laragon\www\E-Commerce\wp-content\plugins\woocommerce\packages\action-scheduler\classes\ActionScheduler_QueueRunner.php(153): ActionScheduler_DBStore->stake_claim(25)
+#2 C:\laragon\www\E-Commerce\wp-content\plugins\woocommerce\packages\action-scheduler\classes\ActionScheduler_QueueRunner.php(132): ActionScheduler_QueueRunner->do_batch(25, 'WP Cron')
+#3 C:\laragon\www\E-Commerce\wp-includes\class-wp-hook.php(303): ActionScheduler_QueueRunner->run('WP Cron')
+#4 C:\laragon\www\E-Commerce\wp-includes\class-wp-hook.php(327): WP_Hook->apply_filters('', Array)
+#5 C:\lara dans C:\laragon\www\E-Commerce\wp-content\plugins\woocommerce\packages\action-scheduler\classes\data-stores\ActionScheduler_DBStore.php à la ligne 694
+
+2021-08-03T11:40:36+00:00 CRITICAL Uncaught RuntimeException: Impossible de demander des actions. Erreur de la base de données. in C:\laragon\www\E-Commerce\wp-content\plugins\woocommerce\packages\action-scheduler\classes\data-stores\ActionScheduler_DBStore.php:694
+Stack trace:
+#0 C:\laragon\www\E-Commerce\wp-content\plugins\woocommerce\packages\action-scheduler\classes\data-stores\ActionScheduler_DBStore.php(617): ActionScheduler_DBStore->claim_actions(0, 25, NULL, Array, '')
+#1 C:\laragon\www\E-Commerce\wp-content\plugins\woocommerce\packages\action-scheduler\classes\ActionScheduler_QueueRunner.php(153): ActionScheduler_DBStore->stake_claim(25)
+#2 C:\laragon\www\E-Commerce\wp-content\plugins\woocommerce\packages\action-scheduler\classes\ActionScheduler_QueueRunner.php(132): ActionScheduler_QueueRunner->do_batch(25, 'WP Cron')
+#3 C:\laragon\www\E-Commerce\wp-includes\class-wp-hook.php(303): ActionScheduler_QueueRunner->run('WP Cron')
+#4 C:\laragon\www\E-Commerce\wp-includes\class-wp-hook.php(327): WP_Hook->apply_filters('', Array)
+#5 C:\lara dans C:\laragon\www\E-Commerce\wp-content\plugins\woocommerce\packages\action-scheduler\classes\data-stores\ActionScheduler_DBStore.php à la ligne 694
+
