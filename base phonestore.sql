@@ -14,10 +14,12 @@
 
 
 -- Listage de la structure de la base pour e-commerce
+DROP DATABASE IF EXISTS `e-commerce`;
 CREATE DATABASE IF NOT EXISTS `e-commerce` /*!40100 DEFAULT CHARACTER SET latin1 */;
 USE `e-commerce`;
 
 -- Listage de la structure de la table e-commerce. wp_actionscheduler_actions
+DROP TABLE IF EXISTS `wp_actionscheduler_actions`;
 CREATE TABLE IF NOT EXISTS `wp_actionscheduler_actions` (
   `action_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `hook` varchar(191) COLLATE utf8mb4_unicode_520_ci NOT NULL,
@@ -43,7 +45,7 @@ CREATE TABLE IF NOT EXISTS `wp_actionscheduler_actions` (
   KEY `claim_id_status_scheduled_date_gmt` (`claim_id`,`status`,`scheduled_date_gmt`)
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
--- Listage des données de la table e-commerce.wp_actionscheduler_actions : ~5 rows (environ)
+-- Listage des données de la table e-commerce.wp_actionscheduler_actions : ~7 rows (environ)
 /*!40000 ALTER TABLE `wp_actionscheduler_actions` DISABLE KEYS */;
 INSERT INTO `wp_actionscheduler_actions` (`action_id`, `hook`, `status`, `scheduled_date_gmt`, `scheduled_date_local`, `args`, `schedule`, `group_id`, `attempts`, `last_attempt_gmt`, `last_attempt_local`, `claim_id`, `extended_args`) VALUES
 	(7, 'action_scheduler/migration_hook', 'complete', '2021-08-02 13:42:21', '2021-08-02 15:42:21', '[]', 'O:30:"ActionScheduler_SimpleSchedule":2:{s:22:"\0*\0scheduled_timestamp";i:1627911741;s:41:"\0ActionScheduler_SimpleSchedule\0timestamp";i:1627911741;}', 1, 1, '2021-08-02 13:42:49', '2021-08-02 15:42:49', 0, NULL),
@@ -56,6 +58,7 @@ INSERT INTO `wp_actionscheduler_actions` (`action_id`, `hook`, `status`, `schedu
 /*!40000 ALTER TABLE `wp_actionscheduler_actions` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_actionscheduler_claims
+DROP TABLE IF EXISTS `wp_actionscheduler_claims`;
 CREATE TABLE IF NOT EXISTS `wp_actionscheduler_claims` (
   `claim_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `date_created_gmt` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
@@ -68,6 +71,7 @@ CREATE TABLE IF NOT EXISTS `wp_actionscheduler_claims` (
 /*!40000 ALTER TABLE `wp_actionscheduler_claims` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_actionscheduler_groups
+DROP TABLE IF EXISTS `wp_actionscheduler_groups`;
 CREATE TABLE IF NOT EXISTS `wp_actionscheduler_groups` (
   `group_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `slug` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL,
@@ -75,7 +79,7 @@ CREATE TABLE IF NOT EXISTS `wp_actionscheduler_groups` (
   KEY `slug` (`slug`(191))
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
--- Listage des données de la table e-commerce.wp_actionscheduler_groups : ~1 rows (environ)
+-- Listage des données de la table e-commerce.wp_actionscheduler_groups : ~2 rows (environ)
 /*!40000 ALTER TABLE `wp_actionscheduler_groups` DISABLE KEYS */;
 INSERT INTO `wp_actionscheduler_groups` (`group_id`, `slug`) VALUES
 	(1, 'action-scheduler-migration'),
@@ -83,6 +87,7 @@ INSERT INTO `wp_actionscheduler_groups` (`group_id`, `slug`) VALUES
 /*!40000 ALTER TABLE `wp_actionscheduler_groups` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_actionscheduler_logs
+DROP TABLE IF EXISTS `wp_actionscheduler_logs`;
 CREATE TABLE IF NOT EXISTS `wp_actionscheduler_logs` (
   `log_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `action_id` bigint(20) unsigned NOT NULL,
@@ -94,7 +99,7 @@ CREATE TABLE IF NOT EXISTS `wp_actionscheduler_logs` (
   KEY `log_date_gmt` (`log_date_gmt`)
 ) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
--- Listage des données de la table e-commerce.wp_actionscheduler_logs : ~15 rows (environ)
+-- Listage des données de la table e-commerce.wp_actionscheduler_logs : ~21 rows (environ)
 /*!40000 ALTER TABLE `wp_actionscheduler_logs` DISABLE KEYS */;
 INSERT INTO `wp_actionscheduler_logs` (`log_id`, `action_id`, `message`, `log_date_gmt`, `log_date_local`) VALUES
 	(1, 7, 'action created', '2021-08-02 13:41:21', '2021-08-02 15:41:21'),
@@ -121,6 +126,7 @@ INSERT INTO `wp_actionscheduler_logs` (`log_id`, `action_id`, `message`, `log_da
 /*!40000 ALTER TABLE `wp_actionscheduler_logs` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_ce4wp_abandoned_checkout
+DROP TABLE IF EXISTS `wp_ce4wp_abandoned_checkout`;
 CREATE TABLE IF NOT EXISTS `wp_ce4wp_abandoned_checkout` (
   `checkout_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` bigint(20) unsigned NOT NULL DEFAULT '0',
@@ -143,6 +149,7 @@ CREATE TABLE IF NOT EXISTS `wp_ce4wp_abandoned_checkout` (
 /*!40000 ALTER TABLE `wp_ce4wp_abandoned_checkout` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_ce4wp_contacts
+DROP TABLE IF EXISTS `wp_ce4wp_contacts`;
 CREATE TABLE IF NOT EXISTS `wp_ce4wp_contacts` (
   `contact_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `email` varchar(200) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
@@ -159,6 +166,7 @@ CREATE TABLE IF NOT EXISTS `wp_ce4wp_contacts` (
 /*!40000 ALTER TABLE `wp_ce4wp_contacts` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_commentmeta
+DROP TABLE IF EXISTS `wp_commentmeta`;
 CREATE TABLE IF NOT EXISTS `wp_commentmeta` (
   `meta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `comment_id` bigint(20) unsigned NOT NULL DEFAULT '0',
@@ -174,6 +182,7 @@ CREATE TABLE IF NOT EXISTS `wp_commentmeta` (
 /*!40000 ALTER TABLE `wp_commentmeta` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_comments
+DROP TABLE IF EXISTS `wp_comments`;
 CREATE TABLE IF NOT EXISTS `wp_comments` (
   `comment_ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `comment_post_ID` bigint(20) unsigned NOT NULL DEFAULT '0',
@@ -206,6 +215,7 @@ INSERT INTO `wp_comments` (`comment_ID`, `comment_post_ID`, `comment_author`, `c
 /*!40000 ALTER TABLE `wp_comments` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_gla_budget_recommendations
+DROP TABLE IF EXISTS `wp_gla_budget_recommendations`;
 CREATE TABLE IF NOT EXISTS `wp_gla_budget_recommendations` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `currency` varchar(3) COLLATE utf8mb4_unicode_520_ci NOT NULL,
@@ -4452,6 +4462,7 @@ INSERT INTO `wp_gla_budget_recommendations` (`id`, `currency`, `country`, `daily
 /*!40000 ALTER TABLE `wp_gla_budget_recommendations` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_gla_merchant_issues
+DROP TABLE IF EXISTS `wp_gla_merchant_issues`;
 CREATE TABLE IF NOT EXISTS `wp_gla_merchant_issues` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `product_id` bigint(20) NOT NULL,
@@ -4474,6 +4485,7 @@ CREATE TABLE IF NOT EXISTS `wp_gla_merchant_issues` (
 /*!40000 ALTER TABLE `wp_gla_merchant_issues` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_gla_shipping_rates
+DROP TABLE IF EXISTS `wp_gla_shipping_rates`;
 CREATE TABLE IF NOT EXISTS `wp_gla_shipping_rates` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `country` varchar(2) COLLATE utf8mb4_unicode_520_ci NOT NULL,
@@ -4489,6 +4501,7 @@ CREATE TABLE IF NOT EXISTS `wp_gla_shipping_rates` (
 /*!40000 ALTER TABLE `wp_gla_shipping_rates` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_gla_shipping_times
+DROP TABLE IF EXISTS `wp_gla_shipping_times`;
 CREATE TABLE IF NOT EXISTS `wp_gla_shipping_times` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `country` varchar(2) COLLATE utf8mb4_unicode_520_ci NOT NULL,
@@ -4502,6 +4515,7 @@ CREATE TABLE IF NOT EXISTS `wp_gla_shipping_times` (
 /*!40000 ALTER TABLE `wp_gla_shipping_times` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_links
+DROP TABLE IF EXISTS `wp_links`;
 CREATE TABLE IF NOT EXISTS `wp_links` (
   `link_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `link_url` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
@@ -4525,6 +4539,7 @@ CREATE TABLE IF NOT EXISTS `wp_links` (
 /*!40000 ALTER TABLE `wp_links` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_mailchimp_carts
+DROP TABLE IF EXISTS `wp_mailchimp_carts`;
 CREATE TABLE IF NOT EXISTS `wp_mailchimp_carts` (
   `id` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `email` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL,
@@ -4539,6 +4554,7 @@ CREATE TABLE IF NOT EXISTS `wp_mailchimp_carts` (
 /*!40000 ALTER TABLE `wp_mailchimp_carts` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_mailchimp_jobs
+DROP TABLE IF EXISTS `wp_mailchimp_jobs`;
 CREATE TABLE IF NOT EXISTS `wp_mailchimp_jobs` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `obj_id` text COLLATE utf8mb4_unicode_520_ci,
@@ -4552,6 +4568,7 @@ CREATE TABLE IF NOT EXISTS `wp_mailchimp_jobs` (
 /*!40000 ALTER TABLE `wp_mailchimp_jobs` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_mailpoet_custom_fields
+DROP TABLE IF EXISTS `wp_mailpoet_custom_fields`;
 CREATE TABLE IF NOT EXISTS `wp_mailpoet_custom_fields` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(90) COLLATE utf8mb4_unicode_520_ci NOT NULL,
@@ -4568,6 +4585,7 @@ CREATE TABLE IF NOT EXISTS `wp_mailpoet_custom_fields` (
 /*!40000 ALTER TABLE `wp_mailpoet_custom_fields` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_mailpoet_dynamic_segment_filters
+DROP TABLE IF EXISTS `wp_mailpoet_dynamic_segment_filters`;
 CREATE TABLE IF NOT EXISTS `wp_mailpoet_dynamic_segment_filters` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `segment_id` int(11) unsigned NOT NULL,
@@ -4583,6 +4601,7 @@ CREATE TABLE IF NOT EXISTS `wp_mailpoet_dynamic_segment_filters` (
 /*!40000 ALTER TABLE `wp_mailpoet_dynamic_segment_filters` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_mailpoet_feature_flags
+DROP TABLE IF EXISTS `wp_mailpoet_feature_flags`;
 CREATE TABLE IF NOT EXISTS `wp_mailpoet_feature_flags` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL,
@@ -4598,6 +4617,7 @@ CREATE TABLE IF NOT EXISTS `wp_mailpoet_feature_flags` (
 /*!40000 ALTER TABLE `wp_mailpoet_feature_flags` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_mailpoet_forms
+DROP TABLE IF EXISTS `wp_mailpoet_forms`;
 CREATE TABLE IF NOT EXISTS `wp_mailpoet_forms` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(90) COLLATE utf8mb4_unicode_520_ci NOT NULL,
@@ -4616,6 +4636,7 @@ CREATE TABLE IF NOT EXISTS `wp_mailpoet_forms` (
 /*!40000 ALTER TABLE `wp_mailpoet_forms` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_mailpoet_log
+DROP TABLE IF EXISTS `wp_mailpoet_log`;
 CREATE TABLE IF NOT EXISTS `wp_mailpoet_log` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
@@ -4630,6 +4651,7 @@ CREATE TABLE IF NOT EXISTS `wp_mailpoet_log` (
 /*!40000 ALTER TABLE `wp_mailpoet_log` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_mailpoet_mapping_to_external_entities
+DROP TABLE IF EXISTS `wp_mailpoet_mapping_to_external_entities`;
 CREATE TABLE IF NOT EXISTS `wp_mailpoet_mapping_to_external_entities` (
   `old_id` int(11) unsigned NOT NULL,
   `type` varchar(50) COLLATE utf8mb4_unicode_520_ci NOT NULL,
@@ -4644,6 +4666,7 @@ CREATE TABLE IF NOT EXISTS `wp_mailpoet_mapping_to_external_entities` (
 /*!40000 ALTER TABLE `wp_mailpoet_mapping_to_external_entities` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_mailpoet_newsletters
+DROP TABLE IF EXISTS `wp_mailpoet_newsletters`;
 CREATE TABLE IF NOT EXISTS `wp_mailpoet_newsletters` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `hash` varchar(150) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
@@ -4673,6 +4696,7 @@ CREATE TABLE IF NOT EXISTS `wp_mailpoet_newsletters` (
 /*!40000 ALTER TABLE `wp_mailpoet_newsletters` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_mailpoet_newsletter_links
+DROP TABLE IF EXISTS `wp_mailpoet_newsletter_links`;
 CREATE TABLE IF NOT EXISTS `wp_mailpoet_newsletter_links` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `newsletter_id` int(11) unsigned NOT NULL,
@@ -4692,6 +4716,7 @@ CREATE TABLE IF NOT EXISTS `wp_mailpoet_newsletter_links` (
 /*!40000 ALTER TABLE `wp_mailpoet_newsletter_links` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_mailpoet_newsletter_option
+DROP TABLE IF EXISTS `wp_mailpoet_newsletter_option`;
 CREATE TABLE IF NOT EXISTS `wp_mailpoet_newsletter_option` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `newsletter_id` int(11) unsigned NOT NULL,
@@ -4708,6 +4733,7 @@ CREATE TABLE IF NOT EXISTS `wp_mailpoet_newsletter_option` (
 /*!40000 ALTER TABLE `wp_mailpoet_newsletter_option` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_mailpoet_newsletter_option_fields
+DROP TABLE IF EXISTS `wp_mailpoet_newsletter_option_fields`;
 CREATE TABLE IF NOT EXISTS `wp_mailpoet_newsletter_option_fields` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(90) COLLATE utf8mb4_unicode_520_ci NOT NULL,
@@ -4744,6 +4770,7 @@ INSERT INTO `wp_mailpoet_newsletter_option_fields` (`id`, `name`, `newsletter_ty
 /*!40000 ALTER TABLE `wp_mailpoet_newsletter_option_fields` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_mailpoet_newsletter_posts
+DROP TABLE IF EXISTS `wp_mailpoet_newsletter_posts`;
 CREATE TABLE IF NOT EXISTS `wp_mailpoet_newsletter_posts` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `newsletter_id` int(11) unsigned NOT NULL,
@@ -4759,6 +4786,7 @@ CREATE TABLE IF NOT EXISTS `wp_mailpoet_newsletter_posts` (
 /*!40000 ALTER TABLE `wp_mailpoet_newsletter_posts` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_mailpoet_newsletter_segment
+DROP TABLE IF EXISTS `wp_mailpoet_newsletter_segment`;
 CREATE TABLE IF NOT EXISTS `wp_mailpoet_newsletter_segment` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `newsletter_id` int(11) unsigned NOT NULL,
@@ -4774,6 +4802,7 @@ CREATE TABLE IF NOT EXISTS `wp_mailpoet_newsletter_segment` (
 /*!40000 ALTER TABLE `wp_mailpoet_newsletter_segment` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_mailpoet_newsletter_templates
+DROP TABLE IF EXISTS `wp_mailpoet_newsletter_templates`;
 CREATE TABLE IF NOT EXISTS `wp_mailpoet_newsletter_templates` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `newsletter_id` int(11) DEFAULT '0',
@@ -4788,7 +4817,7 @@ CREATE TABLE IF NOT EXISTS `wp_mailpoet_newsletter_templates` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=75 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
--- Listage des données de la table e-commerce.wp_mailpoet_newsletter_templates : ~66 rows (environ)
+-- Listage des données de la table e-commerce.wp_mailpoet_newsletter_templates : ~74 rows (environ)
 /*!40000 ALTER TABLE `wp_mailpoet_newsletter_templates` DISABLE KEYS */;
 INSERT INTO `wp_mailpoet_newsletter_templates` (`id`, `newsletter_id`, `name`, `categories`, `description`, `body`, `thumbnail`, `readonly`, `created_at`, `updated_at`) VALUES
 	(1, 0, 'E-mail de bienvenue : Vide, 1 Colonne', '["welcome","blank"]', '', '{"content":{"type":"container","orientation":"vertical","styles":{"block":{"backgroundColor":"transparent"}},"blocks":[{"type":"container","orientation":"horizontal","styles":{"block":{"backgroundColor":"#f8f8f8"}},"blocks":[{"type":"container","orientation":"vertical","styles":{"block":{"backgroundColor":"transparent"}},"blocks":[{"type":"header","text":"<a href=\\"[link:newsletter_view_in_browser_url]\\">Voir dans votre navigateur.<\\/a>","styles":{"block":{"backgroundColor":"transparent"},"text":{"fontColor":"#222222","fontFamily":"Arial","fontSize":"12px","textAlign":"center"},"link":{"fontColor":"#6cb7d4","textDecoration":"underline"}}}]}]},{"type":"container","orientation":"horizontal","styles":{"block":{"backgroundColor":"#ffffff"}},"blocks":[{"type":"container","orientation":"vertical","styles":{"block":{"backgroundColor":"transparent"}},"blocks":[{"type":"spacer","styles":{"block":{"backgroundColor":"transparent","height":"30px"}}},{"type":"image","link":"","src":"http:\\/\\/localhost\\/E-Commerce\\/wp-content\\/plugins\\/mailpoet\\/assets\\/img\\/blank_templates\\/fake-logo.png","alt":"Faux logo","fullWidth":false,"width":"598px","height":"71px","styles":{"block":{"textAlign":"center"}}},{"type":"text","text":"<h1 style=\\"text-align: center;\\"><strong>Bonjour\\u00a0!<\\/strong><\\/h1>\\n<p>&nbsp;<\\/p>\\n<p>[subscriber:firstname | default:Abonn\\u00e9\\u00b7e],<\\/p>\\n<p>&nbsp;<\\/p>\\n<p>Vous avez r\\u00e9cemment rejoint notre liste et nous vous souhaitons la bienvenue\\u00a0!<\\/p>\\n<p>&nbsp;<\\/p>\\n<p>Vous voulez mieux nous conna\\u00eetre\\u00a0? D\\u00e9couvrez quelques-uns de nos articles les plus populaires\\u00a0:<\\/p>\\n<ol>\\n<li><a href=\\"http:\\/\\/www.mailpoet.com\\/the-importance-of-focus-when-writing\\/\\">L\\u2019importance de la concentration pendant la r\\u00e9daction<\\/a><\\/li>\\n<li><a href=\\"http:\\/\\/www.mailpoet.com\\/write-great-subject-line\\/\\">Comment r\\u00e9diger une bonne ligne de sujet<\\/a><\\/li>\\n<li><a href=\\"http:\\/\\/www.mailpoet.com\\/just-sit-write-advice-motivation-ernest-hemingway\\/\\">Installez-vous et \\u00e9crivez &ndash; Conseil sur la motivation par Ernest Hemingway<\\/a><\\/li>\\n<\\/ol>"}]}]},{"type":"container","orientation":"horizontal","styles":{"block":{"backgroundColor":"#f8f8f8"}},"blocks":[{"type":"container","orientation":"vertical","styles":{"block":{"backgroundColor":"transparent"}},"blocks":[{"type":"divider","styles":{"block":{"backgroundColor":"transparent","padding":"24.5px","borderStyle":"solid","borderWidth":"3px","borderColor":"#aaaaaa"}}},{"type":"social","iconSet":"grey","icons":[{"type":"socialIcon","iconType":"facebook","link":"http:\\/\\/www.facebook.com","image":"http:\\/\\/localhost\\/E-Commerce\\/wp-content\\/plugins\\/mailpoet\\/assets\\/img\\/newsletter_editor\\/social-icons\\/02-grey\\/Facebook.png","height":"32px","width":"32px","text":"Facebook"},{"type":"socialIcon","iconType":"twitter","link":"http:\\/\\/www.twitter.com","image":"http:\\/\\/localhost\\/E-Commerce\\/wp-content\\/plugins\\/mailpoet\\/assets\\/img\\/newsletter_editor\\/social-icons\\/02-grey\\/Twitter.png","height":"32px","width":"32px","text":"Twitter"}]},{"type":"divider","styles":{"block":{"backgroundColor":"transparent","padding":"7.5px","borderStyle":"solid","borderWidth":"3px","borderColor":"#aaaaaa"}}},{"type":"footer","text":"<p><a href=\\"[link:subscription_unsubscribe_url]\\">Se d\\u00e9sabonner<\\/a> | <a href=\\"[link:subscription_manage_url]\\">G\\u00e9rer votre abonnement<\\/a><br \\/>Ajoutez votre adresse postale ici !<\\/p>","styles":{"block":{"backgroundColor":"transparent"},"text":{"fontColor":"#222222","fontFamily":"Arial","fontSize":"12px","textAlign":"center"},"link":{"fontColor":"#6cb7d4","textDecoration":"none"}}}]}]}]},"globalStyles":{"text":{"fontColor":"#000000","fontFamily":"Arial","fontSize":"16px"},"h1":{"fontColor":"#111111","fontFamily":"Trebuchet MS","fontSize":"30px"},"h2":{"fontColor":"#222222","fontFamily":"Trebuchet MS","fontSize":"24px"},"h3":{"fontColor":"#333333","fontFamily":"Trebuchet MS","fontSize":"22px"},"link":{"fontColor":"#21759B","textDecoration":"underline"},"wrapper":{"backgroundColor":"#ffffff"},"body":{"backgroundColor":"#eeeeee"}}}', 'https://ps.w.org/mailpoet/assets/newsletter-templates/welcome-email-blank-1-column/thumbnail.20190411-1500.jpg', 1, NULL, '2021-08-02 16:43:11'),
@@ -4869,6 +4898,7 @@ INSERT INTO `wp_mailpoet_newsletter_templates` (`id`, `newsletter_id`, `name`, `
 /*!40000 ALTER TABLE `wp_mailpoet_newsletter_templates` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_mailpoet_scheduled_tasks
+DROP TABLE IF EXISTS `wp_mailpoet_scheduled_tasks`;
 CREATE TABLE IF NOT EXISTS `wp_mailpoet_scheduled_tasks` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `type` varchar(90) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
@@ -4887,7 +4917,7 @@ CREATE TABLE IF NOT EXISTS `wp_mailpoet_scheduled_tasks` (
   KEY `status` (`status`)
 ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
--- Listage des données de la table e-commerce.wp_mailpoet_scheduled_tasks : ~15 rows (environ)
+-- Listage des données de la table e-commerce.wp_mailpoet_scheduled_tasks : ~16 rows (environ)
 /*!40000 ALTER TABLE `wp_mailpoet_scheduled_tasks` DISABLE KEYS */;
 INSERT INTO `wp_mailpoet_scheduled_tasks` (`id`, `type`, `status`, `priority`, `scheduled_at`, `processed_at`, `created_at`, `updated_at`, `deleted_at`, `in_progress`, `reschedule_count`, `meta`) VALUES
 	(1, 'inactive_subscribers', 'completed', 5, '2021-08-02 17:43:12', '2021-08-03 13:35:29', '2021-08-02 16:43:12', '2021-08-03 13:35:29', NULL, 0, 0, '{"last_subscriber_id":1000}'),
@@ -4909,6 +4939,7 @@ INSERT INTO `wp_mailpoet_scheduled_tasks` (`id`, `type`, `status`, `priority`, `
 /*!40000 ALTER TABLE `wp_mailpoet_scheduled_tasks` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_mailpoet_scheduled_task_subscribers
+DROP TABLE IF EXISTS `wp_mailpoet_scheduled_task_subscribers`;
 CREATE TABLE IF NOT EXISTS `wp_mailpoet_scheduled_task_subscribers` (
   `task_id` int(11) unsigned NOT NULL,
   `subscriber_id` int(11) unsigned NOT NULL,
@@ -4926,6 +4957,7 @@ CREATE TABLE IF NOT EXISTS `wp_mailpoet_scheduled_task_subscribers` (
 /*!40000 ALTER TABLE `wp_mailpoet_scheduled_task_subscribers` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_mailpoet_segments
+DROP TABLE IF EXISTS `wp_mailpoet_segments`;
 CREATE TABLE IF NOT EXISTS `wp_mailpoet_segments` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(90) COLLATE utf8mb4_unicode_520_ci NOT NULL,
@@ -4950,6 +4982,7 @@ INSERT INTO `wp_mailpoet_segments` (`id`, `name`, `type`, `description`, `create
 /*!40000 ALTER TABLE `wp_mailpoet_segments` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_mailpoet_sending_queues
+DROP TABLE IF EXISTS `wp_mailpoet_sending_queues`;
 CREATE TABLE IF NOT EXISTS `wp_mailpoet_sending_queues` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `task_id` int(11) unsigned NOT NULL,
@@ -4974,6 +5007,7 @@ CREATE TABLE IF NOT EXISTS `wp_mailpoet_sending_queues` (
 /*!40000 ALTER TABLE `wp_mailpoet_sending_queues` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_mailpoet_settings
+DROP TABLE IF EXISTS `wp_mailpoet_settings`;
 CREATE TABLE IF NOT EXISTS `wp_mailpoet_settings` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(50) COLLATE utf8mb4_unicode_520_ci NOT NULL,
@@ -5000,12 +5034,13 @@ INSERT INTO `wp_mailpoet_settings` (`id`, `name`, `value`, `created_at`, `update
 	(11, 'subscription', 'a:1:{s:5:"pages";a:5:{s:11:"unsubscribe";i:32;s:6:"manage";i:32;s:12:"confirmation";i:32;s:7:"captcha";i:32;s:19:"confirm_unsubscribe";i:32;}}', '2021-08-02 16:43:12', '2021-08-02 16:43:12'),
 	(13, 'db_version', '3.65.1', '2021-08-02 16:43:12', '2021-08-02 16:43:12'),
 	(14, 'updates_log', 'a:1:{i:0;a:3:{s:16:"previous_version";N;s:11:"new_version";s:6:"3.65.1";s:4:"date";s:19:"2021-08-02 14:43:12";}}', '2021-08-02 16:43:12', '2021-08-02 16:43:12'),
-	(15, 'cron_trigger_wordpress', 'a:1:{s:11:"last_run_at";i:1627991552;}', '2021-08-02 16:43:30', '2021-08-03 13:52:32'),
-	(16, 'cron_daemon', 'a:8:{s:5:"token";s:5:"zntc9";s:6:"status";s:8:"inactive";s:15:"run_accessed_at";i:1627990630;s:14:"run_started_at";i:1627990631;s:16:"run_completed_at";i:1627990631;s:10:"last_error";N;s:15:"last_error_date";N;s:10:"updated_at";i:1627990631;}', '2021-08-02 16:43:30', '2021-08-03 13:52:32'),
+	(15, 'cron_trigger_wordpress', 'a:1:{s:11:"last_run_at";i:1627992352;}', '2021-08-02 16:43:30', '2021-08-03 14:05:52'),
+	(16, 'cron_daemon', 'a:8:{s:5:"token";s:5:"zntc9";s:6:"status";s:8:"inactive";s:15:"run_accessed_at";i:1627990630;s:14:"run_started_at";i:1627990631;s:16:"run_completed_at";i:1627990631;s:10:"last_error";N;s:15:"last_error_date";N;s:10:"updated_at";i:1627990631;}', '2021-08-02 16:43:30', '2021-08-03 14:05:52'),
 	(33, 'last_announcement_date', '1615460446', '2021-08-02 16:43:51', '2021-08-02 16:43:51');
 /*!40000 ALTER TABLE `wp_mailpoet_settings` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_mailpoet_statistics_clicks
+DROP TABLE IF EXISTS `wp_mailpoet_statistics_clicks`;
 CREATE TABLE IF NOT EXISTS `wp_mailpoet_statistics_clicks` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `newsletter_id` int(11) unsigned NOT NULL,
@@ -5026,6 +5061,7 @@ CREATE TABLE IF NOT EXISTS `wp_mailpoet_statistics_clicks` (
 /*!40000 ALTER TABLE `wp_mailpoet_statistics_clicks` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_mailpoet_statistics_forms
+DROP TABLE IF EXISTS `wp_mailpoet_statistics_forms`;
 CREATE TABLE IF NOT EXISTS `wp_mailpoet_statistics_forms` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `form_id` int(11) unsigned NOT NULL,
@@ -5040,6 +5076,7 @@ CREATE TABLE IF NOT EXISTS `wp_mailpoet_statistics_forms` (
 /*!40000 ALTER TABLE `wp_mailpoet_statistics_forms` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_mailpoet_statistics_newsletters
+DROP TABLE IF EXISTS `wp_mailpoet_statistics_newsletters`;
 CREATE TABLE IF NOT EXISTS `wp_mailpoet_statistics_newsletters` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `newsletter_id` int(11) unsigned NOT NULL,
@@ -5056,6 +5093,7 @@ CREATE TABLE IF NOT EXISTS `wp_mailpoet_statistics_newsletters` (
 /*!40000 ALTER TABLE `wp_mailpoet_statistics_newsletters` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_mailpoet_statistics_opens
+DROP TABLE IF EXISTS `wp_mailpoet_statistics_opens`;
 CREATE TABLE IF NOT EXISTS `wp_mailpoet_statistics_opens` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `newsletter_id` int(11) unsigned NOT NULL,
@@ -5075,6 +5113,7 @@ CREATE TABLE IF NOT EXISTS `wp_mailpoet_statistics_opens` (
 /*!40000 ALTER TABLE `wp_mailpoet_statistics_opens` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_mailpoet_statistics_unsubscribes
+DROP TABLE IF EXISTS `wp_mailpoet_statistics_unsubscribes`;
 CREATE TABLE IF NOT EXISTS `wp_mailpoet_statistics_unsubscribes` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `newsletter_id` int(11) unsigned DEFAULT NULL,
@@ -5094,6 +5133,7 @@ CREATE TABLE IF NOT EXISTS `wp_mailpoet_statistics_unsubscribes` (
 /*!40000 ALTER TABLE `wp_mailpoet_statistics_unsubscribes` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_mailpoet_statistics_woocommerce_purchases
+DROP TABLE IF EXISTS `wp_mailpoet_statistics_woocommerce_purchases`;
 CREATE TABLE IF NOT EXISTS `wp_mailpoet_statistics_woocommerce_purchases` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `newsletter_id` int(11) unsigned NOT NULL,
@@ -5117,6 +5157,7 @@ CREATE TABLE IF NOT EXISTS `wp_mailpoet_statistics_woocommerce_purchases` (
 /*!40000 ALTER TABLE `wp_mailpoet_statistics_woocommerce_purchases` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_mailpoet_stats_notifications
+DROP TABLE IF EXISTS `wp_mailpoet_stats_notifications`;
 CREATE TABLE IF NOT EXISTS `wp_mailpoet_stats_notifications` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `newsletter_id` int(11) unsigned NOT NULL,
@@ -5133,6 +5174,7 @@ CREATE TABLE IF NOT EXISTS `wp_mailpoet_stats_notifications` (
 /*!40000 ALTER TABLE `wp_mailpoet_stats_notifications` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_mailpoet_subscribers
+DROP TABLE IF EXISTS `wp_mailpoet_subscribers`;
 CREATE TABLE IF NOT EXISTS `wp_mailpoet_subscribers` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `wp_user_id` bigint(20) DEFAULT NULL,
@@ -5173,6 +5215,7 @@ INSERT INTO `wp_mailpoet_subscribers` (`id`, `wp_user_id`, `is_woocommerce_user`
 /*!40000 ALTER TABLE `wp_mailpoet_subscribers` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_mailpoet_subscriber_custom_field
+DROP TABLE IF EXISTS `wp_mailpoet_subscriber_custom_field`;
 CREATE TABLE IF NOT EXISTS `wp_mailpoet_subscriber_custom_field` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `subscriber_id` int(11) unsigned NOT NULL,
@@ -5189,6 +5232,7 @@ CREATE TABLE IF NOT EXISTS `wp_mailpoet_subscriber_custom_field` (
 /*!40000 ALTER TABLE `wp_mailpoet_subscriber_custom_field` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_mailpoet_subscriber_ips
+DROP TABLE IF EXISTS `wp_mailpoet_subscriber_ips`;
 CREATE TABLE IF NOT EXISTS `wp_mailpoet_subscriber_ips` (
   `ip` varchar(45) COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -5201,6 +5245,7 @@ CREATE TABLE IF NOT EXISTS `wp_mailpoet_subscriber_ips` (
 /*!40000 ALTER TABLE `wp_mailpoet_subscriber_ips` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_mailpoet_subscriber_segment
+DROP TABLE IF EXISTS `wp_mailpoet_subscriber_segment`;
 CREATE TABLE IF NOT EXISTS `wp_mailpoet_subscriber_segment` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `subscriber_id` int(11) unsigned NOT NULL,
@@ -5213,13 +5258,14 @@ CREATE TABLE IF NOT EXISTS `wp_mailpoet_subscriber_segment` (
   KEY `segment_id` (`segment_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
--- Listage des données de la table e-commerce.wp_mailpoet_subscriber_segment : ~0 rows (environ)
+-- Listage des données de la table e-commerce.wp_mailpoet_subscriber_segment : ~1 rows (environ)
 /*!40000 ALTER TABLE `wp_mailpoet_subscriber_segment` DISABLE KEYS */;
 INSERT INTO `wp_mailpoet_subscriber_segment` (`id`, `subscriber_id`, `segment_id`, `status`, `created_at`, `updated_at`) VALUES
 	(1, 1, 1, 'subscribed', '2021-08-02 16:43:11', '2021-08-02 16:43:11');
 /*!40000 ALTER TABLE `wp_mailpoet_subscriber_segment` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_mailpoet_user_flags
+DROP TABLE IF EXISTS `wp_mailpoet_user_flags`;
 CREATE TABLE IF NOT EXISTS `wp_mailpoet_user_flags` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` bigint(20) NOT NULL,
@@ -5236,6 +5282,7 @@ CREATE TABLE IF NOT EXISTS `wp_mailpoet_user_flags` (
 /*!40000 ALTER TABLE `wp_mailpoet_user_flags` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_options
+DROP TABLE IF EXISTS `wp_options`;
 CREATE TABLE IF NOT EXISTS `wp_options` (
   `option_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `option_name` varchar(191) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
@@ -5246,7 +5293,7 @@ CREATE TABLE IF NOT EXISTS `wp_options` (
   KEY `autoload` (`autoload`)
 ) ENGINE=InnoDB AUTO_INCREMENT=600 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
--- Listage des données de la table e-commerce.wp_options : ~405 rows (environ)
+-- Listage des données de la table e-commerce.wp_options : ~410 rows (environ)
 /*!40000 ALTER TABLE `wp_options` DISABLE KEYS */;
 INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`) VALUES
 	(1, 'siteurl', 'http://localhost/E-Commerce', 'yes'),
@@ -5353,7 +5400,7 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 	(102, 'WPLANG', 'fr_FR', 'yes'),
 	(103, 'widget_block', 'a:6:{i:2;a:1:{s:7:"content";s:19:"<!-- wp:search /-->";}i:3;a:1:{s:7:"content";s:159:"<!-- wp:group --><div class="wp-block-group"><!-- wp:heading --><h2>Articles récents</h2><!-- /wp:heading --><!-- wp:latest-posts /--></div><!-- /wp:group -->";}i:4;a:1:{s:7:"content";s:233:"<!-- wp:group --><div class="wp-block-group"><!-- wp:heading --><h2>Commentaires récents</h2><!-- /wp:heading --><!-- wp:latest-comments {"displayAvatar":false,"displayDate":false,"displayExcerpt":false} /--></div><!-- /wp:group -->";}i:5;a:1:{s:7:"content";s:146:"<!-- wp:group --><div class="wp-block-group"><!-- wp:heading --><h2>Archives</h2><!-- /wp:heading --><!-- wp:archives /--></div><!-- /wp:group -->";}i:6;a:1:{s:7:"content";s:151:"<!-- wp:group --><div class="wp-block-group"><!-- wp:heading --><h2>Catégories</h2><!-- /wp:heading --><!-- wp:categories /--></div><!-- /wp:group -->";}s:12:"_multiwidget";i:1;}', 'yes'),
 	(104, 'sidebars_widgets', 'a:8:{s:19:"wp_inactive_widgets";a:5:{i:0;s:7:"block-2";i:1;s:7:"block-3";i:2;s:7:"block-4";i:3;s:7:"block-5";i:4;s:7:"block-6";}s:9:"sidebar-1";a:1:{i:0;s:10:"nav_menu-2";}s:8:"header-1";a:0:{}s:8:"footer-1";a:0:{}s:8:"footer-2";a:0:{}s:8:"footer-3";a:0:{}s:8:"footer-4";a:0:{}s:13:"array_version";i:3;}', 'yes'),
-	(105, 'cron', 'a:19:{i:1627991599;a:1:{s:26:"action_scheduler_run_queue";a:1:{s:32:"0d04ed39571b55704c122d726248bbac";a:3:{s:8:"schedule";s:12:"every_minute";s:4:"args";a:1:{i:0;s:7:"WP Cron";}s:8:"interval";i:60;}}}i:1627992062;a:1:{s:34:"wp_privacy_delete_old_export_files";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:6:"hourly";s:4:"args";a:0:{}s:8:"interval";i:3600;}}}i:1627994113;a:1:{s:32:"woocommerce_cancel_unpaid_orders";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:2:{s:8:"schedule";b:0;s:4:"args";a:0:{}}}}i:1627994480;a:1:{s:33:"wc_admin_process_orders_milestone";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:6:"hourly";s:4:"args";a:0:{}s:8:"interval";i:3600;}}}i:1627994487;a:1:{s:29:"wc_admin_unsnooze_admin_notes";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:6:"hourly";s:4:"args";a:0:{}s:8:"interval";i:3600;}}}i:1627994610;a:1:{s:20:"jetpack_clean_nonces";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:6:"hourly";s:4:"args";a:0:{}s:8:"interval";i:3600;}}}i:1627994615;a:1:{s:46:"facebook_for_woocommerce_hourly_heartbeat_cron";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:6:"hourly";s:4:"args";a:0:{}s:8:"interval";i:3600;}}}i:1627995662;a:6:{s:30:"wp_site_health_scheduled_check";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:6:"weekly";s:4:"args";a:0:{}s:8:"interval";i:604800;}}s:32:"recovery_mode_clean_expired_keys";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}s:18:"wp_https_detection";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:16:"wp_version_check";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:17:"wp_update_plugins";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:16:"wp_update_themes";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1627995717;a:2:{s:19:"wp_scheduled_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}s:25:"delete_expired_transients";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1627995718;a:1:{s:30:"wp_scheduled_auto_draft_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1627998081;a:1:{s:14:"wc_admin_daily";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1627998090;a:2:{s:33:"woocommerce_cleanup_personal_data";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}s:30:"woocommerce_tracker_send_event";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1628001810;a:1:{s:20:"jetpack_v2_heartbeat";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1628001815;a:1:{s:45:"facebook_for_woocommerce_daily_heartbeat_cron";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1628008880;a:1:{s:24:"woocommerce_cleanup_logs";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1628019680;a:1:{s:28:"woocommerce_cleanup_sessions";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1628028000;a:1:{s:27:"woocommerce_scheduled_sales";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1629207740;a:1:{s:25:"woocommerce_geoip_updater";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:11:"fifteendays";s:4:"args";a:0:{}s:8:"interval";i:1296000;}}}s:7:"version";i:2;}', 'yes'),
+	(105, 'cron', 'a:18:{i:1627992379;a:1:{s:26:"action_scheduler_run_queue";a:1:{s:32:"0d04ed39571b55704c122d726248bbac";a:3:{s:8:"schedule";s:12:"every_minute";s:4:"args";a:1:{i:0;s:7:"WP Cron";}s:8:"interval";i:60;}}}i:1627994113;a:1:{s:32:"woocommerce_cancel_unpaid_orders";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:2:{s:8:"schedule";b:0;s:4:"args";a:0:{}}}}i:1627994480;a:1:{s:33:"wc_admin_process_orders_milestone";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:6:"hourly";s:4:"args";a:0:{}s:8:"interval";i:3600;}}}i:1627994487;a:1:{s:29:"wc_admin_unsnooze_admin_notes";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:6:"hourly";s:4:"args";a:0:{}s:8:"interval";i:3600;}}}i:1627994610;a:1:{s:20:"jetpack_clean_nonces";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:6:"hourly";s:4:"args";a:0:{}s:8:"interval";i:3600;}}}i:1627994615;a:1:{s:46:"facebook_for_woocommerce_hourly_heartbeat_cron";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:6:"hourly";s:4:"args";a:0:{}s:8:"interval";i:3600;}}}i:1627995662;a:7:{s:30:"wp_site_health_scheduled_check";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:6:"weekly";s:4:"args";a:0:{}s:8:"interval";i:604800;}}s:32:"recovery_mode_clean_expired_keys";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}s:18:"wp_https_detection";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:16:"wp_version_check";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:17:"wp_update_plugins";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:16:"wp_update_themes";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:34:"wp_privacy_delete_old_export_files";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:6:"hourly";s:4:"args";a:0:{}s:8:"interval";i:3600;}}}i:1627995717;a:2:{s:19:"wp_scheduled_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}s:25:"delete_expired_transients";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1627995718;a:1:{s:30:"wp_scheduled_auto_draft_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1627998081;a:1:{s:14:"wc_admin_daily";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1627998090;a:2:{s:33:"woocommerce_cleanup_personal_data";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}s:30:"woocommerce_tracker_send_event";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1628001810;a:1:{s:20:"jetpack_v2_heartbeat";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1628001815;a:1:{s:45:"facebook_for_woocommerce_daily_heartbeat_cron";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1628008880;a:1:{s:24:"woocommerce_cleanup_logs";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1628019680;a:1:{s:28:"woocommerce_cleanup_sessions";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1628028000;a:1:{s:27:"woocommerce_scheduled_sales";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1629207740;a:1:{s:25:"woocommerce_geoip_updater";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:11:"fifteendays";s:4:"args";a:0:{}s:8:"interval";i:1296000;}}}s:7:"version";i:2;}', 'yes'),
 	(106, 'widget_pages', 'a:1:{s:12:"_multiwidget";i:1;}', 'yes'),
 	(107, 'widget_calendar', 'a:1:{s:12:"_multiwidget";i:1;}', 'yes'),
 	(108, 'widget_archives', 'a:1:{s:12:"_multiwidget";i:1;}', 'yes'),
@@ -5382,7 +5429,7 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 	(159, 'widget_recent-posts', 'a:2:{i:1;a:0:{}s:12:"_multiwidget";i:1;}', 'yes'),
 	(161, 'widget_recent-comments', 'a:2:{i:1;a:0:{}s:12:"_multiwidget";i:1;}', 'yes'),
 	(164, 'category_children', 'a:0:{}', 'yes'),
-	(170, 'theme_mods_storefront', 'a:17:{i:0;b:0;s:18:"nav_menu_locations";a:0:{}s:18:"custom_css_post_id";i:-1;s:16:"background_color";s:6:"ffffff";s:16:"background_image";s:92:"http://localhost/E-Commerce/wp-content/uploads/2021/08/fond-ecran-batterie-smartphone-1.jpeg";s:21:"background_position_x";s:4:"left";s:21:"background_position_y";s:3:"top";s:17:"background_preset";s:3:"fit";s:15:"background_size";s:7:"contain";s:17:"background_repeat";s:9:"no-repeat";s:21:"background_attachment";s:6:"scroll";s:11:"custom_logo";i:17;s:28:"storefront_header_text_color";s:7:"#000000";s:28:"storefront_header_link_color";s:7:"#dd3333";s:23:"storefront_accent_color";s:7:"#000000";s:28:"storefront_footer_text_color";s:7:"#000000";s:28:"storefront_footer_link_color";s:7:"#dd3333";}', 'yes'),
+	(170, 'theme_mods_storefront', 'a:17:{i:0;b:0;s:18:"nav_menu_locations";a:0:{}s:18:"custom_css_post_id";i:-1;s:16:"background_color";s:6:"ffffff";s:16:"background_image";s:0:"";s:21:"background_position_x";s:4:"left";s:21:"background_position_y";s:3:"top";s:17:"background_preset";s:3:"fit";s:15:"background_size";s:7:"contain";s:17:"background_repeat";s:9:"no-repeat";s:21:"background_attachment";s:6:"scroll";s:11:"custom_logo";i:17;s:28:"storefront_header_text_color";s:7:"#000000";s:28:"storefront_header_link_color";s:7:"#dd3333";s:23:"storefront_accent_color";s:7:"#000000";s:28:"storefront_footer_text_color";s:7:"#000000";s:28:"storefront_footer_link_color";s:7:"#dd3333";}', 'yes'),
 	(171, 'storefront_nux_fresh_site', '1', 'yes'),
 	(172, 'storefront_cleared_widgets', '1', 'yes'),
 	(175, 'action_scheduler_hybrid_store_demarkation', '6', 'yes'),
@@ -5511,7 +5558,7 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 	(302, '_transient__woocommerce_upload_directory_status', 'protected', 'no'),
 	(304, 'recently_activated', 'a:1:{i:0;b:0;}', 'yes'),
 	(305, '_transient_jetpack_autoloader_plugin_paths', 'a:4:{i:0;s:41:"{{WP_PLUGIN_DIR}}/google-listings-and-ads";i:1;s:25:"{{WP_PLUGIN_DIR}}/jetpack";i:2;s:29:"{{WP_PLUGIN_DIR}}/woocommerce";i:3;s:38:"{{WP_PLUGIN_DIR}}/woocommerce-payments";}', 'yes'),
-	(306, 'action_scheduler_lock_async-request-runner', '1627991612', 'yes'),
+	(306, 'action_scheduler_lock_async-request-runner', '1627992352', 'yes'),
 	(307, 'woocommerce_admin_notices', 'a:1:{i:0;s:20:"no_secure_connection";}', 'yes'),
 	(308, 'woocommerce_maxmind_geolocation_settings', 'a:1:{s:15:"database_prefix";s:32:"G5faSoohvOHXYvR8YMROW1ORvPXscSDp";}', 'yes'),
 	(309, '_transient_woocommerce_webhook_ids_status_active', 'a:0:{}', 'yes'),
@@ -5659,10 +5706,15 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 	(581, '_site_transient_timeout_wp_remote_block_patterns_c7c8c95fa9addca87bee2a6698313d1f', '1627994186', 'no'),
 	(582, '_site_transient_wp_remote_block_patterns_c7c8c95fa9addca87bee2a6698313d1f', 'a:26:{i:0;O:8:"stdClass":7:{s:2:"id";i:1332;s:5:"title";O:8:"stdClass":1:{s:8:"rendered";s:8:"Citation";}s:7:"content";O:8:"stdClass":2:{s:8:"rendered";s:675:"\n<hr class="wp-block-separator is-style-default" />\n\n\n\n<div class="wp-block-image is-style-rounded"><figure class="aligncenter size-large is-resized"><img loading="lazy" src="https://s.w.org/images/core/5.8/portrait.jpg" alt="Un portrait de profil d’une femme portant un pull à col roulé ocre et un sac blanc. Elle regarde en l’air et ferme les yeux." width="150" height="150" /></figure></div>\n\n\n\n<blockquote class="wp-block-quote has-text-align-center is-style-large"><p>« Contributing makes me feel like I&rsquo;m being useful to the planet. »</p><cite>— Anna Wong, <em>Bénévole</em></cite></blockquote>\n\n\n\n<hr class="wp-block-separator is-style-default" />\n";s:9:"protected";b:0;}s:4:"meta";O:8:"stdClass":5:{s:10:"spay_email";s:0:"";s:16:"wpop_description";s:0:"";s:19:"wpop_viewport_width";i:800;s:16:"wpop_block_types";a:0:{}s:11:"wpop_locale";s:5:"fr_FR";}s:14:"category_slugs";a:1:{i:0;s:4:"text";}s:13:"keyword_slugs";a:1:{i:0;s:4:"core";}s:15:"pattern_content";s:1037:"<!-- wp:separator {"className":"is-style-default"} -->\n<hr class="wp-block-separator is-style-default" />\n<!-- /wp:separator -->\n\n<!-- wp:image {"align":"center","width":150,"height":150,"sizeSlug":"large","linkDestination":"none","className":"is-style-rounded"} -->\n<div class="wp-block-image is-style-rounded"><figure class="aligncenter size-large is-resized"><img src="https://s.w.org/images/core/5.8/portrait.jpg" alt="Un portrait de profil d’une femme portant un pull à col roulé ocre et un sac blanc. Elle regarde en l’air et ferme les yeux." width="150" height="150" /></figure></div>\n<!-- /wp:image -->\n\n<!-- wp:quote {"align":"center","className":"is-style-large"} -->\n<blockquote class="wp-block-quote has-text-align-center is-style-large"><p>"Contributing makes me feel like I\'m being useful to the planet."</p><cite>— Anna Wong, <em>Bénévole</em></cite></blockquote>\n<!-- /wp:quote -->\n\n<!-- wp:separator {"className":"is-style-default"} -->\n<hr class="wp-block-separator is-style-default" />\n<!-- /wp:separator -->";}i:1;O:8:"stdClass":7:{s:2:"id";i:1322;s:5:"title";O:8:"stdClass":1:{s:8:"rendered";s:48:"Deux colonnes de texte avec des titres décalés";}s:7:"content";O:8:"stdClass":2:{s:8:"rendered";s:1891:"\n<div class="wp-block-group alignfull has-background" style="background-color:#f2f0e9"><div class="wp-block-group__inner-container">\n<div style="height:70px" aria-hidden="true" class="wp-block-spacer"></div>\n\n\n\n<div class="wp-block-columns alignwide are-vertically-aligned-center">\n<div class="wp-block-column" style="flex-basis:50%">\n<p class="has-text-color" style="color:#000000;font-size:30px;line-height:1.1"><strong>Inspiration océanique</strong></p>\n</div>\n\n\n\n<div class="wp-block-column" style="flex-basis:50%">\n<hr class="wp-block-separator has-text-color has-background is-style-wide" style="background-color:#000000;color:#000000" />\n</div>\n</div>\n\n\n\n<div class="wp-block-columns alignwide">\n<div class="wp-block-column"></div>\n\n\n\n<div class="wp-block-column">\n<p class="has-text-color has-extra-small-font-size" style="color:#000000">Winding veils round their heads, the women walked on deck. They were now moving steadily down the river, passing the dark shapes of ships at anchor, and London was a swarm of lights with a pale yellow canopy drooping above it. There were the lights of the great theatres, the lights of the long streets, lights that indicated huge squares of domestic comfort, lights that hung high in air.</p>\n</div>\n\n\n\n<div class="wp-block-column">\n<p class="has-text-color has-extra-small-font-size" style="color:#000000">No darkness would ever settle upon those lamps, as no darkness had settled upon them for hundreds of years. It seemed dreadful that the town should blaze for ever in the same spot; dreadful at least to people going away to adventure upon the sea, and beholding it as a circumscribed mound, eternally burnt, eternally scarred. From the deck of the ship the great city appeared a crouched and cowardly figure, a sedentary miser.</p>\n</div>\n</div>\n\n\n\n<div style="height:40px" aria-hidden="true" class="wp-block-spacer"></div>\n</div></div>\n";s:9:"protected";b:0;}s:4:"meta";O:8:"stdClass":5:{s:10:"spay_email";s:0:"";s:16:"wpop_description";s:43:"Two columns of text with an offset heading.";s:19:"wpop_viewport_width";i:1200;s:16:"wpop_block_types";a:0:{}s:11:"wpop_locale";s:5:"fr_FR";}s:14:"category_slugs";a:2:{i:0;s:7:"columns";i:1;s:4:"text";}s:13:"keyword_slugs";a:1:{i:0;s:4:"core";}s:15:"pattern_content";s:2840:"<!-- wp:group {"align":"full","style":{"color":{"background":"#f2f0e9"}}} -->\n<div class="wp-block-group alignfull has-background" style="background-color:#f2f0e9"><!-- wp:spacer {"height":70} -->\n<div style="height:70px" aria-hidden="true" class="wp-block-spacer"></div>\n<!-- /wp:spacer -->\n\n<!-- wp:columns {"verticalAlignment":"center","align":"wide"} -->\n<div class="wp-block-columns alignwide are-vertically-aligned-center"><!-- wp:column {"width":"50%"} -->\n<div class="wp-block-column" style="flex-basis:50%"><!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.1","fontSize":"30px"},"color":{"text":"#000000"}}} -->\n<p class="has-text-color" style="color:#000000;font-size:30px;line-height:1.1"><strong>Inspiration océanique</strong></p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:column -->\n\n<!-- wp:column {"width":"50%"} -->\n<div class="wp-block-column" style="flex-basis:50%"><!-- wp:separator {"customColor":"#000000","className":"is-style-wide"} -->\n<hr class="wp-block-separator has-text-color has-background is-style-wide" style="background-color:#000000;color:#000000" />\n<!-- /wp:separator --></div>\n<!-- /wp:column --></div>\n<!-- /wp:columns -->\n\n<!-- wp:columns {"align":"wide"} -->\n<div class="wp-block-columns alignwide"><!-- wp:column -->\n<div class="wp-block-column"></div>\n<!-- /wp:column -->\n\n<!-- wp:column -->\n<div class="wp-block-column"><!-- wp:paragraph {"style":{"color":{"text":"#000000"}},"fontSize":"extra-small"} -->\n<p class="has-text-color has-extra-small-font-size" style="color:#000000">Winding veils round their heads, the women walked on deck. They were now moving steadily down the river, passing the dark shapes of ships at anchor, and London was a swarm of lights with a pale yellow canopy drooping above it. There were the lights of the great theatres, the lights of the long streets, lights that indicated huge squares of domestic comfort, lights that hung high in air.</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:column -->\n\n<!-- wp:column -->\n<div class="wp-block-column"><!-- wp:paragraph {"style":{"color":{"text":"#000000"}},"fontSize":"extra-small"} -->\n<p class="has-text-color has-extra-small-font-size" style="color:#000000">No darkness would ever settle upon those lamps, as no darkness had settled upon them for hundreds of years. It seemed dreadful that the town should blaze for ever in the same spot; dreadful at least to people going away to adventure upon the sea, and beholding it as a circumscribed mound, eternally burnt, eternally scarred. From the deck of the ship the great city appeared a crouched and cowardly figure, a sedentary miser.</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:column --></div>\n<!-- /wp:columns -->\n\n<!-- wp:spacer {"height":40} -->\n<div style="height:40px" aria-hidden="true" class="wp-block-spacer"></div>\n<!-- /wp:spacer --></div>\n<!-- /wp:group -->";}i:2;O:8:"stdClass":7:{s:2:"id";i:1334;s:5:"title";O:8:"stdClass":1:{s:8:"rendered";s:31:"Deux colonnes de texte et titre";}s:7:"content";O:8:"stdClass":2:{s:8:"rendered";s:1356:"\n<h2 style="font-size:38px;line-height:1.4"><strong>Le voyage avait commencé, et avait commencé heureusement avec un ciel bleu doux, et une mer calme.</strong></h2>\n\n\n\n<div class="wp-block-columns">\n<div class="wp-block-column">\n<p style="font-size:18px">They followed her on to the deck. All the smoke and the houses had disappeared, and the ship was out in a wide space of sea very fresh and clear though pale in the early light. They had left London sitting on its mud. A very thin line of shadow tapered on the horizon, scarcely thick enough to stand the burden of Paris, which nevertheless rested upon it. They were free of roads, free of mankind, and the same exhilaration at their freedom ran through them all.</p>\n</div>\n\n\n\n<div class="wp-block-column">\n<p style="font-size:18px">The ship was making her way steadily through small waves which slapped her and then fizzled like effervescing water, leaving a little border of bubbles and foam on either side. The colourless October sky above was thinly clouded as if by the trail of wood-fire smoke, and the air was wonderfully salt and brisk. Indeed it was too cold to stand still. Mrs. Ambrose drew her arm within her husband&rsquo;s, and as they moved off it could be seen from the way in which her sloping cheek turned up to his that she had something private to communicate.</p>\n</div>\n</div>\n";s:9:"protected";b:0;}s:4:"meta";O:8:"stdClass":5:{s:10:"spay_email";s:0:"";s:16:"wpop_description";s:54:"Deux colonnes de texte précédées par un long titre.";s:19:"wpop_viewport_width";i:1200;s:16:"wpop_block_types";a:0:{}s:11:"wpop_locale";s:5:"fr_FR";}s:14:"category_slugs";a:2:{i:0;s:7:"columns";i:1;s:4:"text";}s:13:"keyword_slugs";a:1:{i:0;s:4:"core";}s:15:"pattern_content";s:1730:"<!-- wp:heading {"style":{"typography":{"fontSize":38,"lineHeight":"1.4"}}} -->\n<h2 style="font-size:38px;line-height:1.4"><strong>Le voyage avait commencé, et avait commencé heureusement avec un ciel bleu doux, et une mer calme.</strong></h2>\n<!-- /wp:heading -->\n\n<!-- wp:columns -->\n<div class="wp-block-columns"><!-- wp:column -->\n<div class="wp-block-column"><!-- wp:paragraph {"style":{"typography":{"fontSize":18}}} -->\n<p style="font-size:18px">They followed her on to the deck. All the smoke and the houses had disappeared, and the ship was out in a wide space of sea very fresh and clear though pale in the early light. They had left London sitting on its mud. A very thin line of shadow tapered on the horizon, scarcely thick enough to stand the burden of Paris, which nevertheless rested upon it. They were free of roads, free of mankind, and the same exhilaration at their freedom ran through them all.</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:column -->\n\n<!-- wp:column -->\n<div class="wp-block-column"><!-- wp:paragraph {"style":{"typography":{"fontSize":18}}} -->\n<p style="font-size:18px">The ship was making her way steadily through small waves which slapped her and then fizzled like effervescing water, leaving a little border of bubbles and foam on either side. The colourless October sky above was thinly clouded as if by the trail of wood-fire smoke, and the air was wonderfully salt and brisk. Indeed it was too cold to stand still. Mrs. Ambrose drew her arm within her husband\'s, and as they moved off it could be seen from the way in which her sloping cheek turned up to his that she had something private to communicate.</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:column --></div>\n<!-- /wp:columns -->";}i:3;O:8:"stdClass":7:{s:2:"id";i:1272;s:5:"title";O:8:"stdClass":1:{s:8:"rendered";s:26:"Deux images côte à côte";}s:7:"content";O:8:"stdClass":2:{s:8:"rendered";s:674:"\n<figure class="wp-block-gallery alignwide columns-2 is-cropped"><ul class="blocks-gallery-grid"><li class="blocks-gallery-item"><figure><img src="https://s.w.org/images/core/5.8/nature-above-01.jpg" alt="Une vue aérienne de vagues s’écrasant sur le bord de mer." data-full-url="https://s.w.org/images/core/5.8/nature-above-01.jpg" data-link="#" /></figure></li><li class="blocks-gallery-item"><figure><img src="https://s.w.org/images/core/5.8/nature-above-02.jpg" alt="Une vue aérienne d’un champ. Une route est visible dans le coin en haut à droite." data-full-url="https://s.w.org/images/core/5.8/nature-above-02.jpg" data-link="#" /></figure></li></ul></figure>\n";s:9:"protected";b:0;}s:4:"meta";O:8:"stdClass":5:{s:10:"spay_email";s:0:"";s:16:"wpop_description";s:52:"Une galerie d’images avec deux images d’exemple.";s:19:"wpop_viewport_width";i:800;s:16:"wpop_block_types";a:0:{}s:11:"wpop_locale";s:5:"fr_FR";}s:14:"category_slugs";a:1:{i:0;s:7:"gallery";}s:13:"keyword_slugs";a:1:{i:0;s:4:"core";}s:15:"pattern_content";s:764:"<!-- wp:gallery {"ids":[null,null],"linkTo":"none","align":"wide"} -->\n<figure class="wp-block-gallery alignwide columns-2 is-cropped"><ul class="blocks-gallery-grid"><li class="blocks-gallery-item"><figure><img src="https://s.w.org/images/core/5.8/nature-above-01.jpg" alt="Une vue aérienne de vagues s’écrasant sur le bord de mer." data-full-url="https://s.w.org/images/core/5.8/nature-above-01.jpg" data-link="#" /></figure></li><li class="blocks-gallery-item"><figure><img src="https://s.w.org/images/core/5.8/nature-above-02.jpg" alt="Une vue aérienne d’un champ. Une route est visible dans le coin en haut à droite." data-full-url="https://s.w.org/images/core/5.8/nature-above-02.jpg" data-link="#" /></figure></li></ul></figure>\n<!-- /wp:gallery -->";}i:4;O:8:"stdClass":7:{s:2:"id";i:1325;s:5:"title";O:8:"stdClass":1:{s:8:"rendered";s:44:"Large en-tête avec texte aligné à gauche.";}s:7:"content";O:8:"stdClass":2:{s:8:"rendered";s:1019:"\n<div class="wp-block-cover alignfull has-background-dim-60 has-background-dim" style="min-height:800px"><img class="wp-block-cover__image-background" alt="" src="https://s.w.org/images/core/5.8/forest.jpg" data-object-fit="cover" /><div class="wp-block-cover__inner-container">\n<h2 class="alignwide has-text-color" style="color:#ffe074;font-size:64px">Forêt.</h2>\n\n\n\n<div class="wp-block-columns alignwide">\n<div class="wp-block-column" style="flex-basis:55%">\n<div style="height:330px" aria-hidden="true" class="wp-block-spacer"></div>\n\n\n\n<p class="has-text-color" style="color:#ffe074;font-size:12px;line-height:1.3"><em>Even a child knows how valuable the forest is. The fresh, breathtaking smell of trees. Echoing birds flying above that dense magnitude. A stable climate, a sustainable diverse life and a source of culture. Yet, forests and other ecosystems hang in the balance, threatened to become croplands, pasture, and plantations.</em></p>\n</div>\n\n\n\n<div class="wp-block-column"></div>\n</div>\n</div></div>\n";s:9:"protected";b:0;}s:4:"meta";O:8:"stdClass":5:{s:10:"spay_email";s:0:"";s:16:"wpop_description";s:35:"Bannière avec une citation en haut";s:19:"wpop_viewport_width";i:1200;s:16:"wpop_block_types";a:0:{}s:11:"wpop_locale";s:5:"fr_FR";}s:14:"category_slugs";a:1:{i:0;s:6:"header";}s:13:"keyword_slugs";a:1:{i:0;s:4:"core";}s:15:"pattern_content";s:1616:"<!-- wp:cover {"url":"https:\\/\\/s.w.org\\/images\\/core\\/5.8\\/forest.jpg","dimRatio":60,"minHeight":800,"align":"full"} -->\n<div class="wp-block-cover alignfull has-background-dim-60 has-background-dim" style="min-height:800px"><img class="wp-block-cover__image-background" alt="" src="https://s.w.org/images/core/5.8/forest.jpg" data-object-fit="cover" /><div class="wp-block-cover__inner-container"><!-- wp:heading {"align":"wide","style":{"color":{"text":"#ffe074"},"typography":{"fontSize":"64px"}}} -->\n<h2 class="alignwide has-text-color" style="color:#ffe074;font-size:64px">Forêt.</h2>\n<!-- /wp:heading -->\n\n<!-- wp:columns {"align":"wide"} -->\n<div class="wp-block-columns alignwide"><!-- wp:column {"width":"55%"} -->\n<div class="wp-block-column" style="flex-basis:55%"><!-- wp:spacer {"height":330} -->\n<div style="height:330px" aria-hidden="true" class="wp-block-spacer"></div>\n<!-- /wp:spacer -->\n\n<!-- wp:paragraph {"style":{"color":{"text":"#ffe074"},"typography":{"lineHeight":"1.3","fontSize":"12px"}}} -->\n<p class="has-text-color" style="color:#ffe074;font-size:12px;line-height:1.3"><em>Even a child knows how valuable the forest is. The fresh, breathtaking smell of trees. Echoing birds flying above that dense magnitude. A stable climate, a sustainable diverse life and a source of culture. Yet, forests and other ecosystems hang in the balance, threatened to become croplands, pasture, and plantations.</em></p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:column -->\n\n<!-- wp:column -->\n<div class="wp-block-column"></div>\n<!-- /wp:column --></div>\n<!-- /wp:columns --></div></div>\n<!-- /wp:cover -->";}i:5;O:8:"stdClass":7:{s:2:"id";i:1324;s:5:"title";O:8:"stdClass":1:{s:8:"rendered";s:35:"Large en-tête avec texte et bouton";}s:7:"content";O:8:"stdClass":2:{s:8:"rendered";s:1057:"\n<div class="wp-block-cover alignfull has-background-dim-40 has-background-dim has-parallax" style="background-image:url(https://s.w.org/images/core/5.8/art-01.jpg);background-color:#000000;min-height:100vh"><div class="wp-block-cover__inner-container">\n<h2 class="alignwide has-white-color has-text-color" style="font-size:48px;line-height:1.2"><strong><em>Overseas:</em></strong><br><strong><em>1500 — 1960</em></strong></h2>\n\n\n\n<div class="wp-block-columns alignwide">\n<div class="wp-block-column" style="flex-basis:60%">\n<p class="has-text-color" style="color:#ffffff">An exhibition about the different representations of the ocean throughout time, between the sixteenth and the twentieth century. Taking place in our Open Room in <em>Floor 2</em>.</p>\n\n\n\n<div class="wp-block-buttons">\n<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-text-color has-background no-border-radius" style="background-color:#000000;color:#ffffff">Visitez</a></div>\n</div>\n</div>\n\n\n\n<div class="wp-block-column"></div>\n</div>\n</div></div>\n";s:9:"protected";b:0;}s:4:"meta";O:8:"stdClass":5:{s:10:"spay_email";s:0:"";s:16:"wpop_description";s:84:"Une grande en-tête avec une image d’arrière-plan, un texte et un bouton en haut.";s:19:"wpop_viewport_width";i:1200;s:16:"wpop_block_types";a:0:{}s:11:"wpop_locale";s:5:"fr_FR";}s:14:"category_slugs";a:1:{i:0;s:6:"header";}s:13:"keyword_slugs";a:1:{i:0;s:4:"core";}s:15:"pattern_content";s:1873:"<!-- wp:cover {"url":"https:\\/\\/s.w.org\\/images\\/core\\/5.8\\/art-01.jpg","hasParallax":true,"dimRatio":40,"customOverlayColor":"#000000","minHeight":100,"minHeightUnit":"vh","contentPosition":"center center","align":"full"} -->\n<div class="wp-block-cover alignfull has-background-dim-40 has-background-dim has-parallax" style="background-image:url(https://s.w.org/images/core/5.8/art-01.jpg);background-color:#000000;min-height:100vh"><div class="wp-block-cover__inner-container"><!-- wp:heading {"style":{"typography":{"fontSize":"48px","lineHeight":"1.2"}},"className":"alignwide has-white-color has-text-color"} -->\n<h2 class="alignwide has-white-color has-text-color" style="font-size:48px;line-height:1.2"><strong><em>Overseas:</em></strong><br><strong><em>1500 — 1960</em></strong></h2>\n<!-- /wp:heading -->\n\n<!-- wp:columns {"align":"wide"} -->\n<div class="wp-block-columns alignwide"><!-- wp:column {"width":"60%"} -->\n<div class="wp-block-column" style="flex-basis:60%"><!-- wp:paragraph {"style":{"color":{"text":"#ffffff"}}} -->\n<p class="has-text-color" style="color:#ffffff">An exhibition about the different representations of the ocean throughout time, between the sixteenth and the twentieth century. Taking place in our Open Room in <em>Floor 2</em>.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:buttons -->\n<div class="wp-block-buttons"><!-- wp:button {"borderRadius":0,"style":{"color":{"text":"#ffffff","background":"#000000"}},"className":"is-style-outline"} -->\n<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-text-color has-background no-border-radius" style="background-color:#000000;color:#ffffff">Visitez</a></div>\n<!-- /wp:button --></div>\n<!-- /wp:buttons --></div>\n<!-- /wp:column -->\n\n<!-- wp:column -->\n<div class="wp-block-column"></div>\n<!-- /wp:column --></div>\n<!-- /wp:columns --></div></div>\n<!-- /wp:cover -->";}i:6;O:8:"stdClass":7:{s:2:"id";i:1803;s:5:"title";O:8:"stdClass":1:{s:8:"rendered";s:39:"Média + texte avec image sur la droite";}s:7:"content";O:8:"stdClass":2:{s:8:"rendered";s:700:"\n<div class="wp-block-media-text alignfull has-media-on-the-right is-stacked-on-mobile is-vertically-aligned-center is-style-default" style="grid-template-columns:auto 56%"><figure class="wp-block-media-text__media"><img src="https://s.w.org/images/core/5.8/art-02.jpg" alt="Un paysage vert et marron avec un océan bleu brillant et un ciel plutôt nuageux, réalisé à la peinture à l’huile." /></figure><div class="wp-block-media-text__content">\n<h2 class="has-text-color" style="color:#000000"><strong>Rivage avec une mer bleue</strong></h2>\n\n\n\n<p class="has-text-color" style="color:#636363;font-size:17px;line-height:1.1">Eleanor Harris (Américaine, 1901-1942)</p>\n</div></div>\n\n\n\n<p></p>\n";s:9:"protected";b:0;}s:4:"meta";O:8:"stdClass":5:{s:10:"spay_email";s:0:"";s:16:"wpop_description";s:66:"Media and text block with image to the right and text to the left.";s:19:"wpop_viewport_width";i:1200;s:16:"wpop_block_types";a:0:{}s:11:"wpop_locale";s:5:"fr_FR";}s:14:"category_slugs";a:1:{i:0;s:6:"header";}s:13:"keyword_slugs";a:1:{i:0;s:4:"core";}s:15:"pattern_content";s:1153:"<!-- wp:media-text {"align":"full","mediaPosition":"right","mediaLink":"#","mediaType":"image","mediaWidth":56,"verticalAlignment":"center","className":"is-style-default"} -->\n<div class="wp-block-media-text alignfull has-media-on-the-right is-stacked-on-mobile is-vertically-aligned-center is-style-default" style="grid-template-columns:auto 56%"><figure class="wp-block-media-text__media"><img src="https://s.w.org/images/core/5.8/art-02.jpg" alt="Un paysage vert et marron avec un océan bleu brillant et un ciel plutôt nuageux, réalisé à la peinture à l’huile." /></figure><div class="wp-block-media-text__content"><!-- wp:heading {"style":{"color":{"text":"#000000"}}} -->\n<h2 class="has-text-color" style="color:#000000"><strong>Rivage avec une mer bleue</strong></h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.1","fontSize":"17px"},"color":{"text":"#636363"}}} -->\n<p class="has-text-color" style="color:#636363;font-size:17px;line-height:1.1">Eleanor Harris (Américaine, 1901-1942)</p>\n<!-- /wp:paragraph --></div></div>\n<!-- /wp:media-text -->\n\n<!-- wp:paragraph -->\n<p></p>\n<!-- /wp:paragraph -->";}i:7;O:8:"stdClass":7:{s:2:"id";i:1355;s:5:"title";O:8:"stdClass":1:{s:8:"rendered";s:39:"Média + texte avec image sur la gauche";}s:7:"content";O:8:"stdClass":2:{s:8:"rendered";s:530:"\n<div class="wp-block-media-text alignfull is-stacked-on-mobile is-vertically-aligned-center"><figure class="wp-block-media-text__media"><img src="https://s.w.org/images/core/5.8/architecture-04.jpg" alt="Vue de près d’un détail architectural." /></figure><div class="wp-block-media-text__content">\n<h3 class="has-text-align-center has-text-color" style="color:#000000"><strong>Open Spaces</strong></h3>\n\n\n\n<p class="has-text-align-center has-extra-small-font-size"><a href="#">Voir l’étude de cas ↗</a></p>\n</div></div>\n";s:9:"protected";b:0;}s:4:"meta";O:8:"stdClass":5:{s:10:"spay_email";s:0:"";s:16:"wpop_description";s:66:"Media and text block with image to the left and text to the right.";s:19:"wpop_viewport_width";i:1200;s:16:"wpop_block_types";a:0:{}s:11:"wpop_locale";s:5:"fr_FR";}s:14:"category_slugs";a:1:{i:0;s:6:"header";}s:13:"keyword_slugs";a:1:{i:0;s:4:"core";}s:15:"pattern_content";s:837:"<!-- wp:media-text {"align":"full","mediaType":"image","verticalAlignment":"center"} -->\n<div class="wp-block-media-text alignfull is-stacked-on-mobile is-vertically-aligned-center"><figure class="wp-block-media-text__media"><img src="https://s.w.org/images/core/5.8/architecture-04.jpg" alt="Vue de près d’un détail architectural." /></figure><div class="wp-block-media-text__content"><!-- wp:heading {"textAlign":"center","level":3,"style":{"color":{"text":"#000000"}}} -->\n<h3 class="has-text-align-center has-text-color" style="color:#000000"><strong>Open Spaces</strong></h3>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph {"align":"center","fontSize":"extra-small"} -->\n<p class="has-text-align-center has-extra-small-font-size"><a href="#">Voir l’étude de cas ↗</a></p>\n<!-- /wp:paragraph --></div></div>\n<!-- /wp:media-text -->";}i:8;O:8:"stdClass":7:{s:2:"id";i:1323;s:5:"title";O:8:"stdClass":1:{s:8:"rendered";s:81:"Média + texte dans un conteneur prenant la totalité de la hauteur de l’écran";}s:7:"content";O:8:"stdClass":2:{s:8:"rendered";s:1205:"\n<div class="wp-block-cover alignfull has-background-dim" style="background-color:#ffffff;min-height:100vh"><div class="wp-block-cover__inner-container">\n<div class="wp-block-media-text alignwide is-stacked-on-mobile is-vertically-aligned-center is-image-fill" style="grid-template-columns:56% auto"><figure class="wp-block-media-text__media" style="background-image:url(https://s.w.org/images/core/5.8/soil.jpg);background-position:50% 50%"><img src="https://s.w.org/images/core/5.8/soil.jpg" alt="Détail d’une terre sèche, craquelée." /></figure><div class="wp-block-media-text__content">\n<h2 class="has-text-color" style="color:#000000;font-size:32px"><strong>Quel est le problème ?</strong></h2>\n\n\n\n<p class="has-text-color" style="color:#000000;font-size:17px">Trees are more important today than ever before. More than 10,000 products are reportedly made from trees. Through chemistry, the humble woodpile is yielding chemicals, plastics and fabrics that were beyond comprehension when an axe first felled a Texas tree.</p>\n\n\n\n<div class="wp-block-buttons">\n<div class="wp-block-button is-style-fill"><a class="wp-block-button__link">En savoir plus</a></div>\n</div>\n</div></div>\n</div></div>\n";s:9:"protected";b:0;}s:4:"meta";O:8:"stdClass":5:{s:10:"spay_email";s:0:"";s:16:"wpop_description";s:77:"Media and text block with image to the left and text and button to the right.";s:19:"wpop_viewport_width";i:1200;s:16:"wpop_block_types";a:0:{}s:11:"wpop_locale";s:5:"fr_FR";}s:14:"category_slugs";a:1:{i:0;s:6:"header";}s:13:"keyword_slugs";a:1:{i:0;s:4:"core";}s:15:"pattern_content";s:1881:"<!-- wp:cover {"customOverlayColor":"#ffffff","minHeight":100,"minHeightUnit":"vh","contentPosition":"center center","align":"full"} -->\n<div class="wp-block-cover alignfull has-background-dim" style="background-color:#ffffff;min-height:100vh"><div class="wp-block-cover__inner-container"><!-- wp:media-text {"mediaLink":"https:\\/\\/s.w.org\\/images\\/core\\/5.8\\/soil.jpg","mediaType":"image","mediaWidth":56,"verticalAlignment":"center","imageFill":true} -->\n<div class="wp-block-media-text alignwide is-stacked-on-mobile is-vertically-aligned-center is-image-fill" style="grid-template-columns:56% auto"><figure class="wp-block-media-text__media" style="background-image:url(https://s.w.org/images/core/5.8/soil.jpg);background-position:50% 50%"><img src="https://s.w.org/images/core/5.8/soil.jpg" alt="Détail d’une terre sèche, craquelée." /></figure><div class="wp-block-media-text__content"><!-- wp:heading {"style":{"typography":{"fontSize":"32px"},"color":{"text":"#000000"}}} -->\n<h2 class="has-text-color" style="color:#000000;font-size:32px"><strong>Quel est le problème ?</strong></h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph {"style":{"typography":{"fontSize":"17px"},"color":{"text":"#000000"}}} -->\n<p class="has-text-color" style="color:#000000;font-size:17px">Trees are more important today than ever before. More than 10,000 products are reportedly made from trees. Through chemistry, the humble woodpile is yielding chemicals, plastics and fabrics that were beyond comprehension when an axe first felled a Texas tree.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:buttons -->\n<div class="wp-block-buttons"><!-- wp:button {"className":"is-style-fill"} -->\n<div class="wp-block-button is-style-fill"><a class="wp-block-button__link">En savoir plus</a></div>\n<!-- /wp:button --></div>\n<!-- /wp:buttons --></div></div>\n<!-- /wp:media-text --></div></div>\n<!-- /wp:cover -->";}i:9;O:8:"stdClass":7:{s:2:"id";i:1326;s:5:"title";O:8:"stdClass":1:{s:8:"rendered";s:5:"Titre";}s:7:"content";O:8:"stdClass":2:{s:8:"rendered";s:290:"\n<h2 class="alignwide" style="font-size:48px;line-height:1.1">We&rsquo;re a studio in Berlin with an international practice in architecture, urban planning and interior design. We believe in sharing knowledge and promoting dialogue to increase the creative potential of collaboration.</h2>\n";s:9:"protected";b:0;}s:4:"meta";O:8:"stdClass":5:{s:10:"spay_email";s:0:"";s:16:"wpop_description";s:14:"Texte du titre";s:19:"wpop_viewport_width";i:1200;s:16:"wpop_block_types";a:0:{}s:11:"wpop_locale";s:5:"fr_FR";}s:14:"category_slugs";a:1:{i:0;s:4:"text";}s:13:"keyword_slugs";a:1:{i:0;s:4:"core";}s:15:"pattern_content";s:402:"<!-- wp:heading {"align":"wide","style":{"typography":{"fontSize":"48px","lineHeight":"1.1"}}} -->\n<h2 class="alignwide" style="font-size:48px;line-height:1.1">We\'re a studio in Berlin with an international practice in architecture, urban planning and interior design. We believe in sharing knowledge and promoting dialogue to increase the creative potential of collaboration.</h2>\n<!-- /wp:heading -->";}i:10;O:8:"stdClass":7:{s:2:"id";i:4952;s:5:"title";O:8:"stdClass":1:{s:8:"rendered";s:41:"Trois colonnes avec des images décalées";}s:7:"content";O:8:"stdClass":2:{s:8:"rendered";s:1053:"\n<div class="wp-block-columns alignwide">\n<div class="wp-block-column" style="flex-basis:25%">\n<figure class="wp-block-image size-large is-style-default"><img src="https://s.w.org/images/core/5.8/architecture-01.jpg" alt="Vue de près d’un détail architectural." /></figure>\n</div>\n\n\n\n<div class="wp-block-column" style="flex-basis:25%">\n<div style="height:500px" aria-hidden="true" class="wp-block-spacer"></div>\n\n\n\n<div style="height:150px" aria-hidden="true" class="wp-block-spacer"></div>\n\n\n\n<figure class="wp-block-image size-large"><img src="https://s.w.org/images/core/5.8/architecture-02.jpg" alt="Détail d’une fenêtre d’un immeuble blanc." /></figure>\n</div>\n\n\n\n<div class="wp-block-column" style="flex-basis:45%">\n<figure class="wp-block-image size-large is-style-default"><img src="https://s.w.org/images/core/5.8/architecture-03.jpg" alt="Détail du coin d’un immeuble blanc avec des points saillants et des coins arrondis." /></figure>\n\n\n\n<div style="height:285px" aria-hidden="true" class="wp-block-spacer"></div>\n</div>\n</div>\n";s:9:"protected";b:0;}s:4:"meta";O:8:"stdClass":5:{s:10:"spay_email";s:0:"";s:16:"wpop_description";s:33:"Three columns with offset images.";s:19:"wpop_viewport_width";i:1200;s:16:"wpop_block_types";a:0:{}s:11:"wpop_locale";s:5:"fr_FR";}s:14:"category_slugs";a:2:{i:0;s:7:"gallery";i:1;s:6:"images";}s:13:"keyword_slugs";a:1:{i:0;s:4:"core";}s:15:"pattern_content";s:1729:"<!-- wp:columns {"align":"wide"} -->\n<div class="wp-block-columns alignwide"><!-- wp:column {"width":"25%"} -->\n<div class="wp-block-column" style="flex-basis:25%"><!-- wp:image {"sizeSlug":"large","linkDestination":"none","className":"is-style-default"} -->\n<figure class="wp-block-image size-large is-style-default"><img src="https://s.w.org/images/core/5.8/architecture-01.jpg" alt="Vue de près d’un détail architectural." /></figure>\n<!-- /wp:image --></div>\n<!-- /wp:column -->\n\n<!-- wp:column {"width":"25%"} -->\n<div class="wp-block-column" style="flex-basis:25%"><!-- wp:spacer {"height":500} -->\n<div style="height:500px" aria-hidden="true" class="wp-block-spacer"></div>\n<!-- /wp:spacer -->\n\n<!-- wp:spacer {"height":150} -->\n<div style="height:150px" aria-hidden="true" class="wp-block-spacer"></div>\n<!-- /wp:spacer -->\n\n<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->\n<figure class="wp-block-image size-large"><img src="https://s.w.org/images/core/5.8/architecture-02.jpg" alt="Détail d’une fenêtre d’un immeuble blanc." /></figure>\n<!-- /wp:image --></div>\n<!-- /wp:column -->\n\n<!-- wp:column {"width":"45%"} -->\n<div class="wp-block-column" style="flex-basis:45%"><!-- wp:image {"sizeSlug":"large","linkDestination":"none","className":"is-style-default"} -->\n<figure class="wp-block-image size-large is-style-default"><img src="https://s.w.org/images/core/5.8/architecture-03.jpg" alt="Détail du coin d’un immeuble blanc avec des points saillants et des coins arrondis." /></figure>\n<!-- /wp:image -->\n\n<!-- wp:spacer {"height":285} -->\n<div style="height:285px" aria-hidden="true" class="wp-block-spacer"></div>\n<!-- /wp:spacer --></div>\n<!-- /wp:column --></div>\n<!-- /wp:columns -->";}i:11;O:8:"stdClass":7:{s:2:"id";i:1321;s:5:"title";O:8:"stdClass":1:{s:8:"rendered";s:35:"Trois colonnes avec images et texte";}s:7:"content";O:8:"stdClass":2:{s:8:"rendered";s:2668:"\n<div class="wp-block-group alignfull has-background" style="background-color:#f8f4e4"><div class="wp-block-group__inner-container">\n<div class="wp-block-columns alignwide">\n<div class="wp-block-column">\n<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>\n\n\n\n<h6 class="has-text-color" style="color:#000000">ÉCOSYSTÈME</h6>\n\n\n\n<p class="has-text-color" style="color:#000000;font-size:5vw;line-height:1.1"><strong>Croissance positive.</strong></p>\n\n\n\n<div style="height:5px" aria-hidden="true" class="wp-block-spacer"></div>\n</div>\n</div>\n\n\n\n<div class="wp-block-columns alignwide">\n<div class="wp-block-column" style="flex-basis:33.38%">\n<p class="has-text-color has-extra-small-font-size" style="color:#000000"><em>Nature</em>, in the common sense, refers to essences unchanged by man; space, the air, the river, the leaf.&nbsp;<em>Art</em>&nbsp;is applied to the mixture of his will with the same things, as in a house, a canal, a statue, a picture. But his operations taken together are so insignificant, a little chipping, baking, patching, and washing, that in an impression so grand as that of the world on the human mind, they do not vary the result.</p>\n</div>\n\n\n\n<div class="wp-block-column" style="flex-basis:33%">\n<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>\n\n\n\n<figure class="wp-block-image size-large"><img src="https://s.w.org/images/core/5.8/outside-01.jpg" alt="Le soleil se frayant un chemin à travers une forêt dense." /></figure>\n</div>\n\n\n\n<div class="wp-block-column" style="flex-basis:33.62%">\n<figure class="wp-block-image size-large"><img src="https://s.w.org/images/core/5.8/outside-02.jpg" alt="Des éoliennes se tiennent sur une plaine herbeuse, avec un ciel bleu en arrière-plan." /></figure>\n</div>\n</div>\n\n\n\n<div class="wp-block-columns alignwide">\n<div class="wp-block-column" style="flex-basis:67%">\n<div class="wp-block-image"><figure class="alignright size-large"><img src="https://s.w.org/images/core/5.8/outside-03.jpg" alt="Le soleil brille au dessus d’une crête donnant sur le bord de mer. Plus loin, une voiture est visible." /></figure></div>\n</div>\n\n\n\n<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:33%">\n<p class="has-text-color has-extra-small-font-size" style="color:#000000">Undoubtedly we have no questions to ask which are unanswerable. We must trust the perfection of the creation so far, as to believe that whatever curiosity the order of things has awakened in our minds, the order of things can satisfy. Every man&rsquo;s condition is a solution in hieroglyphic to those inquiries he would put.</p>\n</div>\n</div>\n</div></div>\n";s:9:"protected";b:0;}s:4:"meta";O:8:"stdClass":5:{s:10:"spay_email";s:0:"";s:16:"wpop_description";s:77:"Three columns with images and text, with vertical spacing for an offset look.";s:19:"wpop_viewport_width";i:1200;s:16:"wpop_block_types";a:0:{}s:11:"wpop_locale";s:5:"fr_FR";}s:14:"category_slugs";a:1:{i:0;s:7:"columns";}s:13:"keyword_slugs";a:1:{i:0;s:4:"core";}s:15:"pattern_content";s:4029:"<!-- wp:group {"align":"full","style":{"color":{"background":"#f8f4e4"}}} -->\n<div class="wp-block-group alignfull has-background" style="background-color:#f8f4e4"><!-- wp:columns {"align":"wide"} -->\n<div class="wp-block-columns alignwide"><!-- wp:column -->\n<div class="wp-block-column"><!-- wp:spacer -->\n<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>\n<!-- /wp:spacer -->\n\n<!-- wp:heading {"level":6,"style":{"color":{"text":"#000000"}}} -->\n<h6 class="has-text-color" style="color:#000000">ÉCOSYSTÈME</h6>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.1","fontSize":"5vw"},"color":{"text":"#000000"}}} -->\n<p class="has-text-color" style="color:#000000;font-size:5vw;line-height:1.1"><strong>Croissance positive.</strong></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:spacer {"height":5} -->\n<div style="height:5px" aria-hidden="true" class="wp-block-spacer"></div>\n<!-- /wp:spacer --></div>\n<!-- /wp:column --></div>\n<!-- /wp:columns -->\n\n<!-- wp:columns {"align":"wide"} -->\n<div class="wp-block-columns alignwide"><!-- wp:column {"width":"33.38%"} -->\n<div class="wp-block-column" style="flex-basis:33.38%"><!-- wp:paragraph {"style":{"color":{"text":"#000000"}},"fontSize":"extra-small"} -->\n<p class="has-text-color has-extra-small-font-size" style="color:#000000"><em>Nature</em>, in the common sense, refers to essences unchanged by man; space, the air, the river, the leaf.&nbsp;<em>Art</em>&nbsp;is applied to the mixture of his will with the same things, as in a house, a canal, a statue, a picture. But his operations taken together are so insignificant, a little chipping, baking, patching, and washing, that in an impression so grand as that of the world on the human mind, they do not vary the result.</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:column -->\n\n<!-- wp:column {"width":"33%"} -->\n<div class="wp-block-column" style="flex-basis:33%"><!-- wp:spacer -->\n<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>\n<!-- /wp:spacer -->\n\n<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->\n<figure class="wp-block-image size-large"><img src="https://s.w.org/images/core/5.8/outside-01.jpg" alt="Le soleil se frayant un chemin à travers une forêt dense." /></figure>\n<!-- /wp:image --></div>\n<!-- /wp:column -->\n\n<!-- wp:column {"width":"33.62%"} -->\n<div class="wp-block-column" style="flex-basis:33.62%"><!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->\n<figure class="wp-block-image size-large"><img src="https://s.w.org/images/core/5.8/outside-02.jpg" alt="Des éoliennes se tiennent sur une plaine herbeuse, avec un ciel bleu en arrière-plan." /></figure>\n<!-- /wp:image --></div>\n<!-- /wp:column --></div>\n<!-- /wp:columns -->\n\n<!-- wp:columns {"align":"wide"} -->\n<div class="wp-block-columns alignwide"><!-- wp:column {"width":"67%"} -->\n<div class="wp-block-column" style="flex-basis:67%"><!-- wp:image {"align":"right","sizeSlug":"large","linkDestination":"none"} -->\n<div class="wp-block-image"><figure class="alignright size-large"><img src="https://s.w.org/images/core/5.8/outside-03.jpg" alt="Le soleil brille au dessus d’une crête donnant sur le bord de mer. Plus loin, une voiture est visible." /></figure></div>\n<!-- /wp:image --></div>\n<!-- /wp:column -->\n\n<!-- wp:column {"verticalAlignment":"center","width":"33%"} -->\n<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:33%"><!-- wp:paragraph {"style":{"color":{"text":"#000000"}},"fontSize":"extra-small"} -->\n<p class="has-text-color has-extra-small-font-size" style="color:#000000">Undoubtedly we have no questions to ask which are unanswerable. We must trust the perfection of the creation so far, as to believe that whatever curiosity the order of things has awakened in our minds, the order of things can satisfy. Every man\'s condition is a solution in hieroglyphic to those inquiries he would put.</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:column --></div>\n<!-- /wp:columns --></div>\n<!-- /wp:group -->";}i:12;O:8:"stdClass":7:{s:2:"id";i:1320;s:5:"title";O:8:"stdClass":1:{s:8:"rendered";s:23:"Trois colonnes de texte";}s:7:"content";O:8:"stdClass":2:{s:8:"rendered";s:801:"\n<div class="wp-block-columns alignfull has-text-color has-background" style="background-color:#ffffff;color:#000000">\n<div class="wp-block-column">\n<h3 style="font-size:24px;line-height:1.3"><strong><a href="http://wordpress.org">Virtual Tour ↗</a></strong></h3>\n\n\n\n<p>Get a virtual tour of the museum. Ideal for schools and events.</p>\n</div>\n\n\n\n<div class="wp-block-column">\n<h3 style="font-size:24px;line-height:1.3"><strong><a href="https://wordpress.org">Current Shows ↗</a></strong></h3>\n\n\n\n<p>Stay updated and see our current exhibitions here.</p>\n</div>\n\n\n\n<div class="wp-block-column">\n<h3 style="font-size:24px;line-height:1.3"><strong><a href="https://wordpress.org">Useful Info ↗</a></strong></h3>\n\n\n\n<p>Get to know our opening times, ticket prices and discounts.</p>\n</div>\n</div>\n";s:9:"protected";b:0;}s:4:"meta";O:8:"stdClass":5:{s:10:"spay_email";s:0:"";s:16:"wpop_description";s:24:"Trois colonnes de texte.";s:19:"wpop_viewport_width";i:1200;s:16:"wpop_block_types";a:0:{}s:11:"wpop_locale";s:5:"fr_FR";}s:14:"category_slugs";a:2:{i:0;s:7:"columns";i:1;s:4:"text";}s:13:"keyword_slugs";a:1:{i:0;s:4:"core";}s:15:"pattern_content";s:1496:"<!-- wp:columns {"align":"full","style":{"color":{"text":"#000000","background":"#ffffff"}}} -->\n<div class="wp-block-columns alignfull has-text-color has-background" style="background-color:#ffffff;color:#000000"><!-- wp:column -->\n<div class="wp-block-column"><!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"24px","lineHeight":"1.3"}}} -->\n<h3 style="font-size:24px;line-height:1.3"><strong><a href="http://wordpress.org">Virtual Tour ↗</a></strong></h3>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>Get a virtual tour of the museum. Ideal for schools and events.</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:column -->\n\n<!-- wp:column -->\n<div class="wp-block-column"><!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"24px","lineHeight":"1.3"}}} -->\n<h3 style="font-size:24px;line-height:1.3"><strong><a href="https://wordpress.org">Current Shows ↗</a></strong></h3>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>Stay updated and see our current exhibitions here.</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:column -->\n\n<!-- wp:column -->\n<div class="wp-block-column"><!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"24px","lineHeight":"1.3"}}} -->\n<h3 style="font-size:24px;line-height:1.3"><strong><a href="https://wordpress.org">Useful Info ↗</a></strong></h3>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>Get to know our opening times, ticket prices and discounts.</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:column --></div>\n<!-- /wp:columns -->";}i:13;O:8:"stdClass":7:{s:2:"id";i:184;s:5:"title";O:8:"stdClass":1:{s:8:"rendered";s:7:"Heading";}s:7:"content";O:8:"stdClass":2:{s:8:"rendered";s:290:"\n<h2 class="alignwide" style="font-size:48px;line-height:1.1">We&rsquo;re a studio in Berlin with an international practice in architecture, urban planning and interior design. We believe in sharing knowledge and promoting dialogue to increase the creative potential of collaboration.</h2>\n";s:9:"protected";b:0;}s:4:"meta";O:8:"stdClass":5:{s:10:"spay_email";s:0:"";s:16:"wpop_description";s:12:"Heading text";s:19:"wpop_viewport_width";i:1200;s:16:"wpop_block_types";a:1:{i:0;s:12:"core/heading";}s:11:"wpop_locale";s:5:"en_US";}s:14:"category_slugs";a:1:{i:0;s:4:"text";}s:13:"keyword_slugs";a:1:{i:0;s:4:"core";}s:15:"pattern_content";s:402:"<!-- wp:heading {"align":"wide","style":{"typography":{"fontSize":"48px","lineHeight":"1.1"}}} -->\n<h2 class="alignwide" style="font-size:48px;line-height:1.1">We\'re a studio in Berlin with an international practice in architecture, urban planning and interior design. We believe in sharing knowledge and promoting dialogue to increase the creative potential of collaboration.</h2>\n<!-- /wp:heading -->";}i:14;O:8:"stdClass":7:{s:2:"id";i:185;s:5:"title";O:8:"stdClass":1:{s:8:"rendered";s:35:"Large header with left-aligned text";}s:7:"content";O:8:"stdClass":2:{s:8:"rendered";s:1019:"\n<div class="wp-block-cover alignfull has-background-dim-60 has-background-dim" style="min-height:800px"><img class="wp-block-cover__image-background" alt="" src="https://s.w.org/images/core/5.8/forest.jpg" data-object-fit="cover" /><div class="wp-block-cover__inner-container">\n<h2 class="alignwide has-text-color" style="color:#ffe074;font-size:64px">Forest.</h2>\n\n\n\n<div class="wp-block-columns alignwide">\n<div class="wp-block-column" style="flex-basis:55%">\n<div style="height:330px" aria-hidden="true" class="wp-block-spacer"></div>\n\n\n\n<p class="has-text-color" style="color:#ffe074;font-size:12px;line-height:1.3"><em>Even a child knows how valuable the forest is. The fresh, breathtaking smell of trees. Echoing birds flying above that dense magnitude. A stable climate, a sustainable diverse life and a source of culture. Yet, forests and other ecosystems hang in the balance, threatened to become croplands, pasture, and plantations.</em></p>\n</div>\n\n\n\n<div class="wp-block-column"></div>\n</div>\n</div></div>\n";s:9:"protected";b:0;}s:4:"meta";O:8:"stdClass":5:{s:10:"spay_email";s:0:"";s:16:"wpop_description";s:29:"Cover image with quote on top";s:19:"wpop_viewport_width";i:1200;s:16:"wpop_block_types";a:0:{}s:11:"wpop_locale";s:5:"en_US";}s:14:"category_slugs";a:1:{i:0;s:6:"header";}s:13:"keyword_slugs";a:1:{i:0;s:4:"core";}s:15:"pattern_content";s:1616:"<!-- wp:cover {"url":"https:\\/\\/s.w.org\\/images\\/core\\/5.8\\/forest.jpg","dimRatio":60,"minHeight":800,"align":"full"} -->\n<div class="wp-block-cover alignfull has-background-dim-60 has-background-dim" style="min-height:800px"><img class="wp-block-cover__image-background" alt="" src="https://s.w.org/images/core/5.8/forest.jpg" data-object-fit="cover" /><div class="wp-block-cover__inner-container"><!-- wp:heading {"align":"wide","style":{"color":{"text":"#ffe074"},"typography":{"fontSize":"64px"}}} -->\n<h2 class="alignwide has-text-color" style="color:#ffe074;font-size:64px">Forest.</h2>\n<!-- /wp:heading -->\n\n<!-- wp:columns {"align":"wide"} -->\n<div class="wp-block-columns alignwide"><!-- wp:column {"width":"55%"} -->\n<div class="wp-block-column" style="flex-basis:55%"><!-- wp:spacer {"height":330} -->\n<div style="height:330px" aria-hidden="true" class="wp-block-spacer"></div>\n<!-- /wp:spacer -->\n\n<!-- wp:paragraph {"style":{"color":{"text":"#ffe074"},"typography":{"lineHeight":"1.3","fontSize":"12px"}}} -->\n<p class="has-text-color" style="color:#ffe074;font-size:12px;line-height:1.3"><em>Even a child knows how valuable the forest is. The fresh, breathtaking smell of trees. Echoing birds flying above that dense magnitude. A stable climate, a sustainable diverse life and a source of culture. Yet, forests and other ecosystems hang in the balance, threatened to become croplands, pasture, and plantations.</em></p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:column -->\n\n<!-- wp:column -->\n<div class="wp-block-column"></div>\n<!-- /wp:column --></div>\n<!-- /wp:columns --></div></div>\n<!-- /wp:cover -->";}i:15;O:8:"stdClass":7:{s:2:"id";i:186;s:5:"title";O:8:"stdClass":1:{s:8:"rendered";s:35:"Large header with text and a button";}s:7:"content";O:8:"stdClass":2:{s:8:"rendered";s:1055:"\n<div class="wp-block-cover alignfull has-background-dim-40 has-background-dim has-parallax" style="background-image:url(https://s.w.org/images/core/5.8/art-01.jpg);background-color:#000000;min-height:100vh"><div class="wp-block-cover__inner-container">\n<h2 class="alignwide has-white-color has-text-color" style="font-size:48px;line-height:1.2"><strong><em>Overseas:</em></strong><br><strong><em>1500 — 1960</em></strong></h2>\n\n\n\n<div class="wp-block-columns alignwide">\n<div class="wp-block-column" style="flex-basis:60%">\n<p class="has-text-color" style="color:#ffffff">An exhibition about the different representations of the ocean throughout time, between the sixteenth and the twentieth century. Taking place in our Open Room in <em>Floor 2</em>.</p>\n\n\n\n<div class="wp-block-buttons">\n<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-text-color has-background no-border-radius" style="background-color:#000000;color:#ffffff">Visit</a></div>\n</div>\n</div>\n\n\n\n<div class="wp-block-column"></div>\n</div>\n</div></div>\n";s:9:"protected";b:0;}s:4:"meta";O:8:"stdClass":5:{s:10:"spay_email";s:0:"";s:16:"wpop_description";s:62:"Large header with background image and text and button on top.";s:19:"wpop_viewport_width";i:1200;s:16:"wpop_block_types";a:0:{}s:11:"wpop_locale";s:5:"en_US";}s:14:"category_slugs";a:1:{i:0;s:6:"header";}s:13:"keyword_slugs";a:1:{i:0;s:4:"core";}s:15:"pattern_content";s:1871:"<!-- wp:cover {"url":"https:\\/\\/s.w.org\\/images\\/core\\/5.8\\/art-01.jpg","hasParallax":true,"dimRatio":40,"customOverlayColor":"#000000","minHeight":100,"minHeightUnit":"vh","contentPosition":"center center","align":"full"} -->\n<div class="wp-block-cover alignfull has-background-dim-40 has-background-dim has-parallax" style="background-image:url(https://s.w.org/images/core/5.8/art-01.jpg);background-color:#000000;min-height:100vh"><div class="wp-block-cover__inner-container"><!-- wp:heading {"style":{"typography":{"fontSize":"48px","lineHeight":"1.2"}},"className":"alignwide has-white-color has-text-color"} -->\n<h2 class="alignwide has-white-color has-text-color" style="font-size:48px;line-height:1.2"><strong><em>Overseas:</em></strong><br><strong><em>1500 — 1960</em></strong></h2>\n<!-- /wp:heading -->\n\n<!-- wp:columns {"align":"wide"} -->\n<div class="wp-block-columns alignwide"><!-- wp:column {"width":"60%"} -->\n<div class="wp-block-column" style="flex-basis:60%"><!-- wp:paragraph {"style":{"color":{"text":"#ffffff"}}} -->\n<p class="has-text-color" style="color:#ffffff">An exhibition about the different representations of the ocean throughout time, between the sixteenth and the twentieth century. Taking place in our Open Room in <em>Floor 2</em>.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:buttons -->\n<div class="wp-block-buttons"><!-- wp:button {"borderRadius":0,"style":{"color":{"text":"#ffffff","background":"#000000"}},"className":"is-style-outline"} -->\n<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-text-color has-background no-border-radius" style="background-color:#000000;color:#ffffff">Visit</a></div>\n<!-- /wp:button --></div>\n<!-- /wp:buttons --></div>\n<!-- /wp:column -->\n\n<!-- wp:column -->\n<div class="wp-block-column"></div>\n<!-- /wp:column --></div>\n<!-- /wp:columns --></div></div>\n<!-- /wp:cover -->";}i:16;O:8:"stdClass":7:{s:2:"id";i:196;s:5:"title";O:8:"stdClass":1:{s:8:"rendered";s:41:"Media and text in a full height container";}s:7:"content";O:8:"stdClass":2:{s:8:"rendered";s:1194:"\n<div class="wp-block-cover alignfull has-background-dim" style="background-color:#ffffff;min-height:100vh"><div class="wp-block-cover__inner-container">\n<div class="wp-block-media-text alignwide is-stacked-on-mobile is-vertically-aligned-center is-image-fill" style="grid-template-columns:56% auto"><figure class="wp-block-media-text__media" style="background-image:url(https://s.w.org/images/core/5.8/soil.jpg);background-position:50% 50%"><img src="https://s.w.org/images/core/5.8/soil.jpg" alt="Close-up of dried, cracked earth." /></figure><div class="wp-block-media-text__content">\n<h2 class="has-text-color" style="color:#000000;font-size:32px"><strong>What&rsquo;s the problem?</strong></h2>\n\n\n\n<p class="has-text-color" style="color:#000000;font-size:17px">Trees are more important today than ever before. More than 10,000 products are reportedly made from trees. Through chemistry, the humble woodpile is yielding chemicals, plastics and fabrics that were beyond comprehension when an axe first felled a Texas tree.</p>\n\n\n\n<div class="wp-block-buttons">\n<div class="wp-block-button is-style-fill"><a class="wp-block-button__link">Learn more</a></div>\n</div>\n</div></div>\n</div></div>\n";s:9:"protected";b:0;}s:4:"meta";O:8:"stdClass":5:{s:10:"spay_email";s:0:"";s:16:"wpop_description";s:77:"Media and text block with image to the left and text and button to the right.";s:19:"wpop_viewport_width";i:1200;s:16:"wpop_block_types";a:0:{}s:11:"wpop_locale";s:5:"en_US";}s:14:"category_slugs";a:1:{i:0;s:6:"header";}s:13:"keyword_slugs";a:1:{i:0;s:4:"core";}s:15:"pattern_content";s:1864:"<!-- wp:cover {"customOverlayColor":"#ffffff","minHeight":100,"minHeightUnit":"vh","contentPosition":"center center","align":"full"} -->\n<div class="wp-block-cover alignfull has-background-dim" style="background-color:#ffffff;min-height:100vh"><div class="wp-block-cover__inner-container"><!-- wp:media-text {"mediaLink":"https:\\/\\/s.w.org\\/images\\/core\\/5.8\\/soil.jpg","mediaType":"image","mediaWidth":56,"verticalAlignment":"center","imageFill":true} -->\n<div class="wp-block-media-text alignwide is-stacked-on-mobile is-vertically-aligned-center is-image-fill" style="grid-template-columns:56% auto"><figure class="wp-block-media-text__media" style="background-image:url(https://s.w.org/images/core/5.8/soil.jpg);background-position:50% 50%"><img src="https://s.w.org/images/core/5.8/soil.jpg" alt="Close-up of dried, cracked earth." /></figure><div class="wp-block-media-text__content"><!-- wp:heading {"style":{"typography":{"fontSize":"32px"},"color":{"text":"#000000"}}} -->\n<h2 class="has-text-color" style="color:#000000;font-size:32px"><strong>What\'s the problem?</strong></h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph {"style":{"typography":{"fontSize":"17px"},"color":{"text":"#000000"}}} -->\n<p class="has-text-color" style="color:#000000;font-size:17px">Trees are more important today than ever before. More than 10,000 products are reportedly made from trees. Through chemistry, the humble woodpile is yielding chemicals, plastics and fabrics that were beyond comprehension when an axe first felled a Texas tree.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:buttons -->\n<div class="wp-block-buttons"><!-- wp:button {"className":"is-style-fill"} -->\n<div class="wp-block-button is-style-fill"><a class="wp-block-button__link">Learn more</a></div>\n<!-- /wp:button --></div>\n<!-- /wp:buttons --></div></div>\n<!-- /wp:media-text --></div></div>\n<!-- /wp:cover -->";}i:17;O:8:"stdClass":7:{s:2:"id";i:192;s:5:"title";O:8:"stdClass":1:{s:8:"rendered";s:37:"Media and text with image on the left";}s:7:"content";O:8:"stdClass":2:{s:8:"rendered";s:520:"\n<div class="wp-block-media-text alignfull is-stacked-on-mobile is-vertically-aligned-center"><figure class="wp-block-media-text__media"><img src="https://s.w.org/images/core/5.8/architecture-04.jpg" alt="Close-up, abstract view of architecture." /></figure><div class="wp-block-media-text__content">\n<h3 class="has-text-align-center has-text-color" style="color:#000000"><strong>Open Spaces</strong></h3>\n\n\n\n<p class="has-text-align-center has-extra-small-font-size"><a href="#">See case study ↗</a></p>\n</div></div>\n";s:9:"protected";b:0;}s:4:"meta";O:8:"stdClass":5:{s:10:"spay_email";s:0:"";s:16:"wpop_description";s:66:"Media and text block with image to the left and text to the right.";s:19:"wpop_viewport_width";i:1200;s:16:"wpop_block_types";a:0:{}s:11:"wpop_locale";s:5:"en_US";}s:14:"category_slugs";a:1:{i:0;s:6:"header";}s:13:"keyword_slugs";a:1:{i:0;s:4:"core";}s:15:"pattern_content";s:827:"<!-- wp:media-text {"align":"full","mediaType":"image","verticalAlignment":"center"} -->\n<div class="wp-block-media-text alignfull is-stacked-on-mobile is-vertically-aligned-center"><figure class="wp-block-media-text__media"><img src="https://s.w.org/images/core/5.8/architecture-04.jpg" alt="Close-up, abstract view of architecture." /></figure><div class="wp-block-media-text__content"><!-- wp:heading {"textAlign":"center","level":3,"style":{"color":{"text":"#000000"}}} -->\n<h3 class="has-text-align-center has-text-color" style="color:#000000"><strong>Open Spaces</strong></h3>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph {"align":"center","fontSize":"extra-small"} -->\n<p class="has-text-align-center has-extra-small-font-size"><a href="#">See case study ↗</a></p>\n<!-- /wp:paragraph --></div></div>\n<!-- /wp:media-text -->";}i:18;O:8:"stdClass":7:{s:2:"id";i:195;s:5:"title";O:8:"stdClass":1:{s:8:"rendered";s:38:"Media and text with image on the right";}s:7:"content";O:8:"stdClass":2:{s:8:"rendered";s:685:"\n<div class="wp-block-media-text alignfull has-media-on-the-right is-stacked-on-mobile is-vertically-aligned-center is-style-default" style="grid-template-columns:auto 56%"><figure class="wp-block-media-text__media"><img src="https://s.w.org/images/core/5.8/art-02.jpg" alt="A green and brown rural landscape leading into a bright blue ocean and slightly cloudy sky, done in oil paints." /></figure><div class="wp-block-media-text__content">\n<h2 class="has-text-color" style="color:#000000"><strong>Shore with Blue Sea</strong></h2>\n\n\n\n<p class="has-text-color" style="color:#636363;font-size:17px;line-height:1.1">Eleanor Harris&nbsp;(American, 1901-1942)</p>\n</div></div>\n\n\n\n<p></p>\n";s:9:"protected";b:0;}s:4:"meta";O:8:"stdClass":5:{s:10:"spay_email";s:0:"";s:16:"wpop_description";s:66:"Media and text block with image to the right and text to the left.";s:19:"wpop_viewport_width";i:1200;s:16:"wpop_block_types";a:0:{}s:11:"wpop_locale";s:5:"en_US";}s:14:"category_slugs";a:1:{i:0;s:6:"header";}s:13:"keyword_slugs";a:1:{i:0;s:4:"core";}s:15:"pattern_content";s:1138:"<!-- wp:media-text {"align":"full","mediaPosition":"right","mediaLink":"#","mediaType":"image","mediaWidth":56,"verticalAlignment":"center","className":"is-style-default"} -->\n<div class="wp-block-media-text alignfull has-media-on-the-right is-stacked-on-mobile is-vertically-aligned-center is-style-default" style="grid-template-columns:auto 56%"><figure class="wp-block-media-text__media"><img src="https://s.w.org/images/core/5.8/art-02.jpg" alt="A green and brown rural landscape leading into a bright blue ocean and slightly cloudy sky, done in oil paints." /></figure><div class="wp-block-media-text__content"><!-- wp:heading {"style":{"color":{"text":"#000000"}}} -->\n<h2 class="has-text-color" style="color:#000000"><strong>Shore with Blue Sea</strong></h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.1","fontSize":"17px"},"color":{"text":"#636363"}}} -->\n<p class="has-text-color" style="color:#636363;font-size:17px;line-height:1.1">Eleanor Harris&nbsp;(American, 1901-1942)</p>\n<!-- /wp:paragraph --></div></div>\n<!-- /wp:media-text -->\n\n<!-- wp:paragraph -->\n<p></p>\n<!-- /wp:paragraph -->";}i:19;O:8:"stdClass":7:{s:2:"id";i:27;s:5:"title";O:8:"stdClass":1:{s:8:"rendered";s:5:"Quote";}s:7:"content";O:8:"stdClass":2:{s:8:"rendered";s:650:"\n<hr class="wp-block-separator is-style-default" />\n\n\n\n<div class="wp-block-image is-style-rounded"><figure class="aligncenter size-large is-resized"><img loading="lazy" src="https://s.w.org/images/core/5.8/portrait.jpg" alt="A side profile of a woman in a russet-colored turtleneck and white bag. She looks up with her eyes closed." width="150" height="150" /></figure></div>\n\n\n\n<blockquote class="wp-block-quote has-text-align-center is-style-large"><p>« Contributing makes me feel like I&rsquo;m being useful to the planet. »</p><cite>— Anna Wong, <em>Volunteer</em></cite></blockquote>\n\n\n\n<hr class="wp-block-separator is-style-default" />\n";s:9:"protected";b:0;}s:4:"meta";O:8:"stdClass":5:{s:10:"spay_email";s:0:"";s:16:"wpop_description";s:0:"";s:19:"wpop_viewport_width";i:800;s:16:"wpop_block_types";a:1:{i:0;s:10:"core/quote";}s:11:"wpop_locale";s:5:"en_US";}s:14:"category_slugs";a:1:{i:0;s:4:"text";}s:13:"keyword_slugs";a:1:{i:0;s:4:"core";}s:15:"pattern_content";s:1012:"<!-- wp:separator {"className":"is-style-default"} -->\n<hr class="wp-block-separator is-style-default" />\n<!-- /wp:separator -->\n\n<!-- wp:image {"align":"center","width":150,"height":150,"sizeSlug":"large","linkDestination":"none","className":"is-style-rounded"} -->\n<div class="wp-block-image is-style-rounded"><figure class="aligncenter size-large is-resized"><img src="https://s.w.org/images/core/5.8/portrait.jpg" alt="A side profile of a woman in a russet-colored turtleneck and white bag. She looks up with her eyes closed." width="150" height="150" /></figure></div>\n<!-- /wp:image -->\n\n<!-- wp:quote {"align":"center","className":"is-style-large"} -->\n<blockquote class="wp-block-quote has-text-align-center is-style-large"><p>"Contributing makes me feel like I\'m being useful to the planet."</p><cite>— Anna Wong, <em>Volunteer</em></cite></blockquote>\n<!-- /wp:quote -->\n\n<!-- wp:separator {"className":"is-style-default"} -->\n<hr class="wp-block-separator is-style-default" />\n<!-- /wp:separator -->";}i:20;O:8:"stdClass":7:{s:2:"id";i:200;s:5:"title";O:8:"stdClass":1:{s:8:"rendered";s:21:"Three columns of text";}s:7:"content";O:8:"stdClass":2:{s:8:"rendered";s:801:"\n<div class="wp-block-columns alignfull has-text-color has-background" style="background-color:#ffffff;color:#000000">\n<div class="wp-block-column">\n<h3 style="font-size:24px;line-height:1.3"><strong><a href="http://wordpress.org">Virtual Tour ↗</a></strong></h3>\n\n\n\n<p>Get a virtual tour of the museum. Ideal for schools and events.</p>\n</div>\n\n\n\n<div class="wp-block-column">\n<h3 style="font-size:24px;line-height:1.3"><strong><a href="https://wordpress.org">Current Shows ↗</a></strong></h3>\n\n\n\n<p>Stay updated and see our current exhibitions here.</p>\n</div>\n\n\n\n<div class="wp-block-column">\n<h3 style="font-size:24px;line-height:1.3"><strong><a href="https://wordpress.org">Useful Info ↗</a></strong></h3>\n\n\n\n<p>Get to know our opening times, ticket prices and discounts.</p>\n</div>\n</div>\n";s:9:"protected";b:0;}s:4:"meta";O:8:"stdClass":5:{s:10:"spay_email";s:0:"";s:16:"wpop_description";s:22:"Three columns of text.";s:19:"wpop_viewport_width";i:1200;s:16:"wpop_block_types";a:0:{}s:11:"wpop_locale";s:5:"en_US";}s:14:"category_slugs";a:2:{i:0;s:7:"columns";i:1;s:4:"text";}s:13:"keyword_slugs";a:1:{i:0;s:4:"core";}s:15:"pattern_content";s:1496:"<!-- wp:columns {"align":"full","style":{"color":{"text":"#000000","background":"#ffffff"}}} -->\n<div class="wp-block-columns alignfull has-text-color has-background" style="background-color:#ffffff;color:#000000"><!-- wp:column -->\n<div class="wp-block-column"><!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"24px","lineHeight":"1.3"}}} -->\n<h3 style="font-size:24px;line-height:1.3"><strong><a href="http://wordpress.org">Virtual Tour ↗</a></strong></h3>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>Get a virtual tour of the museum. Ideal for schools and events.</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:column -->\n\n<!-- wp:column -->\n<div class="wp-block-column"><!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"24px","lineHeight":"1.3"}}} -->\n<h3 style="font-size:24px;line-height:1.3"><strong><a href="https://wordpress.org">Current Shows ↗</a></strong></h3>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>Stay updated and see our current exhibitions here.</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:column -->\n\n<!-- wp:column -->\n<div class="wp-block-column"><!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"24px","lineHeight":"1.3"}}} -->\n<h3 style="font-size:24px;line-height:1.3"><strong><a href="https://wordpress.org">Useful Info ↗</a></strong></h3>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>Get to know our opening times, ticket prices and discounts.</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:column --></div>\n<!-- /wp:columns -->";}i:21;O:8:"stdClass":7:{s:2:"id";i:199;s:5:"title";O:8:"stdClass":1:{s:8:"rendered";s:34:"Three columns with images and text";}s:7:"content";O:8:"stdClass":2:{s:8:"rendered";s:2619:"\n<div class="wp-block-group alignfull has-background" style="background-color:#f8f4e4"><div class="wp-block-group__inner-container">\n<div class="wp-block-columns alignwide">\n<div class="wp-block-column">\n<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>\n\n\n\n<h6 class="has-text-color" style="color:#000000">ECOSYSTEM</h6>\n\n\n\n<p class="has-text-color" style="color:#000000;font-size:5vw;line-height:1.1"><strong>Positive growth.</strong></p>\n\n\n\n<div style="height:5px" aria-hidden="true" class="wp-block-spacer"></div>\n</div>\n</div>\n\n\n\n<div class="wp-block-columns alignwide">\n<div class="wp-block-column" style="flex-basis:33.38%">\n<p class="has-text-color has-extra-small-font-size" style="color:#000000"><em>Nature</em>, in the common sense, refers to essences unchanged by man; space, the air, the river, the leaf.&nbsp;<em>Art</em>&nbsp;is applied to the mixture of his will with the same things, as in a house, a canal, a statue, a picture. But his operations taken together are so insignificant, a little chipping, baking, patching, and washing, that in an impression so grand as that of the world on the human mind, they do not vary the result.</p>\n</div>\n\n\n\n<div class="wp-block-column" style="flex-basis:33%">\n<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>\n\n\n\n<figure class="wp-block-image size-large"><img src="https://s.w.org/images/core/5.8/outside-01.jpg" alt="The sun setting through a dense forest of trees." /></figure>\n</div>\n\n\n\n<div class="wp-block-column" style="flex-basis:33.62%">\n<figure class="wp-block-image size-large"><img src="https://s.w.org/images/core/5.8/outside-02.jpg" alt="Wind turbines standing on a grassy plain, against a blue sky." /></figure>\n</div>\n</div>\n\n\n\n<div class="wp-block-columns alignwide">\n<div class="wp-block-column" style="flex-basis:67%">\n<div class="wp-block-image"><figure class="alignright size-large"><img src="https://s.w.org/images/core/5.8/outside-03.jpg" alt="The sun shining over a ridge leading down into the shore. In the distance, a car drives down a road." /></figure></div>\n</div>\n\n\n\n<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:33%">\n<p class="has-text-color has-extra-small-font-size" style="color:#000000">Undoubtedly we have no questions to ask which are unanswerable. We must trust the perfection of the creation so far, as to believe that whatever curiosity the order of things has awakened in our minds, the order of things can satisfy. Every man&rsquo;s condition is a solution in hieroglyphic to those inquiries he would put.</p>\n</div>\n</div>\n</div></div>\n";s:9:"protected";b:0;}s:4:"meta";O:8:"stdClass":5:{s:10:"spay_email";s:0:"";s:16:"wpop_description";s:77:"Three columns with images and text, with vertical spacing for an offset look.";s:19:"wpop_viewport_width";i:1200;s:16:"wpop_block_types";a:0:{}s:11:"wpop_locale";s:5:"en_US";}s:14:"category_slugs";a:1:{i:0;s:7:"columns";}s:13:"keyword_slugs";a:1:{i:0;s:4:"core";}s:15:"pattern_content";s:3980:"<!-- wp:group {"align":"full","style":{"color":{"background":"#f8f4e4"}}} -->\n<div class="wp-block-group alignfull has-background" style="background-color:#f8f4e4"><!-- wp:columns {"align":"wide"} -->\n<div class="wp-block-columns alignwide"><!-- wp:column -->\n<div class="wp-block-column"><!-- wp:spacer -->\n<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>\n<!-- /wp:spacer -->\n\n<!-- wp:heading {"level":6,"style":{"color":{"text":"#000000"}}} -->\n<h6 class="has-text-color" style="color:#000000">ECOSYSTEM</h6>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.1","fontSize":"5vw"},"color":{"text":"#000000"}}} -->\n<p class="has-text-color" style="color:#000000;font-size:5vw;line-height:1.1"><strong>Positive growth.</strong></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:spacer {"height":5} -->\n<div style="height:5px" aria-hidden="true" class="wp-block-spacer"></div>\n<!-- /wp:spacer --></div>\n<!-- /wp:column --></div>\n<!-- /wp:columns -->\n\n<!-- wp:columns {"align":"wide"} -->\n<div class="wp-block-columns alignwide"><!-- wp:column {"width":"33.38%"} -->\n<div class="wp-block-column" style="flex-basis:33.38%"><!-- wp:paragraph {"style":{"color":{"text":"#000000"}},"fontSize":"extra-small"} -->\n<p class="has-text-color has-extra-small-font-size" style="color:#000000"><em>Nature</em>, in the common sense, refers to essences unchanged by man; space, the air, the river, the leaf.&nbsp;<em>Art</em>&nbsp;is applied to the mixture of his will with the same things, as in a house, a canal, a statue, a picture. But his operations taken together are so insignificant, a little chipping, baking, patching, and washing, that in an impression so grand as that of the world on the human mind, they do not vary the result.</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:column -->\n\n<!-- wp:column {"width":"33%"} -->\n<div class="wp-block-column" style="flex-basis:33%"><!-- wp:spacer -->\n<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>\n<!-- /wp:spacer -->\n\n<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->\n<figure class="wp-block-image size-large"><img src="https://s.w.org/images/core/5.8/outside-01.jpg" alt="The sun setting through a dense forest of trees." /></figure>\n<!-- /wp:image --></div>\n<!-- /wp:column -->\n\n<!-- wp:column {"width":"33.62%"} -->\n<div class="wp-block-column" style="flex-basis:33.62%"><!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->\n<figure class="wp-block-image size-large"><img src="https://s.w.org/images/core/5.8/outside-02.jpg" alt="Wind turbines standing on a grassy plain, against a blue sky." /></figure>\n<!-- /wp:image --></div>\n<!-- /wp:column --></div>\n<!-- /wp:columns -->\n\n<!-- wp:columns {"align":"wide"} -->\n<div class="wp-block-columns alignwide"><!-- wp:column {"width":"67%"} -->\n<div class="wp-block-column" style="flex-basis:67%"><!-- wp:image {"align":"right","sizeSlug":"large","linkDestination":"none"} -->\n<div class="wp-block-image"><figure class="alignright size-large"><img src="https://s.w.org/images/core/5.8/outside-03.jpg" alt="The sun shining over a ridge leading down into the shore. In the distance, a car drives down a road." /></figure></div>\n<!-- /wp:image --></div>\n<!-- /wp:column -->\n\n<!-- wp:column {"verticalAlignment":"center","width":"33%"} -->\n<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:33%"><!-- wp:paragraph {"style":{"color":{"text":"#000000"}},"fontSize":"extra-small"} -->\n<p class="has-text-color has-extra-small-font-size" style="color:#000000">Undoubtedly we have no questions to ask which are unanswerable. We must trust the perfection of the creation so far, as to believe that whatever curiosity the order of things has awakened in our minds, the order of things can satisfy. Every man\'s condition is a solution in hieroglyphic to those inquiries he would put.</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:column --></div>\n<!-- /wp:columns --></div>\n<!-- /wp:group -->";}i:22;O:8:"stdClass":7:{s:2:"id";i:201;s:5:"title";O:8:"stdClass":1:{s:8:"rendered";s:32:"Three columns with offset images";}s:7:"content";O:8:"stdClass":2:{s:8:"rendered";s:1077:"\n<div class="wp-block-columns alignwide">\n<div class="wp-block-column" style="flex-basis:25%">\n<figure class="wp-block-image size-large is-style-default"><img src="https://s.w.org/images/core/5.8/architecture-01.jpg" alt="Close-up, abstract view of geometric architecture." /></figure>\n</div>\n\n\n\n<div class="wp-block-column" style="flex-basis:25%">\n<div style="height:500px" aria-hidden="true" class="wp-block-spacer"></div>\n\n\n\n<div style="height:150px" aria-hidden="true" class="wp-block-spacer"></div>\n\n\n\n<figure class="wp-block-image size-large"><img src="https://s.w.org/images/core/5.8/architecture-02.jpg" alt="Close-up, angled view of a window on a white building." /></figure>\n</div>\n\n\n\n<div class="wp-block-column" style="flex-basis:45%">\n<figure class="wp-block-image size-large is-style-default"><img src="https://s.w.org/images/core/5.8/architecture-03.jpg" alt="Close-up of the corner of a white, geometric building with both sharp points and round corners." /></figure>\n\n\n\n<div style="height:285px" aria-hidden="true" class="wp-block-spacer"></div>\n</div>\n</div>\n";s:9:"protected";b:0;}s:4:"meta";O:8:"stdClass":5:{s:10:"spay_email";s:0:"";s:16:"wpop_description";s:33:"Three columns with offset images.";s:19:"wpop_viewport_width";i:1200;s:16:"wpop_block_types";a:0:{}s:11:"wpop_locale";s:5:"en_US";}s:14:"category_slugs";a:2:{i:0;s:7:"gallery";i:1;s:6:"images";}s:13:"keyword_slugs";a:1:{i:0;s:4:"core";}s:15:"pattern_content";s:1753:"<!-- wp:columns {"align":"wide"} -->\n<div class="wp-block-columns alignwide"><!-- wp:column {"width":"25%"} -->\n<div class="wp-block-column" style="flex-basis:25%"><!-- wp:image {"sizeSlug":"large","linkDestination":"none","className":"is-style-default"} -->\n<figure class="wp-block-image size-large is-style-default"><img src="https://s.w.org/images/core/5.8/architecture-01.jpg" alt="Close-up, abstract view of geometric architecture." /></figure>\n<!-- /wp:image --></div>\n<!-- /wp:column -->\n\n<!-- wp:column {"width":"25%"} -->\n<div class="wp-block-column" style="flex-basis:25%"><!-- wp:spacer {"height":500} -->\n<div style="height:500px" aria-hidden="true" class="wp-block-spacer"></div>\n<!-- /wp:spacer -->\n\n<!-- wp:spacer {"height":150} -->\n<div style="height:150px" aria-hidden="true" class="wp-block-spacer"></div>\n<!-- /wp:spacer -->\n\n<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->\n<figure class="wp-block-image size-large"><img src="https://s.w.org/images/core/5.8/architecture-02.jpg" alt="Close-up, angled view of a window on a white building." /></figure>\n<!-- /wp:image --></div>\n<!-- /wp:column -->\n\n<!-- wp:column {"width":"45%"} -->\n<div class="wp-block-column" style="flex-basis:45%"><!-- wp:image {"sizeSlug":"large","linkDestination":"none","className":"is-style-default"} -->\n<figure class="wp-block-image size-large is-style-default"><img src="https://s.w.org/images/core/5.8/architecture-03.jpg" alt="Close-up of the corner of a white, geometric building with both sharp points and round corners." /></figure>\n<!-- /wp:image -->\n\n<!-- wp:spacer {"height":285} -->\n<div style="height:285px" aria-hidden="true" class="wp-block-spacer"></div>\n<!-- /wp:spacer --></div>\n<!-- /wp:column --></div>\n<!-- /wp:columns -->";}i:23;O:8:"stdClass":7:{s:2:"id";i:29;s:5:"title";O:8:"stdClass":1:{s:8:"rendered";s:29:"Two columns of text and title";}s:7:"content";O:8:"stdClass":2:{s:8:"rendered";s:1337:"\n<h2 style="font-size:38px;line-height:1.4"><strong>The voyage had begun, and had begun happily with a soft blue sky, and a calm sea.</strong></h2>\n\n\n\n<div class="wp-block-columns">\n<div class="wp-block-column">\n<p style="font-size:18px">They followed her on to the deck. All the smoke and the houses had disappeared, and the ship was out in a wide space of sea very fresh and clear though pale in the early light. They had left London sitting on its mud. A very thin line of shadow tapered on the horizon, scarcely thick enough to stand the burden of Paris, which nevertheless rested upon it. They were free of roads, free of mankind, and the same exhilaration at their freedom ran through them all.</p>\n</div>\n\n\n\n<div class="wp-block-column">\n<p style="font-size:18px">The ship was making her way steadily through small waves which slapped her and then fizzled like effervescing water, leaving a little border of bubbles and foam on either side. The colourless October sky above was thinly clouded as if by the trail of wood-fire smoke, and the air was wonderfully salt and brisk. Indeed it was too cold to stand still. Mrs. Ambrose drew her arm within her husband&rsquo;s, and as they moved off it could be seen from the way in which her sloping cheek turned up to his that she had something private to communicate.</p>\n</div>\n</div>\n";s:9:"protected";b:0;}s:4:"meta";O:8:"stdClass":5:{s:10:"spay_email";s:0:"";s:16:"wpop_description";s:47:"Two columns of text preceded by a long heading.";s:19:"wpop_viewport_width";i:1200;s:16:"wpop_block_types";a:0:{}s:11:"wpop_locale";s:5:"en_US";}s:14:"category_slugs";a:2:{i:0;s:7:"columns";i:1;s:4:"text";}s:13:"keyword_slugs";a:1:{i:0;s:4:"core";}s:15:"pattern_content";s:1711:"<!-- wp:heading {"style":{"typography":{"fontSize":38,"lineHeight":"1.4"}}} -->\n<h2 style="font-size:38px;line-height:1.4"><strong>The voyage had begun, and had begun happily with a soft blue sky, and a calm sea.</strong></h2>\n<!-- /wp:heading -->\n\n<!-- wp:columns -->\n<div class="wp-block-columns"><!-- wp:column -->\n<div class="wp-block-column"><!-- wp:paragraph {"style":{"typography":{"fontSize":18}}} -->\n<p style="font-size:18px">They followed her on to the deck. All the smoke and the houses had disappeared, and the ship was out in a wide space of sea very fresh and clear though pale in the early light. They had left London sitting on its mud. A very thin line of shadow tapered on the horizon, scarcely thick enough to stand the burden of Paris, which nevertheless rested upon it. They were free of roads, free of mankind, and the same exhilaration at their freedom ran through them all.</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:column -->\n\n<!-- wp:column -->\n<div class="wp-block-column"><!-- wp:paragraph {"style":{"typography":{"fontSize":18}}} -->\n<p style="font-size:18px">The ship was making her way steadily through small waves which slapped her and then fizzled like effervescing water, leaving a little border of bubbles and foam on either side. The colourless October sky above was thinly clouded as if by the trail of wood-fire smoke, and the air was wonderfully salt and brisk. Indeed it was too cold to stand still. Mrs. Ambrose drew her arm within her husband\'s, and as they moved off it could be seen from the way in which her sloping cheek turned up to his that she had something private to communicate.</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:column --></div>\n<!-- /wp:columns -->";}i:24;O:8:"stdClass":7:{s:2:"id";i:197;s:5:"title";O:8:"stdClass":1:{s:8:"rendered";s:39:"Two columns of text with offset heading";}s:7:"content";O:8:"stdClass":2:{s:8:"rendered";s:1888:"\n<div class="wp-block-group alignfull has-background" style="background-color:#f2f0e9"><div class="wp-block-group__inner-container">\n<div style="height:70px" aria-hidden="true" class="wp-block-spacer"></div>\n\n\n\n<div class="wp-block-columns alignwide are-vertically-aligned-center">\n<div class="wp-block-column" style="flex-basis:50%">\n<p class="has-text-color" style="color:#000000;font-size:30px;line-height:1.1"><strong>Oceanic Inspiration</strong></p>\n</div>\n\n\n\n<div class="wp-block-column" style="flex-basis:50%">\n<hr class="wp-block-separator has-text-color has-background is-style-wide" style="background-color:#000000;color:#000000" />\n</div>\n</div>\n\n\n\n<div class="wp-block-columns alignwide">\n<div class="wp-block-column"></div>\n\n\n\n<div class="wp-block-column">\n<p class="has-text-color has-extra-small-font-size" style="color:#000000">Winding veils round their heads, the women walked on deck. They were now moving steadily down the river, passing the dark shapes of ships at anchor, and London was a swarm of lights with a pale yellow canopy drooping above it. There were the lights of the great theatres, the lights of the long streets, lights that indicated huge squares of domestic comfort, lights that hung high in air.</p>\n</div>\n\n\n\n<div class="wp-block-column">\n<p class="has-text-color has-extra-small-font-size" style="color:#000000">No darkness would ever settle upon those lamps, as no darkness had settled upon them for hundreds of years. It seemed dreadful that the town should blaze for ever in the same spot; dreadful at least to people going away to adventure upon the sea, and beholding it as a circumscribed mound, eternally burnt, eternally scarred. From the deck of the ship the great city appeared a crouched and cowardly figure, a sedentary miser.</p>\n</div>\n</div>\n\n\n\n<div style="height:40px" aria-hidden="true" class="wp-block-spacer"></div>\n</div></div>\n";s:9:"protected";b:0;}s:4:"meta";O:8:"stdClass":5:{s:10:"spay_email";s:0:"";s:16:"wpop_description";s:43:"Two columns of text with an offset heading.";s:19:"wpop_viewport_width";i:1200;s:16:"wpop_block_types";a:0:{}s:11:"wpop_locale";s:5:"en_US";}s:14:"category_slugs";a:2:{i:0;s:7:"columns";i:1;s:4:"text";}s:13:"keyword_slugs";a:1:{i:0;s:4:"core";}s:15:"pattern_content";s:2837:"<!-- wp:group {"align":"full","style":{"color":{"background":"#f2f0e9"}}} -->\n<div class="wp-block-group alignfull has-background" style="background-color:#f2f0e9"><!-- wp:spacer {"height":70} -->\n<div style="height:70px" aria-hidden="true" class="wp-block-spacer"></div>\n<!-- /wp:spacer -->\n\n<!-- wp:columns {"verticalAlignment":"center","align":"wide"} -->\n<div class="wp-block-columns alignwide are-vertically-aligned-center"><!-- wp:column {"width":"50%"} -->\n<div class="wp-block-column" style="flex-basis:50%"><!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.1","fontSize":"30px"},"color":{"text":"#000000"}}} -->\n<p class="has-text-color" style="color:#000000;font-size:30px;line-height:1.1"><strong>Oceanic Inspiration</strong></p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:column -->\n\n<!-- wp:column {"width":"50%"} -->\n<div class="wp-block-column" style="flex-basis:50%"><!-- wp:separator {"customColor":"#000000","className":"is-style-wide"} -->\n<hr class="wp-block-separator has-text-color has-background is-style-wide" style="background-color:#000000;color:#000000" />\n<!-- /wp:separator --></div>\n<!-- /wp:column --></div>\n<!-- /wp:columns -->\n\n<!-- wp:columns {"align":"wide"} -->\n<div class="wp-block-columns alignwide"><!-- wp:column -->\n<div class="wp-block-column"></div>\n<!-- /wp:column -->\n\n<!-- wp:column -->\n<div class="wp-block-column"><!-- wp:paragraph {"style":{"color":{"text":"#000000"}},"fontSize":"extra-small"} -->\n<p class="has-text-color has-extra-small-font-size" style="color:#000000">Winding veils round their heads, the women walked on deck. They were now moving steadily down the river, passing the dark shapes of ships at anchor, and London was a swarm of lights with a pale yellow canopy drooping above it. There were the lights of the great theatres, the lights of the long streets, lights that indicated huge squares of domestic comfort, lights that hung high in air.</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:column -->\n\n<!-- wp:column -->\n<div class="wp-block-column"><!-- wp:paragraph {"style":{"color":{"text":"#000000"}},"fontSize":"extra-small"} -->\n<p class="has-text-color has-extra-small-font-size" style="color:#000000">No darkness would ever settle upon those lamps, as no darkness had settled upon them for hundreds of years. It seemed dreadful that the town should blaze for ever in the same spot; dreadful at least to people going away to adventure upon the sea, and beholding it as a circumscribed mound, eternally burnt, eternally scarred. From the deck of the ship the great city appeared a crouched and cowardly figure, a sedentary miser.</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:column --></div>\n<!-- /wp:columns -->\n\n<!-- wp:spacer {"height":40} -->\n<div style="height:40px" aria-hidden="true" class="wp-block-spacer"></div>\n<!-- /wp:spacer --></div>\n<!-- /wp:group -->";}i:25;O:8:"stdClass":7:{s:2:"id";i:19;s:5:"title";O:8:"stdClass":1:{s:8:"rendered";s:23:"Two images side by side";}s:7:"content";O:8:"stdClass":2:{s:8:"rendered";s:647:"\n<figure class="wp-block-gallery alignwide columns-2 is-cropped"><ul class="blocks-gallery-grid"><li class="blocks-gallery-item"><figure><img src="https://s.w.org/images/core/5.8/nature-above-01.jpg" alt="An aerial view of waves crashing against a shore." data-full-url="https://s.w.org/images/core/5.8/nature-above-01.jpg" data-link="#" /></figure></li><li class="blocks-gallery-item"><figure><img src="https://s.w.org/images/core/5.8/nature-above-02.jpg" alt="An aerial view of a field. A road runs through the upper right corner." data-full-url="https://s.w.org/images/core/5.8/nature-above-02.jpg" data-link="#" /></figure></li></ul></figure>\n";s:9:"protected";b:0;}s:4:"meta";O:8:"stdClass":5:{s:10:"spay_email";s:0:"";s:16:"wpop_description";s:41:"An image gallery with two example images.";s:19:"wpop_viewport_width";i:800;s:16:"wpop_block_types";a:0:{}s:11:"wpop_locale";s:5:"en_US";}s:14:"category_slugs";a:1:{i:0;s:7:"gallery";}s:13:"keyword_slugs";a:1:{i:0;s:4:"core";}s:15:"pattern_content";s:737:"<!-- wp:gallery {"ids":[null,null],"linkTo":"none","align":"wide"} -->\n<figure class="wp-block-gallery alignwide columns-2 is-cropped"><ul class="blocks-gallery-grid"><li class="blocks-gallery-item"><figure><img src="https://s.w.org/images/core/5.8/nature-above-01.jpg" alt="An aerial view of waves crashing against a shore." data-full-url="https://s.w.org/images/core/5.8/nature-above-01.jpg" data-link="#" /></figure></li><li class="blocks-gallery-item"><figure><img src="https://s.w.org/images/core/5.8/nature-above-02.jpg" alt="An aerial view of a field. A road runs through the upper right corner." data-full-url="https://s.w.org/images/core/5.8/nature-above-02.jpg" data-link="#" /></figure></li></ul></figure>\n<!-- /wp:gallery -->";}}', 'no'),
 	(595, 'wc_facebook_background_product_sync_job_1acc105d8afe332ca28c3a252cfcf03c', '{"requests":{"p-37":"UPDATE"},"id":"1acc105d8afe332ca28c3a252cfcf03c","created_at":"2021-08-03 13:51:26","created_by":1,"status":"completed","started_processing_at":"2021-08-03 13:51:27","updated_at":"2021-08-03 13:51:27","total":1,"progress":1,"completed_at":"2021-08-03 13:51:27"}', 'no'),
-	(598, '_transient_is_multi_author', '0', 'yes');
+	(609, '_transient_is_multi_author', '0', 'yes'),
+	(613, '_transient_timeout_wc_term_counts', '1630584181', 'no'),
+	(614, '_transient_wc_term_counts', 'a:1:{i:15;s:1:"1";}', 'no'),
+	(615, '_transient_timeout_wc_related_37', '1628078623', 'no'),
+	(616, '_transient_wc_related_37', 'a:1:{s:50:"limit=3&exclude_ids%5B0%5D=0&exclude_ids%5B1%5D=37";a:0:{}}', 'no');
 /*!40000 ALTER TABLE `wp_options` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_postmeta
+DROP TABLE IF EXISTS `wp_postmeta`;
 CREATE TABLE IF NOT EXISTS `wp_postmeta` (
   `meta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `post_id` bigint(20) unsigned NOT NULL DEFAULT '0',
@@ -5673,7 +5725,7 @@ CREATE TABLE IF NOT EXISTS `wp_postmeta` (
   KEY `meta_key` (`meta_key`(191))
 ) ENGINE=InnoDB AUTO_INCREMENT=108 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
--- Listage des données de la table e-commerce.wp_postmeta : ~75 rows (environ)
+-- Listage des données de la table e-commerce.wp_postmeta : ~103 rows (environ)
 /*!40000 ALTER TABLE `wp_postmeta` DISABLE KEYS */;
 INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUES
 	(1, 2, '_wp_page_template', 'default'),
@@ -5707,7 +5759,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 	(32, 20, '_edit_last', '1'),
 	(33, 20, '_edit_lock', '1627913271:1'),
 	(34, 9, '_edit_lock', '1627915325:1'),
-	(35, 2, '_edit_lock', '1627913998:1'),
+	(35, 2, '_edit_lock', '1627991913:1'),
 	(36, 1, '_edit_lock', '1627914223:1'),
 	(37, 1, '_wp_trash_meta_status', 'publish'),
 	(38, 1, '_wp_trash_meta_time', '1627914192'),
@@ -5750,7 +5802,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 	(76, 36, '_product_version', '5.5.2'),
 	(77, 36, '_price', '600'),
 	(78, 36, '_wc_gla_visibility', 'sync-and-show'),
-	(79, 27, '_edit_lock', '1627990487:1'),
+	(79, 27, '_edit_lock', '1627992141:1'),
 	(80, 37, '_edit_last', '1'),
 	(81, 37, '_edit_lock', '1627991488:1'),
 	(82, 38, '_wp_attached_file', '2021/08/Iphone-12.jpg'),
@@ -5778,10 +5830,15 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 	(104, 37, '_wc_review_count', '0'),
 	(105, 37, '_product_version', '5.5.2'),
 	(106, 37, '_price', '900'),
-	(107, 37, '_wc_gla_visibility', 'sync-and-show');
+	(107, 37, '_wc_gla_visibility', 'sync-and-show'),
+	(108, 17, '_oembed_af17863c4c67023874f35fc723272064', '{{unknown}}'),
+	(109, 40, '_wp_trash_meta_status', 'publish'),
+	(110, 40, '_wp_trash_meta_time', '1627991975'),
+	(111, 27, '_thumbnail_id', '30');
 /*!40000 ALTER TABLE `wp_postmeta` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_posts
+DROP TABLE IF EXISTS `wp_posts`;
 CREATE TABLE IF NOT EXISTS `wp_posts` (
   `ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `post_author` bigint(20) unsigned NOT NULL DEFAULT '0',
@@ -5813,7 +5870,7 @@ CREATE TABLE IF NOT EXISTS `wp_posts` (
   KEY `post_author` (`post_author`)
 ) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
--- Listage des données de la table e-commerce.wp_posts : ~32 rows (environ)
+-- Listage des données de la table e-commerce.wp_posts : ~35 rows (environ)
 /*!40000 ALTER TABLE `wp_posts` DISABLE KEYS */;
 INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post_content`, `post_title`, `post_excerpt`, `post_status`, `comment_status`, `ping_status`, `post_password`, `post_name`, `to_ping`, `pinged`, `post_modified`, `post_modified_gmt`, `post_content_filtered`, `post_parent`, `guid`, `menu_order`, `post_type`, `post_mime_type`, `comment_count`) VALUES
 	(1, 1, '2021-08-02 15:01:01', '2021-08-02 13:01:01', '<!-- wp:paragraph -->\n<p>Bienvenue sur WordPress. Ceci est votre premier article. Modifiez-le ou supprimez-le, puis commencez à écrire !</p>\n<!-- /wp:paragraph -->', 'Bonjour tout le monde !', '', 'trash', 'open', 'open', '', 'bonjour-tout-le-monde__trashed', '', '', '2021-08-02 16:23:12', '2021-08-02 14:23:12', '', 0, 'http://localhost/E-Commerce/?p=1', 0, 'post', '', 1),
@@ -5839,7 +5896,7 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 	(23, 1, '2021-08-02 16:11:44', '2021-08-02 14:11:44', '<!-- wp:shortcode /-->', 'Panier', '', 'inherit', 'closed', 'closed', '', '9-revision-v1', '', '', '2021-08-02 16:11:44', '2021-08-02 14:11:44', '', 9, 'http://localhost/E-Commerce/?p=23', 0, 'revision', '', 0),
 	(25, 1, '2021-08-02 16:21:13', '2021-08-02 14:21:13', '<!-- wp:list {"ordered":true} -->\n<ol><li>DENOMINATION SOCIALE<br>Phone Store<br><br>Siret : 315 747 436 00030<br>17 rue de Sancey  89100<br>Tél : 03.22.71.37.00 Fax : 03.22.71.37.07 E- mail : phonestore@gmail.com<br>Directeur de publication : Pascal PAGENELLE, Anis Ben Youssef - Président<br>REALISATION DU SITE<br>Conception graphique : Agence ICI 13 RUE Duroyer -80000 AMIENS<br>Web design : Agence ICI 13 RUE Duroyer -80000 AMIENS<br>Développement : Agence ICI 13 RUE Duroyer -80000 AMIENS<br>Hébergement : Fullsave 26 rue de Gironis 31100 TOULOUSE<br></li></ol>\n<!-- /wp:list -->\n\n<!-- wp:list {"ordered":true,"start":2} -->\n<ol start="2"><li>ACCEPTATION DES CONDITIONS D’UTILISATION<br>En contrepartie de l’accès, de la consultation et de l’utilisation du site ARAPL Picardie, vous êtes tenu<br>d’accepter les présentes clauses d’utilisation et de vous y conformer ainsi qu’aux lois et<br>réglementations en vigueur. Si vous n’acceptez pas l’une quelconque de ces clauses, NE<br>CONSULTEZ PAS CE SITE ET NE TELECHARGEZ AUCUN DOCUMENT DE CE SITE.</li><li>ENGAGEMENT PRIS PAR LE SITE<br>Le contenu du site respecte les lois en vigueur et notamment :<br>La loi sur la liberté de la presse du 29 juillet 1881 modifiée de sorte qu’aucun écrit, image ou son à<br>caractère diffamatoire, raciste ou révisionniste ne sera mis en ligne ;<br>Conformément à l’article 227-24 du Code pénal relatif à la protection des mineurs, aucun message à<br>caractère violent, pornographique ou portant gravement atteinte à la dignité humaine susceptible<br>d’être vu ou perçu par un mineur ne sera mis en ligne ;<br>Aucune reproduction d’une oeuvre protégée ou d’une marque sans l’accord de son auteur, de ses<br>ayants droit ou de son titulaire ne sera mise en ligne.<br>Conformément à l’article 6 loi LCEN du 21 juin 2004 et à son décret d’application du 24 octobre 2007,<br>un droit de réponse écrit est ouvert à toute personne nommée ou désignée sur le site. La demande<br>doit être faite au directeur de publication par lettre recommandée avec accusé de réception (ou par<br>tout autre moyen permettant de rapporter la preuve de l’envoi et de la réception) au plus tard dans les<br>trois mois de la mise à disposition du public du message justifiant cette demande. Cette insertion est </li></ol>\n<!-- /wp:list -->', 'Mentions légales', '', 'inherit', 'closed', 'closed', '', '2-revision-v1', '', '', '2021-08-02 16:21:13', '2021-08-02 14:21:13', '', 2, 'http://localhost/E-Commerce/?p=25', 0, 'revision', '', 0),
 	(26, 1, '2021-08-02 16:23:12', '2021-08-02 14:23:12', '<!-- wp:paragraph -->\n<p>Bienvenue sur WordPress. Ceci est votre premier article. Modifiez-le ou supprimez-le, puis commencez à écrire !</p>\n<!-- /wp:paragraph -->', 'Bonjour tout le monde !', '', 'inherit', 'closed', 'closed', '', '1-revision-v1', '', '', '2021-08-02 16:23:12', '2021-08-02 14:23:12', '', 1, 'http://localhost/E-Commerce/?p=26', 0, 'revision', '', 0),
-	(27, 1, '2021-08-02 16:25:16', '2021-08-02 14:25:16', '', 'Accueil', '', 'publish', 'closed', 'closed', '', 'accueil', '', '', '2021-08-02 16:25:16', '2021-08-02 14:25:16', '', 0, 'http://localhost/E-Commerce/?page_id=27', 0, 'page', '', 0),
+	(27, 1, '2021-08-02 16:25:16', '2021-08-02 14:25:16', '', 'Accueil', '', 'publish', 'closed', 'closed', '', 'accueil', '', '', '2021-08-03 14:00:28', '2021-08-03 12:00:28', '', 0, 'http://localhost/E-Commerce/?page_id=27', 0, 'page', '', 0),
 	(28, 1, '2021-08-02 16:25:16', '2021-08-02 14:25:16', '{\n    "show_on_front": {\n        "value": "page",\n        "type": "option",\n        "user_id": 1,\n        "date_modified_gmt": "2021-08-02 14:25:16"\n    },\n    "page_on_front": {\n        "value": "27",\n        "type": "option",\n        "user_id": 1,\n        "date_modified_gmt": "2021-08-02 14:25:16"\n    },\n    "nav_menus_created_posts": {\n        "value": [\n            27\n        ],\n        "type": "option",\n        "user_id": 1,\n        "date_modified_gmt": "2021-08-02 14:25:16"\n    }\n}', '', '', 'trash', 'closed', 'closed', '', '225fb8c6-926d-4999-a82c-56bd9264702a', '', '', '2021-08-02 16:25:16', '2021-08-02 14:25:16', '', 0, 'http://localhost/E-Commerce/2021/08/02/225fb8c6-926d-4999-a82c-56bd9264702a/', 0, 'customize_changeset', '', 0),
 	(29, 1, '2021-08-02 16:25:16', '2021-08-02 14:25:16', '', 'Accueil', '', 'inherit', 'closed', 'closed', '', '27-revision-v1', '', '', '2021-08-02 16:25:16', '2021-08-02 14:25:16', '', 27, 'http://localhost/E-Commerce/?p=29', 0, 'revision', '', 0),
 	(30, 1, '2021-08-02 16:30:43', '2021-08-02 14:30:43', '', 'fond-ecran-batterie-smartphone-1', '', 'inherit', 'open', 'closed', '', 'fond-ecran-batterie-smartphone-1', '', '', '2021-08-02 16:30:43', '2021-08-02 14:30:43', '', 0, 'http://localhost/E-Commerce/wp-content/uploads/2021/08/fond-ecran-batterie-smartphone-1.jpeg', 0, 'attachment', 'image/jpeg', 0),
@@ -5850,10 +5907,13 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 	(35, 1, '2021-08-02 16:50:13', '2021-08-02 14:50:13', '', 'Produits', '', 'inherit', 'closed', 'closed', '', '8-revision-v1', '', '', '2021-08-02 16:50:13', '2021-08-02 14:50:13', '', 8, 'http://localhost/E-Commerce/?p=35', 0, 'revision', '', 0),
 	(36, 1, '2021-08-02 16:53:47', '0000-00-00 00:00:00', '', 'Idobe 12', '', 'draft', 'open', 'closed', '', '', '', '', '2021-08-02 16:53:47', '2021-08-02 14:53:47', '', 0, 'http://localhost/E-Commerce/?post_type=product&#038;p=36', 0, 'product', '', 0),
 	(37, 1, '2021-08-03 13:51:26', '2021-08-03 11:51:26', '<img class="alignnone size-medium wp-image-38" src="http://localhost/E-Commerce/wp-content/uploads/2021/08/Iphone-12-300x300.jpg" alt="" width="300" height="300" />', 'Icrotte 12 64Go', '', 'publish', 'open', 'closed', '', 'icrotte-12-64go', '', '', '2021-08-03 13:51:26', '2021-08-03 11:51:26', '', 0, 'http://localhost/E-Commerce/?post_type=product&#038;p=37', 0, 'product', '', 0),
-	(38, 1, '2021-08-03 13:44:39', '2021-08-03 11:44:39', '', 'Iphone 12', '', 'inherit', 'open', 'closed', '', 'iphone-12', '', '', '2021-08-03 13:44:39', '2021-08-03 11:44:39', '', 37, 'http://localhost/E-Commerce/wp-content/uploads/2021/08/Iphone-12.jpg', 0, 'attachment', 'image/jpeg', 0);
+	(38, 1, '2021-08-03 13:44:39', '2021-08-03 11:44:39', '', 'Iphone 12', '', 'inherit', 'open', 'closed', '', 'iphone-12', '', '', '2021-08-03 13:44:39', '2021-08-03 11:44:39', '', 37, 'http://localhost/E-Commerce/wp-content/uploads/2021/08/Iphone-12.jpg', 0, 'attachment', 'image/jpeg', 0),
+	(39, 1, '2021-08-03 13:58:34', '2021-08-03 11:58:34', '<!-- wp:list {"ordered":true} -->\n<ol><li>DENOMINATION SOCIALE<br>Phone Store<br><br>Siret : 315 747 436 00030<br>17 rue de Sancey  89100<br>Tél : 03.22.71.37.00 Fax : 03.22.71.37.07 E- mail : phonestore@gmail.com<br>Directeur de publication : Pascal PAGENELLE, Anis Ben Youssef - Président<br>REALISATION DU SITE<br>Conception graphique : Agence ICI 13 RUE Duroyer -80000 AMIENS<br>Web design : Agence ICI 13 RUE Duroyer -80000 AMIENS<br>Développement : Agence ICI 13 RUE Duroyer -80000 AMIENS<br>Hébergement : Fullsave 26 rue de Gironis 31100 TOULOUSE<br></li></ol>\n<!-- /wp:list -->\n\n<!-- wp:list {"ordered":true,"start":2} -->\n<ol start="2"><li>ACCEPTATION DES CONDITIONS D’UTILISATION<br>En contrepartie de l’accès, de la consultation et de l’utilisation du site ARAPL Picardie, vous êtes tenu<br>d’accepter les présentes clauses d’utilisation et de vous y conformer ainsi qu’aux lois et<br>réglementations en vigueur. Si vous n’acceptez pas l’une quelconque de ces clauses, NE<br>CONSULTEZ PAS CE SITE ET NE TELECHARGEZ AUCUN DOCUMENT DE CE SITE.</li><li>ENGAGEMENT PRIS PAR LE SITE<br>Le contenu du site respecte les lois en vigueur et notamment :<br>La loi sur la liberté de la presse du 29 juillet 1881 modifiée de sorte qu’aucun écrit, image ou son à<br>caractère diffamatoire, raciste ou révisionniste ne sera mis en ligne ;<br>Conformément à l’article 227-24 du Code pénal relatif à la protection des mineurs, aucun message à<br>caractère violent, pornographique ou portant gravement atteinte à la dignité humaine susceptible<br>d’être vu ou perçu par un mineur ne sera mis en ligne ;<br>Aucune reproduction d’une oeuvre protégée ou d’une marque sans l’accord de son auteur, de ses<br>ayants droit ou de son titulaire ne sera mise en ligne.<br>Conformément à l’article 6 loi LCEN du 21 juin 2004 et à son décret d’application du 24 octobre 2007,<br>un droit de réponse écrit est ouvert à toute personne nommée ou désignée sur le site. La demande<br>doit être faite au directeur de publication par lettre recommandée avec accusé de réception (ou par<br>tout autre moyen permettant de rapporter la preuve de l’envoi et de la réception) au plus tard dans les<br>trois mois de la mise à disposition du public du message justifiant cette demande. Cette insertion est </li></ol>\n<!-- /wp:list -->', 'Mentions légales', '', 'inherit', 'closed', 'closed', '', '2-autosave-v1', '', '', '2021-08-03 13:58:34', '2021-08-03 11:58:34', '', 2, 'http://localhost/E-Commerce/?p=39', 0, 'revision', '', 0),
+	(40, 1, '2021-08-03 13:59:35', '2021-08-03 11:59:35', '{\n    "storefront::background_image": {\n        "value": "",\n        "type": "theme_mod",\n        "user_id": 1,\n        "date_modified_gmt": "2021-08-03 11:59:35"\n    }\n}', '', '', 'trash', 'closed', 'closed', '', 'a97c5b3b-4428-4b12-aadd-0d27c937a885', '', '', '2021-08-03 13:59:35', '2021-08-03 11:59:35', '', 0, 'http://localhost/E-Commerce/2021/08/03/a97c5b3b-4428-4b12-aadd-0d27c937a885/', 0, 'customize_changeset', '', 0);
 /*!40000 ALTER TABLE `wp_posts` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_termmeta
+DROP TABLE IF EXISTS `wp_termmeta`;
 CREATE TABLE IF NOT EXISTS `wp_termmeta` (
   `meta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `term_id` bigint(20) unsigned NOT NULL DEFAULT '0',
@@ -5864,13 +5924,14 @@ CREATE TABLE IF NOT EXISTS `wp_termmeta` (
   KEY `meta_key` (`meta_key`(191))
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
--- Listage des données de la table e-commerce.wp_termmeta : ~0 rows (environ)
+-- Listage des données de la table e-commerce.wp_termmeta : ~1 rows (environ)
 /*!40000 ALTER TABLE `wp_termmeta` DISABLE KEYS */;
 INSERT INTO `wp_termmeta` (`meta_id`, `term_id`, `meta_key`, `meta_value`) VALUES
 	(1, 15, 'product_count_product_cat', '1');
 /*!40000 ALTER TABLE `wp_termmeta` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_terms
+DROP TABLE IF EXISTS `wp_terms`;
 CREATE TABLE IF NOT EXISTS `wp_terms` (
   `term_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(200) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
@@ -5902,6 +5963,7 @@ INSERT INTO `wp_terms` (`term_id`, `name`, `slug`, `term_group`) VALUES
 /*!40000 ALTER TABLE `wp_terms` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_term_relationships
+DROP TABLE IF EXISTS `wp_term_relationships`;
 CREATE TABLE IF NOT EXISTS `wp_term_relationships` (
   `object_id` bigint(20) unsigned NOT NULL DEFAULT '0',
   `term_taxonomy_id` bigint(20) unsigned NOT NULL DEFAULT '0',
@@ -5910,7 +5972,7 @@ CREATE TABLE IF NOT EXISTS `wp_term_relationships` (
   KEY `term_taxonomy_id` (`term_taxonomy_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
--- Listage des données de la table e-commerce.wp_term_relationships : ~3 rows (environ)
+-- Listage des données de la table e-commerce.wp_term_relationships : ~5 rows (environ)
 /*!40000 ALTER TABLE `wp_term_relationships` DISABLE KEYS */;
 INSERT INTO `wp_term_relationships` (`object_id`, `term_taxonomy_id`, `term_order`) VALUES
 	(1, 1, 0),
@@ -5921,6 +5983,7 @@ INSERT INTO `wp_term_relationships` (`object_id`, `term_taxonomy_id`, `term_orde
 /*!40000 ALTER TABLE `wp_term_relationships` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_term_taxonomy
+DROP TABLE IF EXISTS `wp_term_taxonomy`;
 CREATE TABLE IF NOT EXISTS `wp_term_taxonomy` (
   `term_taxonomy_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `term_id` bigint(20) unsigned NOT NULL DEFAULT '0',
@@ -5954,6 +6017,7 @@ INSERT INTO `wp_term_taxonomy` (`term_taxonomy_id`, `term_id`, `taxonomy`, `desc
 /*!40000 ALTER TABLE `wp_term_taxonomy` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_usermeta
+DROP TABLE IF EXISTS `wp_usermeta`;
 CREATE TABLE IF NOT EXISTS `wp_usermeta` (
   `umeta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` bigint(20) unsigned NOT NULL DEFAULT '0',
@@ -5997,6 +6061,7 @@ INSERT INTO `wp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) VALU
 /*!40000 ALTER TABLE `wp_usermeta` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_users
+DROP TABLE IF EXISTS `wp_users`;
 CREATE TABLE IF NOT EXISTS `wp_users` (
   `ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `user_login` varchar(60) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
@@ -6014,13 +6079,14 @@ CREATE TABLE IF NOT EXISTS `wp_users` (
   KEY `user_email` (`user_email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
--- Listage des données de la table e-commerce.wp_users : ~0 rows (environ)
+-- Listage des données de la table e-commerce.wp_users : ~1 rows (environ)
 /*!40000 ALTER TABLE `wp_users` DISABLE KEYS */;
 INSERT INTO `wp_users` (`ID`, `user_login`, `user_pass`, `user_nicename`, `user_email`, `user_url`, `user_registered`, `user_activation_key`, `user_status`, `display_name`) VALUES
 	(1, 'rootpa', '$P$B7Rg3AObuZ5DAVOzYRd31ZQBbFJgEo0', 'rootpa', 'sbgciehv@efhyg.com', 'http://localhost/E-Commerce', '2021-08-02 13:01:01', '', 0, 'rootpa');
 /*!40000 ALTER TABLE `wp_users` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_wc_admin_notes
+DROP TABLE IF EXISTS `wp_wc_admin_notes`;
 CREATE TABLE IF NOT EXISTS `wp_wc_admin_notes` (
   `note_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL,
@@ -6041,7 +6107,7 @@ CREATE TABLE IF NOT EXISTS `wp_wc_admin_notes` (
   PRIMARY KEY (`note_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
--- Listage des données de la table e-commerce.wp_wc_admin_notes : ~36 rows (environ)
+-- Listage des données de la table e-commerce.wp_wc_admin_notes : ~40 rows (environ)
 /*!40000 ALTER TABLE `wp_wc_admin_notes` DISABLE KEYS */;
 INSERT INTO `wp_wc_admin_notes` (`note_id`, `name`, `type`, `locale`, `title`, `content`, `content_data`, `status`, `source`, `date_created`, `date_reminder`, `is_snoozable`, `layout`, `image`, `is_deleted`, `icon`) VALUES
 	(1, 'wayflyer_q3_2021', 'marketing', 'en_US', 'Grow your revenue with Wayflyer financing and analytics', 'Flexible financing tailored to your needs by <a href="https://woocommerce.com/products/wayflyer/">Wayflyer</a> – one fee, no interest rates, penalties, equity, or personal guarantees. Based on your store\'s performance, Wayflyer can provide the financing you need to grow and the analytical insights to help you spend it.', '{}', 'pending', 'woocommerce.com', '2021-08-02 13:41:21', NULL, 0, 'plain', '', 0, 'info'),
@@ -6087,6 +6153,7 @@ INSERT INTO `wp_wc_admin_notes` (`note_id`, `name`, `type`, `locale`, `title`, `
 /*!40000 ALTER TABLE `wp_wc_admin_notes` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_wc_admin_note_actions
+DROP TABLE IF EXISTS `wp_wc_admin_note_actions`;
 CREATE TABLE IF NOT EXISTS `wp_wc_admin_note_actions` (
   `action_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `note_id` bigint(20) unsigned NOT NULL,
@@ -6102,7 +6169,7 @@ CREATE TABLE IF NOT EXISTS `wp_wc_admin_note_actions` (
   KEY `note_id` (`note_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=188 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
--- Listage des données de la table e-commerce.wp_wc_admin_note_actions : ~40 rows (environ)
+-- Listage des données de la table e-commerce.wp_wc_admin_note_actions : ~43 rows (environ)
 /*!40000 ALTER TABLE `wp_wc_admin_note_actions` DISABLE KEYS */;
 INSERT INTO `wp_wc_admin_note_actions` (`action_id`, `note_id`, `name`, `label`, `query`, `status`, `is_primary`, `actioned_text`, `nonce_action`, `nonce_name`) VALUES
 	(37, 34, 'yes-please', 'Yes please!', 'https://woocommerce.us8.list-manage.com/subscribe/post?u=2c1434dc56f9506bf3c3ecd21&amp;id=13860df971&amp;SIGNUPPAGE=plugin', 'actioned', 0, '', NULL, NULL),
@@ -6151,19 +6218,21 @@ INSERT INTO `wp_wc_admin_note_actions` (`action_id`, `note_id`, `name`, `label`,
 /*!40000 ALTER TABLE `wp_wc_admin_note_actions` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_wc_category_lookup
+DROP TABLE IF EXISTS `wp_wc_category_lookup`;
 CREATE TABLE IF NOT EXISTS `wp_wc_category_lookup` (
   `category_tree_id` bigint(20) unsigned NOT NULL,
   `category_id` bigint(20) unsigned NOT NULL,
   PRIMARY KEY (`category_tree_id`,`category_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
--- Listage des données de la table e-commerce.wp_wc_category_lookup : ~0 rows (environ)
+-- Listage des données de la table e-commerce.wp_wc_category_lookup : ~1 rows (environ)
 /*!40000 ALTER TABLE `wp_wc_category_lookup` DISABLE KEYS */;
 INSERT INTO `wp_wc_category_lookup` (`category_tree_id`, `category_id`) VALUES
 	(15, 15);
 /*!40000 ALTER TABLE `wp_wc_category_lookup` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_wc_customer_lookup
+DROP TABLE IF EXISTS `wp_wc_customer_lookup`;
 CREATE TABLE IF NOT EXISTS `wp_wc_customer_lookup` (
   `customer_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` bigint(20) unsigned DEFAULT NULL,
@@ -6187,6 +6256,7 @@ CREATE TABLE IF NOT EXISTS `wp_wc_customer_lookup` (
 /*!40000 ALTER TABLE `wp_wc_customer_lookup` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_wc_download_log
+DROP TABLE IF EXISTS `wp_wc_download_log`;
 CREATE TABLE IF NOT EXISTS `wp_wc_download_log` (
   `download_log_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `timestamp` datetime NOT NULL,
@@ -6204,6 +6274,7 @@ CREATE TABLE IF NOT EXISTS `wp_wc_download_log` (
 /*!40000 ALTER TABLE `wp_wc_download_log` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_wc_order_coupon_lookup
+DROP TABLE IF EXISTS `wp_wc_order_coupon_lookup`;
 CREATE TABLE IF NOT EXISTS `wp_wc_order_coupon_lookup` (
   `order_id` bigint(20) unsigned NOT NULL,
   `coupon_id` bigint(20) NOT NULL,
@@ -6219,6 +6290,7 @@ CREATE TABLE IF NOT EXISTS `wp_wc_order_coupon_lookup` (
 /*!40000 ALTER TABLE `wp_wc_order_coupon_lookup` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_wc_order_product_lookup
+DROP TABLE IF EXISTS `wp_wc_order_product_lookup`;
 CREATE TABLE IF NOT EXISTS `wp_wc_order_product_lookup` (
   `order_item_id` bigint(20) unsigned NOT NULL,
   `order_id` bigint(20) unsigned NOT NULL,
@@ -6245,6 +6317,7 @@ CREATE TABLE IF NOT EXISTS `wp_wc_order_product_lookup` (
 /*!40000 ALTER TABLE `wp_wc_order_product_lookup` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_wc_order_stats
+DROP TABLE IF EXISTS `wp_wc_order_stats`;
 CREATE TABLE IF NOT EXISTS `wp_wc_order_stats` (
   `order_id` bigint(20) unsigned NOT NULL,
   `parent_id` bigint(20) unsigned NOT NULL DEFAULT '0',
@@ -6269,6 +6342,7 @@ CREATE TABLE IF NOT EXISTS `wp_wc_order_stats` (
 /*!40000 ALTER TABLE `wp_wc_order_stats` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_wc_order_tax_lookup
+DROP TABLE IF EXISTS `wp_wc_order_tax_lookup`;
 CREATE TABLE IF NOT EXISTS `wp_wc_order_tax_lookup` (
   `order_id` bigint(20) unsigned NOT NULL,
   `tax_rate_id` bigint(20) unsigned NOT NULL,
@@ -6286,6 +6360,7 @@ CREATE TABLE IF NOT EXISTS `wp_wc_order_tax_lookup` (
 /*!40000 ALTER TABLE `wp_wc_order_tax_lookup` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_wc_product_meta_lookup
+DROP TABLE IF EXISTS `wp_wc_product_meta_lookup`;
 CREATE TABLE IF NOT EXISTS `wp_wc_product_meta_lookup` (
   `product_id` bigint(20) NOT NULL,
   `sku` varchar(100) COLLATE utf8mb4_unicode_520_ci DEFAULT '',
@@ -6310,7 +6385,7 @@ CREATE TABLE IF NOT EXISTS `wp_wc_product_meta_lookup` (
   KEY `min_max_price` (`min_price`,`max_price`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
--- Listage des données de la table e-commerce.wp_wc_product_meta_lookup : ~0 rows (environ)
+-- Listage des données de la table e-commerce.wp_wc_product_meta_lookup : ~2 rows (environ)
 /*!40000 ALTER TABLE `wp_wc_product_meta_lookup` DISABLE KEYS */;
 INSERT INTO `wp_wc_product_meta_lookup` (`product_id`, `sku`, `virtual`, `downloadable`, `min_price`, `max_price`, `onsale`, `stock_quantity`, `stock_status`, `rating_count`, `average_rating`, `total_sales`, `tax_status`, `tax_class`) VALUES
 	(36, '', 0, 0, 600.0000, 600.0000, 1, NULL, 'instock', 0, 0.00, 0, 'taxable', ''),
@@ -6318,6 +6393,7 @@ INSERT INTO `wp_wc_product_meta_lookup` (`product_id`, `sku`, `virtual`, `downlo
 /*!40000 ALTER TABLE `wp_wc_product_meta_lookup` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_wc_reserved_stock
+DROP TABLE IF EXISTS `wp_wc_reserved_stock`;
 CREATE TABLE IF NOT EXISTS `wp_wc_reserved_stock` (
   `order_id` bigint(20) NOT NULL,
   `product_id` bigint(20) NOT NULL,
@@ -6332,6 +6408,7 @@ CREATE TABLE IF NOT EXISTS `wp_wc_reserved_stock` (
 /*!40000 ALTER TABLE `wp_wc_reserved_stock` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_wc_tax_rate_classes
+DROP TABLE IF EXISTS `wp_wc_tax_rate_classes`;
 CREATE TABLE IF NOT EXISTS `wp_wc_tax_rate_classes` (
   `tax_rate_class_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(200) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
@@ -6348,6 +6425,7 @@ INSERT INTO `wp_wc_tax_rate_classes` (`tax_rate_class_id`, `name`, `slug`) VALUE
 /*!40000 ALTER TABLE `wp_wc_tax_rate_classes` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_wc_webhooks
+DROP TABLE IF EXISTS `wp_wc_webhooks`;
 CREATE TABLE IF NOT EXISTS `wp_wc_webhooks` (
   `webhook_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `status` varchar(200) COLLATE utf8mb4_unicode_520_ci NOT NULL,
@@ -6372,6 +6450,7 @@ CREATE TABLE IF NOT EXISTS `wp_wc_webhooks` (
 /*!40000 ALTER TABLE `wp_wc_webhooks` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_woocommerce_api_keys
+DROP TABLE IF EXISTS `wp_woocommerce_api_keys`;
 CREATE TABLE IF NOT EXISTS `wp_woocommerce_api_keys` (
   `key_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` bigint(20) unsigned NOT NULL,
@@ -6392,6 +6471,7 @@ CREATE TABLE IF NOT EXISTS `wp_woocommerce_api_keys` (
 /*!40000 ALTER TABLE `wp_woocommerce_api_keys` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_woocommerce_attribute_taxonomies
+DROP TABLE IF EXISTS `wp_woocommerce_attribute_taxonomies`;
 CREATE TABLE IF NOT EXISTS `wp_woocommerce_attribute_taxonomies` (
   `attribute_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `attribute_name` varchar(200) COLLATE utf8mb4_unicode_520_ci NOT NULL,
@@ -6408,6 +6488,7 @@ CREATE TABLE IF NOT EXISTS `wp_woocommerce_attribute_taxonomies` (
 /*!40000 ALTER TABLE `wp_woocommerce_attribute_taxonomies` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_woocommerce_downloadable_product_permissions
+DROP TABLE IF EXISTS `wp_woocommerce_downloadable_product_permissions`;
 CREATE TABLE IF NOT EXISTS `wp_woocommerce_downloadable_product_permissions` (
   `permission_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `download_id` varchar(36) COLLATE utf8mb4_unicode_520_ci NOT NULL,
@@ -6432,6 +6513,7 @@ CREATE TABLE IF NOT EXISTS `wp_woocommerce_downloadable_product_permissions` (
 /*!40000 ALTER TABLE `wp_woocommerce_downloadable_product_permissions` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_woocommerce_log
+DROP TABLE IF EXISTS `wp_woocommerce_log`;
 CREATE TABLE IF NOT EXISTS `wp_woocommerce_log` (
   `log_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `timestamp` datetime NOT NULL,
@@ -6448,6 +6530,7 @@ CREATE TABLE IF NOT EXISTS `wp_woocommerce_log` (
 /*!40000 ALTER TABLE `wp_woocommerce_log` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_woocommerce_order_itemmeta
+DROP TABLE IF EXISTS `wp_woocommerce_order_itemmeta`;
 CREATE TABLE IF NOT EXISTS `wp_woocommerce_order_itemmeta` (
   `meta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `order_item_id` bigint(20) unsigned NOT NULL,
@@ -6463,6 +6546,7 @@ CREATE TABLE IF NOT EXISTS `wp_woocommerce_order_itemmeta` (
 /*!40000 ALTER TABLE `wp_woocommerce_order_itemmeta` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_woocommerce_order_items
+DROP TABLE IF EXISTS `wp_woocommerce_order_items`;
 CREATE TABLE IF NOT EXISTS `wp_woocommerce_order_items` (
   `order_item_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `order_item_name` text COLLATE utf8mb4_unicode_520_ci NOT NULL,
@@ -6477,6 +6561,7 @@ CREATE TABLE IF NOT EXISTS `wp_woocommerce_order_items` (
 /*!40000 ALTER TABLE `wp_woocommerce_order_items` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_woocommerce_payment_tokenmeta
+DROP TABLE IF EXISTS `wp_woocommerce_payment_tokenmeta`;
 CREATE TABLE IF NOT EXISTS `wp_woocommerce_payment_tokenmeta` (
   `meta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `payment_token_id` bigint(20) unsigned NOT NULL,
@@ -6492,6 +6577,7 @@ CREATE TABLE IF NOT EXISTS `wp_woocommerce_payment_tokenmeta` (
 /*!40000 ALTER TABLE `wp_woocommerce_payment_tokenmeta` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_woocommerce_payment_tokens
+DROP TABLE IF EXISTS `wp_woocommerce_payment_tokens`;
 CREATE TABLE IF NOT EXISTS `wp_woocommerce_payment_tokens` (
   `token_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `gateway_id` varchar(200) COLLATE utf8mb4_unicode_520_ci NOT NULL,
@@ -6508,6 +6594,7 @@ CREATE TABLE IF NOT EXISTS `wp_woocommerce_payment_tokens` (
 /*!40000 ALTER TABLE `wp_woocommerce_payment_tokens` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_woocommerce_sessions
+DROP TABLE IF EXISTS `wp_woocommerce_sessions`;
 CREATE TABLE IF NOT EXISTS `wp_woocommerce_sessions` (
   `session_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `session_key` char(32) COLLATE utf8mb4_unicode_520_ci NOT NULL,
@@ -6517,13 +6604,14 @@ CREATE TABLE IF NOT EXISTS `wp_woocommerce_sessions` (
   UNIQUE KEY `session_key` (`session_key`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
--- Listage des données de la table e-commerce.wp_woocommerce_sessions : ~0 rows (environ)
+-- Listage des données de la table e-commerce.wp_woocommerce_sessions : ~1 rows (environ)
 /*!40000 ALTER TABLE `wp_woocommerce_sessions` DISABLE KEYS */;
 INSERT INTO `wp_woocommerce_sessions` (`session_id`, `session_key`, `session_value`, `session_expiry`) VALUES
 	(1, '1', 'a:10:{s:4:"cart";s:6:"a:0:{}";s:11:"cart_totals";s:367:"a:15:{s:8:"subtotal";i:0;s:12:"subtotal_tax";i:0;s:14:"shipping_total";i:0;s:12:"shipping_tax";i:0;s:14:"shipping_taxes";a:0:{}s:14:"discount_total";i:0;s:12:"discount_tax";i:0;s:19:"cart_contents_total";i:0;s:17:"cart_contents_tax";i:0;s:19:"cart_contents_taxes";a:0:{}s:9:"fee_total";i:0;s:7:"fee_tax";i:0;s:9:"fee_taxes";a:0:{}s:5:"total";i:0;s:9:"total_tax";i:0;}";s:15:"applied_coupons";s:6:"a:0:{}";s:22:"coupon_discount_totals";s:6:"a:0:{}";s:26:"coupon_discount_tax_totals";s:6:"a:0:{}";s:21:"removed_cart_contents";s:6:"a:0:{}";s:8:"customer";s:732:"a:26:{s:2:"id";s:1:"1";s:13:"date_modified";s:25:"2021-08-02T16:48:46+02:00";s:8:"postcode";s:0:"";s:4:"city";s:0:"";s:9:"address_1";s:0:"";s:7:"address";s:0:"";s:9:"address_2";s:0:"";s:5:"state";s:0:"";s:7:"country";s:2:"FR";s:17:"shipping_postcode";s:0:"";s:13:"shipping_city";s:0:"";s:18:"shipping_address_1";s:0:"";s:16:"shipping_address";s:0:"";s:18:"shipping_address_2";s:0:"";s:14:"shipping_state";s:0:"";s:16:"shipping_country";s:2:"FR";s:13:"is_vat_exempt";s:0:"";s:19:"calculated_shipping";s:0:"";s:10:"first_name";s:0:"";s:9:"last_name";s:0:"";s:7:"company";s:0:"";s:5:"phone";s:0:"";s:5:"email";s:18:"sbgciehv@efhyg.com";s:19:"shipping_first_name";s:0:"";s:18:"shipping_last_name";s:0:"";s:16:"shipping_company";s:0:"";}";s:21:"chosen_payment_method";s:0:"";s:10:"wc_notices";N;s:22:"mailchimp_landing_site";s:116:"http://localhost/E-Commerce/E-Commerce/wp-admin/admin-ajax.php?action=as_async_request_queue_runner&nonce=02146b7f96";}', 1628088550);
 /*!40000 ALTER TABLE `wp_woocommerce_sessions` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_woocommerce_shipping_zones
+DROP TABLE IF EXISTS `wp_woocommerce_shipping_zones`;
 CREATE TABLE IF NOT EXISTS `wp_woocommerce_shipping_zones` (
   `zone_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `zone_name` varchar(200) COLLATE utf8mb4_unicode_520_ci NOT NULL,
@@ -6536,6 +6624,7 @@ CREATE TABLE IF NOT EXISTS `wp_woocommerce_shipping_zones` (
 /*!40000 ALTER TABLE `wp_woocommerce_shipping_zones` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_woocommerce_shipping_zone_locations
+DROP TABLE IF EXISTS `wp_woocommerce_shipping_zone_locations`;
 CREATE TABLE IF NOT EXISTS `wp_woocommerce_shipping_zone_locations` (
   `location_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `zone_id` bigint(20) unsigned NOT NULL,
@@ -6551,6 +6640,7 @@ CREATE TABLE IF NOT EXISTS `wp_woocommerce_shipping_zone_locations` (
 /*!40000 ALTER TABLE `wp_woocommerce_shipping_zone_locations` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_woocommerce_shipping_zone_methods
+DROP TABLE IF EXISTS `wp_woocommerce_shipping_zone_methods`;
 CREATE TABLE IF NOT EXISTS `wp_woocommerce_shipping_zone_methods` (
   `zone_id` bigint(20) unsigned NOT NULL,
   `instance_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
@@ -6565,6 +6655,7 @@ CREATE TABLE IF NOT EXISTS `wp_woocommerce_shipping_zone_methods` (
 /*!40000 ALTER TABLE `wp_woocommerce_shipping_zone_methods` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_woocommerce_tax_rates
+DROP TABLE IF EXISTS `wp_woocommerce_tax_rates`;
 CREATE TABLE IF NOT EXISTS `wp_woocommerce_tax_rates` (
   `tax_rate_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `tax_rate_country` varchar(2) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
@@ -6588,6 +6679,7 @@ CREATE TABLE IF NOT EXISTS `wp_woocommerce_tax_rates` (
 /*!40000 ALTER TABLE `wp_woocommerce_tax_rates` ENABLE KEYS */;
 
 -- Listage de la structure de la table e-commerce. wp_woocommerce_tax_rate_locations
+DROP TABLE IF EXISTS `wp_woocommerce_tax_rate_locations`;
 CREATE TABLE IF NOT EXISTS `wp_woocommerce_tax_rate_locations` (
   `location_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `location_code` varchar(200) COLLATE utf8mb4_unicode_520_ci NOT NULL,
