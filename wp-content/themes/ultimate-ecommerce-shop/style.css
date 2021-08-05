@@ -4,9 +4,9 @@ Theme URI:  https://www.logicalthemes.com/themes/free-ecommerce-wordpress-theme/
 Author: LogicalThemes
 Author URI: https://www.logicalthemes.com
 Description: Ultimate Ecommerce Shop is a WordPress theme which, as the name suggests, is the ultimate option for all types of online stores. It is a multipurpose eCommerce WordPress theme which can be used for each and every type of store. Whether you have an online bookstore, clothing, toys, electronics, computers, grocery, mobile store, apparel store, sports shop, jewellery store, online apparel, fashion accessories store, sports equipment shop, digital Storefront, cosmetics store or a furniture store, this theme is for all. Not just for stores, it can also be used by service providing businesses such as tours and travels, restaurant, corporate business, freelancer, and health services. It is so flexible that you can use it for an eCommerce shop, blog, or a portfolio website. Its unique and beautiful design will make your site stand out no matter what business you are using it for. It is a customizable responsive WooCommerce WordPress theme which comes with a treasure of features and functionalities. It implements simple and clean coding which makes it SEO optimized. It is mobile-friendly, retina ready, and translation ready and supports multiple page layouts. It has all the features which you dream to have in your site. Just think of the type of business you want to do and this theme is there to help you serve in that business. Demo: https://www.logicalthemes.com/ultimate-ecommerce-shop-pro/
-Tested up to: 5.7
+Tested up to: 5.8
 Requires PHP: 7.2.14
-Version: 0.3.8
+Version: 0.3.9
 License: GPLv3.0 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: ultimate-ecommerce-shop
@@ -179,8 +179,8 @@ select{
   width: auto;
   z-index: 100000; /* Above WP toolbar. */
 }
-.entry-content a,
-.footersec p a{
+.widget_text a, .entry-content a,
+.footersec p a, .main-content a{
   text-decoration: underline;
   color:#067fb9;
 }
@@ -1631,8 +1631,8 @@ button[type="submit"]{
   margin-top: 3%;
   color: #999;
 }
-.textwidget strong,
-.textwidget p {
+.widget_text strong,
+.widget_text p {
   color: #999;
 }
 .footersec {

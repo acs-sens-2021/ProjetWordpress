@@ -2,9 +2,9 @@
 Contributors: LogicalThemes
 Tags: wide-blocks, flexible-header, left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, sticky-post, post-formats, full-width-template, theme-options, threaded-comments, translation-ready, rtl-language-support, blog, e-commerce, news
 Requires at least: 5.0
-Tested up to: 5.7
+Tested up to: 5.8
 Requires PHP: 7.2.14
-Stable tag: 0.3.8
+Stable tag: 0.3.9
 License: GPLv3.0 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -83,6 +83,11 @@ Ultimate Ecommerce Shop is a WordPress theme which, as the name suggests, is the
   * Removed sanitize email function from function.php.
   * Escaped on get_template_directory_uri() function.
   * Added suffix to enqueued files in function.php.
+
+= 0.3.9 =
+  * Added show / hide topbar option.
+  * Done Underline on anchor tag.
+  * Updated POT file.
   
 == Resources ==
 

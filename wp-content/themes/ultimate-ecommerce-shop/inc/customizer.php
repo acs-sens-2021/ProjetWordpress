@@ -28,7 +28,7 @@ function ultimate_ecommerce_shop_customize_register( $wp_customize ) {
 
 	// Add Settings and Controls for Layout
 	$wp_customize->add_setting('ultimate_ecommerce_shop_theme_options',array(
-        'default' => __( 'Right Sidebar', 'ultimate-ecommerce-shop' ),
+        'default' => 'Right Sidebar',
         'sanitize_callback' => 'ultimate_ecommerce_shop_sanitize_choices'	        
 	));
 	$wp_customize->add_control('ultimate_ecommerce_shop_theme_options',
@@ -473,6 +473,18 @@ function ultimate_ecommerce_shop_customize_register( $wp_customize ) {
     	'type' => 'checkbox',
     	'description' => __( 'Click on the checkbox to enable sticky header.', 'ultimate-ecommerce-shop' ),
         'label' => __( 'Sticky Header','ultimate-ecommerce-shop' ),
+        'section' => 'ultimate_ecommerce_shop_topbar'
+    ));
+
+    //Show /Hide Topbar
+	$wp_customize->add_setting( 'ultimate_ecommerce_shop_show_topbar',array(
+		'default' => false,
+      	'sanitize_callback'	=> 'ultimate_ecommerce_shop_sanitize_checkbox'
+    ) );
+    $wp_customize->add_control('ultimate_ecommerce_shop_show_topbar',array(
+    	'type' => 'checkbox',
+    	'description' => __( 'Click on the checkbox to enable Topbar.', 'ultimate-ecommerce-shop' ),
+        'label' => __( 'Topbar','ultimate-ecommerce-shop' ),
         'section' => 'ultimate_ecommerce_shop_topbar'
     ));
 
