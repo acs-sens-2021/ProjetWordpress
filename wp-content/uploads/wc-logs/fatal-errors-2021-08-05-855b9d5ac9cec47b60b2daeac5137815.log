@@ -1,0 +1,9 @@
+2021-08-05T13:44:33+00:00 CRITICAL Uncaught TypeError: Return value of WCPay\MultiCurrency\MultiCurrency::get_default_currency() must be an instance of WCPay\MultiCurrency\Currency, null returned in C:\laragon\www\E-Commerce\wp-content\plugins\woocommerce-payments\includes\multi-currency\MultiCurrency.php:499
+Stack trace:
+#0 C:\laragon\www\E-Commerce\wp-content\plugins\woocommerce-payments\includes\multi-currency\Compatibility.php(299): WCPay\MultiCurrency\MultiCurrency->get_default_currency()
+#1 C:\laragon\www\E-Commerce\wp-includes\class-wp-hook.php(305): WCPay\MultiCurrency\Compatibility->convert_order_prices(Array)
+#2 C:\laragon\www\E-Commerce\wp-includes\plugin.php(189): WP_Hook->apply_filters(Array, Array)
+#3 C:\laragon\www\E-Commerce\wp-content\plugins\woocommerce\includes\class-wc-order-query.php(87): apply_filters('woocommerce_ord...', Array, Array)
+#4 C:\laragon\www\E-Commerce\wp-content\plugins\woocommerce\packages\woocommerce-admin\src\Notes\NewSalesRecord.php(44): WC_Order_Query->get_orders()
+#5 C:\laragon\www\E-Commerce\wp-conten dans C:\laragon\www\E-Commerce\wp-content\plugins\woocommerce-payments\includes\multi-currency\MultiCurrency.php à la ligne 499
+

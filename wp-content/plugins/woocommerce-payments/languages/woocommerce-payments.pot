@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the WooCommerce Payments package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WooCommerce Payments 2.8.0\n"
+"Project-Id-Version: WooCommerce Payments 2.8.1\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/woocommerce-payments\n"
-"POT-Creation-Date: 2021-08-04 08:44:50+00:00\n"
+"POT-Creation-Date: 2021-08-04 21:44:52+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1170,7 +1170,7 @@ msgstr ""
 msgid "Display flags in supported devices"
 msgstr ""
 
-#: includes/multi-currency/MultiCurrency.php:700
+#: includes/multi-currency/MultiCurrency.php:708
 #. translators: %1 User's country, %2 Selected currency name, %3 Default store
 #. currency name
 msgid ""
@@ -1178,7 +1178,7 @@ msgid ""
 "your shopping convenience. <a>Use %3$s instead.</a>"
 msgstr ""
 
-#: includes/multi-currency/MultiCurrency.php:715
+#: includes/multi-currency/MultiCurrency.php:723
 msgid "Dismiss"
 msgstr ""
 
@@ -1196,28 +1196,30 @@ msgstr ""
 msgid "Set up now"
 msgstr ""
 
-#: includes/multi-currency/Settings.php:78
-#: includes/multi-currency/Settings.php:464
+#: includes/multi-currency/Settings.php:93
+#: includes/multi-currency/Settings.php:517
 msgid "Currencies"
 msgstr ""
 
-#: includes/multi-currency/Settings.php:97
+#: includes/multi-currency/Settings.php:111
+#: includes/multi-currency/Settings.php:131
 msgid "Enabled currencies"
 msgstr ""
 
-#: includes/multi-currency/Settings.php:100
+#: includes/multi-currency/Settings.php:114
+#: includes/multi-currency/Settings.php:134
 #. translators: %s: url to documentation.
 msgid ""
 "Accept payments in multiple currencies. Prices are converted based on "
 "exchange rates and rounding rules. <a href=\"%s\">Learn more</a>"
 msgstr ""
 
-#: includes/multi-currency/Settings.php:121
-#: includes/multi-currency/Settings.php:133
+#: includes/multi-currency/Settings.php:155
+#: includes/multi-currency/Settings.php:167
 msgid "Store settings"
 msgstr ""
 
-#: includes/multi-currency/Settings.php:124
+#: includes/multi-currency/Settings.php:158
 #. translators: %s: url to documentation.
 msgid ""
 "Store settings allow your customers to choose which currency they would "
@@ -1225,40 +1227,50 @@ msgid ""
 "target=\"blank\">Learn more</a>"
 msgstr ""
 
-#: includes/multi-currency/Settings.php:134
+#: includes/multi-currency/Settings.php:168
 msgid ""
 "Automatically switch customers to their local currency if it is enabled "
 "above."
 msgstr ""
 
-#: includes/multi-currency/Settings.php:136
+#: includes/multi-currency/Settings.php:170
 msgid "Customers will be notified via store alert banner."
 msgstr ""
 
-#: includes/multi-currency/Settings.php:145
+#: includes/multi-currency/Settings.php:179
 #. translators: %s: url to the widgets page
 msgid ""
 "A currency switcher is available in your widgets. <a href=\"%s\">Configure "
 "now</a>"
 msgstr ""
 
-#: includes/multi-currency/Settings.php:275
+#: includes/multi-currency/Settings.php:256
+msgid ""
+"To add new currencies to your store, please finish setting up WooCommerce "
+"Payments."
+msgstr ""
+
+#: includes/multi-currency/Settings.php:259
+msgid "Get started"
+msgstr ""
+
+#: includes/multi-currency/Settings.php:328
 #. translators: %1$s: default currency rate, %2$s: new currency exchange rate,
 #. %3$s: time rates were last updated.
 msgid "Fetch rate automatically. Current rate: %1$s = %2$s (Last updated: %3$s)"
 msgstr ""
 
-#: includes/multi-currency/Settings.php:280
+#: includes/multi-currency/Settings.php:333
 msgid "Manual rate. Enter your own fixed rate of exchange."
 msgstr ""
 
-#: includes/multi-currency/Settings.php:284
-#: includes/multi-currency/Settings.php:307
-#: includes/multi-currency/Settings.php:312
+#: includes/multi-currency/Settings.php:337
+#: includes/multi-currency/Settings.php:360
+#: includes/multi-currency/Settings.php:365
 msgid "None"
 msgstr ""
 
-#: includes/multi-currency/Settings.php:329
+#: includes/multi-currency/Settings.php:382
 #. translators: %1$s: default currency of the store, %2$s currency being
 #. converted to.
 msgid ""
@@ -1266,43 +1278,43 @@ msgid ""
 "%2$s using the exchange rate and formatting rules above."
 msgstr ""
 
-#: includes/multi-currency/Settings.php:343
+#: includes/multi-currency/Settings.php:396
 #: client/multi-currency/enabled-currencies-list/index.js:50
 msgid "Exchange rate"
 msgstr ""
 
-#: includes/multi-currency/Settings.php:352
+#: includes/multi-currency/Settings.php:405
 msgid "Manual rate"
 msgstr ""
 
-#: includes/multi-currency/Settings.php:357
+#: includes/multi-currency/Settings.php:410
 msgid "Enter the manual rate you would like to use. Must be a positive number."
 msgstr ""
 
-#: includes/multi-currency/Settings.php:370
+#: includes/multi-currency/Settings.php:423
 msgid "Formatting rules"
 msgstr ""
 
-#: includes/multi-currency/Settings.php:376
+#: includes/multi-currency/Settings.php:429
 msgid "Price rounding"
 msgstr ""
 
-#: includes/multi-currency/Settings.php:379
+#: includes/multi-currency/Settings.php:432
 #. translators: %1$s currency being converted to.
 msgid ""
 "Make your %1$s prices consistent by rounding them up after they are "
 "converted."
 msgstr ""
 
-#: includes/multi-currency/Settings.php:389
+#: includes/multi-currency/Settings.php:442
 msgid "Price charm"
 msgstr ""
 
-#: includes/multi-currency/Settings.php:390
+#: includes/multi-currency/Settings.php:443
 msgid "Reduce the converted price by a specific amount."
 msgstr ""
 
-#: includes/multi-currency/Settings.php:403
+#: includes/multi-currency/Settings.php:456
 #: client/settings/payment-method-settings/payment-request-settings.js:167
 msgid "Preview"
 msgstr ""
@@ -1644,7 +1656,7 @@ msgid ""
 "your account page: %2$s"
 msgstr ""
 
-#: includes/multi-currency/Settings.php:55
+#: includes/multi-currency/Settings.php:65
 msgctxt "Settings tab label"
 msgid "Multi-currency"
 msgstr ""
@@ -3470,7 +3482,7 @@ msgstr ""
 msgid "Add currencies"
 msgstr ""
 
-#: client/multi-currency/index.js:97
+#: client/multi-currency/index.js:105
 msgid "Please enter a valid number"
 msgstr ""
 
