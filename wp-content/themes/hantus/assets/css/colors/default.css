@@ -1,4 +1,4 @@
-.woocommerce #respond input#submit.alt.disabled,.woocommerce #respond input#submit.alt:disabled,.woocommerce #respond input#submit.alt:disabled[disabled],.woocommerce a.button.alt.disabled,.woocommerce a.button.alt:disabled,.woocommerce a.button.alt:disabled[disabled],.woocommerce button.button.alt.disabled,.woocommerce button.button.alt:disabled,.woocommerce button.button.alt:disabled[disabled],.woocommerce input.button.alt.disabled,.woocommerce input.button.alt:disabled,.woocommerce input.button.alt:disabled[disabled] {
+.woocommerce #respond input#submit.alt.disabled,.woocommerce #respond input#submit.alt:disabled,.woocommerce #respond input#submit.alt:disabled[disabled],.woocommerce a.button.alt.disabled,.woocommerce a.button.alt:disabled,.woocommerce a.button.alt:disabled[disabled],.woocommerce button.button.alt.disabled,.woocommerce button.button.alt:disabled,.woocommerce button.button.alt:disabled[disabled],.woocommerce input.button.alt.disabled,.woocommerce input.button.alt:disabled,.woocommerce input.button.alt:disabled[disabled], .widget_block.widget_search .wp-block-search__button {
 background:#f22853
 }
 

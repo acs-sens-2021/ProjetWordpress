@@ -3,7 +3,7 @@
 Plugin Name: Clever Fox
 Plugin URI:
 Description: Clever Fox plugin to enhance the functionality of free themes made by Nayra Themes. More than 40000+ trusted websites with us. Clever Fox contains all features which are required to create a complete website. See below free themes.
-Version: 6.7
+Version: 6.8
 Author: nayrathemes
 Author URI: https://nayrathemes.com
 Text Domain: clever-fox

@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the WooCommerce Payments package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WooCommerce Payments 2.8.1\n"
+"Project-Id-Version: WooCommerce Payments 2.8.2\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/woocommerce-payments\n"
-"POT-Creation-Date: 2021-08-04 21:44:52+00:00\n"
+"POT-Creation-Date: 2021-08-05 17:55:41+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1170,7 +1170,7 @@ msgstr ""
 msgid "Display flags in supported devices"
 msgstr ""
 
-#: includes/multi-currency/MultiCurrency.php:708
+#: includes/multi-currency/MultiCurrency.php:728
 #. translators: %1 User's country, %2 Selected currency name, %3 Default store
 #. currency name
 msgid ""
@@ -1178,7 +1178,7 @@ msgid ""
 "your shopping convenience. <a>Use %3$s instead.</a>"
 msgstr ""
 
-#: includes/multi-currency/MultiCurrency.php:723
+#: includes/multi-currency/MultiCurrency.php:743
 msgid "Dismiss"
 msgstr ""
 
@@ -1196,30 +1196,30 @@ msgstr ""
 msgid "Set up now"
 msgstr ""
 
-#: includes/multi-currency/Settings.php:93
-#: includes/multi-currency/Settings.php:517
+#: includes/multi-currency/Settings.php:79
+#: includes/multi-currency/Settings.php:463
 msgid "Currencies"
 msgstr ""
 
-#: includes/multi-currency/Settings.php:111
-#: includes/multi-currency/Settings.php:131
+#: includes/multi-currency/Settings.php:98
+#: includes/multi-currency/SettingsOnboardCta.php:68
 msgid "Enabled currencies"
 msgstr ""
 
-#: includes/multi-currency/Settings.php:114
-#: includes/multi-currency/Settings.php:134
+#: includes/multi-currency/Settings.php:101
+#: includes/multi-currency/SettingsOnboardCta.php:71
 #. translators: %s: url to documentation.
 msgid ""
 "Accept payments in multiple currencies. Prices are converted based on "
 "exchange rates and rounding rules. <a href=\"%s\">Learn more</a>"
 msgstr ""
 
-#: includes/multi-currency/Settings.php:155
-#: includes/multi-currency/Settings.php:167
+#: includes/multi-currency/Settings.php:122
+#: includes/multi-currency/Settings.php:134
 msgid "Store settings"
 msgstr ""
 
-#: includes/multi-currency/Settings.php:158
+#: includes/multi-currency/Settings.php:125
 #. translators: %s: url to documentation.
 msgid ""
 "Store settings allow your customers to choose which currency they would "
@@ -1227,50 +1227,40 @@ msgid ""
 "target=\"blank\">Learn more</a>"
 msgstr ""
 
-#: includes/multi-currency/Settings.php:168
+#: includes/multi-currency/Settings.php:135
 msgid ""
 "Automatically switch customers to their local currency if it is enabled "
 "above."
 msgstr ""
 
-#: includes/multi-currency/Settings.php:170
+#: includes/multi-currency/Settings.php:137
 msgid "Customers will be notified via store alert banner."
 msgstr ""
 
-#: includes/multi-currency/Settings.php:179
+#: includes/multi-currency/Settings.php:146
 #. translators: %s: url to the widgets page
 msgid ""
 "A currency switcher is available in your widgets. <a href=\"%s\">Configure "
 "now</a>"
 msgstr ""
 
-#: includes/multi-currency/Settings.php:256
-msgid ""
-"To add new currencies to your store, please finish setting up WooCommerce "
-"Payments."
-msgstr ""
-
-#: includes/multi-currency/Settings.php:259
-msgid "Get started"
-msgstr ""
-
-#: includes/multi-currency/Settings.php:328
+#: includes/multi-currency/Settings.php:274
 #. translators: %1$s: default currency rate, %2$s: new currency exchange rate,
 #. %3$s: time rates were last updated.
 msgid "Fetch rate automatically. Current rate: %1$s = %2$s (Last updated: %3$s)"
 msgstr ""
 
-#: includes/multi-currency/Settings.php:333
+#: includes/multi-currency/Settings.php:279
 msgid "Manual rate. Enter your own fixed rate of exchange."
 msgstr ""
 
-#: includes/multi-currency/Settings.php:337
-#: includes/multi-currency/Settings.php:360
-#: includes/multi-currency/Settings.php:365
+#: includes/multi-currency/Settings.php:283
+#: includes/multi-currency/Settings.php:306
+#: includes/multi-currency/Settings.php:311
 msgid "None"
 msgstr ""
 
-#: includes/multi-currency/Settings.php:382
+#: includes/multi-currency/Settings.php:328
 #. translators: %1$s: default currency of the store, %2$s currency being
 #. converted to.
 msgid ""
@@ -1278,45 +1268,55 @@ msgid ""
 "%2$s using the exchange rate and formatting rules above."
 msgstr ""
 
-#: includes/multi-currency/Settings.php:396
+#: includes/multi-currency/Settings.php:342
 #: client/multi-currency/enabled-currencies-list/index.js:50
 msgid "Exchange rate"
 msgstr ""
 
-#: includes/multi-currency/Settings.php:405
+#: includes/multi-currency/Settings.php:351
 msgid "Manual rate"
 msgstr ""
 
-#: includes/multi-currency/Settings.php:410
+#: includes/multi-currency/Settings.php:356
 msgid "Enter the manual rate you would like to use. Must be a positive number."
 msgstr ""
 
-#: includes/multi-currency/Settings.php:423
+#: includes/multi-currency/Settings.php:369
 msgid "Formatting rules"
 msgstr ""
 
-#: includes/multi-currency/Settings.php:429
+#: includes/multi-currency/Settings.php:375
 msgid "Price rounding"
 msgstr ""
 
-#: includes/multi-currency/Settings.php:432
+#: includes/multi-currency/Settings.php:378
 #. translators: %1$s currency being converted to.
 msgid ""
 "Make your %1$s prices consistent by rounding them up after they are "
 "converted."
 msgstr ""
 
-#: includes/multi-currency/Settings.php:442
+#: includes/multi-currency/Settings.php:388
 msgid "Price charm"
 msgstr ""
 
-#: includes/multi-currency/Settings.php:443
+#: includes/multi-currency/Settings.php:389
 msgid "Reduce the converted price by a specific amount."
 msgstr ""
 
-#: includes/multi-currency/Settings.php:456
+#: includes/multi-currency/Settings.php:402
 #: client/settings/payment-method-settings/payment-request-settings.js:167
 msgid "Preview"
+msgstr ""
+
+#: includes/multi-currency/SettingsOnboardCta.php:50
+msgid ""
+"To add new currencies to your store, please finish setting up WooCommerce "
+"Payments."
+msgstr ""
+
+#: includes/multi-currency/SettingsOnboardCta.php:53
+msgid "Get started"
 msgstr ""
 
 #: includes/multi-currency/StorefrontIntegration.php:58
@@ -1339,12 +1339,12 @@ msgstr ""
 msgid "Select your preferred currency for shopping and payments."
 msgstr ""
 
-#: includes/notes/class-wc-payments-notes-additional-payment-methods.php:49
+#: includes/notes/class-wc-payments-notes-additional-payment-methods.php:63
 #: client/additional-methods-setup/task.js:63
 msgid "Boost your sales by accepting new payment methods"
 msgstr ""
 
-#: includes/notes/class-wc-payments-notes-additional-payment-methods.php:50
+#: includes/notes/class-wc-payments-notes-additional-payment-methods.php:64
 msgid ""
 "Get early access to additional payment methods and an improved checkout "
 "experience, coming soon to WooCommerce Payments. <a "
@@ -1352,8 +1352,14 @@ msgid ""
 "methods/\" target=\"wcpay_upe_learn_more\">Learn more</a>"
 msgstr ""
 
-#: includes/notes/class-wc-payments-notes-additional-payment-methods.php:57
+#: includes/notes/class-wc-payments-notes-additional-payment-methods.php:71
 msgid "Enable on your store"
+msgstr ""
+
+#: includes/notes/class-wc-payments-notes-additional-payment-methods.php:107
+msgid ""
+"We detected a temporary issue with your account. Please try and connect "
+"your Stripe account."
 msgstr ""
 
 #: includes/notes/class-wc-payments-notes-instant-deposits-eligible.php:30
@@ -1656,7 +1662,8 @@ msgid ""
 "your account page: %2$s"
 msgstr ""
 
-#: includes/multi-currency/Settings.php:65
+#: includes/multi-currency/Settings.php:55
+#: includes/multi-currency/SettingsOnboardCta.php:31
 msgctxt "Settings tab label"
 msgid "Multi-currency"
 msgstr ""
@@ -3951,8 +3958,8 @@ msgstr ""
 
 #: client/payment-methods-map.js:36
 msgid ""
-"Accept secure bank transfers from Austria, Belgium, Germany, Italy, and "
-"Netherlands."
+"Accept secure bank transfers from Austria, Belgium, Germany, Italy, "
+"Netherlands, and Spain."
 msgstr ""
 
 #: client/payment-methods-map.js:44

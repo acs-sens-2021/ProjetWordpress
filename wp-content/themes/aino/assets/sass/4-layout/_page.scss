@@ -1,0 +1,63 @@
+/* Structure */
+.page-template-default,
+.tpl-fullwidth,
+.single-post,
+.error404,
+.search-no-results {
+
+	.entry-header {
+		display: block;
+		text-align: center;
+		padding-top: 0;
+	}
+}
+
+
+/* 404 Error page */
+.error404 {
+
+	.wp-block-search {
+
+		.wp-block-search__button {
+			background: var(--wp--custom--color--primary);
+			color: var(--wp--custom--color--button-color-primary);
+			padding: 1rem 2rem;
+		}
+
+		.wp-block-search__label {
+			width: auto;
+		}
+	}
+}
+
+/* Site Building Page */
+.tpl-fullscreen {
+
+	.type-page .entry-header {
+		display: none;
+	}
+
+	.site-content {
+		max-width: none;
+		padding: 0;
+	}
+
+	.site-content .type-page {
+		clear: both;
+		overflow: hidden;
+	}
+
+	.site-content .entry-content {
+		padding-top: 0;
+		padding-bottom: 0;
+		float: none;
+	}
+}
+
+/* Fullwidth Page */
+.tpl-fullwidth-notitle {
+
+	.type-page .entry-header {
+		display: none;
+	}
+}

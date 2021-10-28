@@ -8,7 +8,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
         'below_header',
         array(
         	'priority'      => 4,
-            'title' 		=> __('Below Header','fiona-news'),
+            'title' 		=> __('Below Header','clever-fox'),
 			'panel'  		=> 'header_section',
 		)
     );
@@ -27,7 +27,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	'bh_latest_news_head',
 		array(
 			'type' => 'hidden',
-			'label' => __('Latest News','fiona-news'),
+			'label' => __('Latest News','clever-fox'),
 			'section' => 'below_header',
 		)
 	);
@@ -47,7 +47,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	'bh_latest_news_hs',
 		array(
 			'type' => 'checkbox',
-			'label' => __('Hide / Show','fiona-news'),
+			'label' => __('Hide / Show','clever-fox'),
 			'section' => 'below_header',
 		)
 	);
@@ -57,7 +57,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_setting(
     	'bh_latest_news_ttl',
     	array(
-			'default' => __('Latest News','fiona-news'),
+			'default' => __('Latest News','clever-fox'),
 			'capability'     	=> 'edit_theme_options',
 			'sanitize_callback' => 'fiona_blog_sanitize_html',
 			'transport'         => $selective_refresh,
@@ -68,7 +68,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_control( 
 		'bh_latest_news_ttl',
 		array(
-		    'label'   => __('Title','fiona-news'),
+		    'label'   => __('Title','clever-fox'),
 		    'section' => 'below_header',
 			'type'           => 'text',
 		)  
@@ -85,7 +85,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_control( new Fiona_Blog_Category_Dropdown_Control( $wp_customize, 
 	'bh_latest_news_cat_id', 
 		array(
-		'label'   => __('Select category','fiona-news'),
+		'label'   => __('Select category','clever-fox'),
 		'section' => 'below_header',
 		) 
 	) );
@@ -106,7 +106,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	'bh_temp_head',
 		array(
 			'type' => 'hidden',
-			'label' => __('Temprature','fiona-news'),
+			'label' => __('Temprature','clever-fox'),
 			'section' => 'below_header',
 		)
 	);
@@ -126,7 +126,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	'bh_temp_hs',
 		array(
 			'type' => 'checkbox',
-			'label' => __('Hide / Show','fiona-news'),
+			'label' => __('Hide / Show','clever-fox'),
 			'section' => 'below_header',
 		)
 	);
@@ -145,7 +145,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_control( 
 		'bh_temp_api',
 		array(
-		    'label'   => __('API Key Link','fiona-news'),
+		    'label'   => __('API Key Link','clever-fox'),
 		    'section' => 'below_header',
 			'type'           => 'textarea',
 		)  
@@ -166,7 +166,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	'bh_date_head',
 		array(
 			'type' => 'hidden',
-			'label' => __('Date','fiona-news'),
+			'label' => __('Date','clever-fox'),
 			'section' => 'below_header',
 		)
 	);
@@ -186,7 +186,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	'bh_date_hs',
 		array(
 			'type' => 'checkbox',
-			'label' => __('Hide / Show','fiona-news'),
+			'label' => __('Hide / Show','clever-fox'),
 			'section' => 'below_header',
 		)
 	);	

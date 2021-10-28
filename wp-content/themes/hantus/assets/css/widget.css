@@ -236,7 +236,9 @@ li.latest-news:last-child {
     stroke-width: 4px;
 }
 
-.widget_search input[type=button], .widget_search input[type=submit] {
+.widget_search input[type=button], 
+.widget_search input[type=submit], 
+.widget_block.widget_search .wp-block-search__button {
     border-radius: 4px;
     box-shadow: 0px 0px 2px 0px rgba(7, 7, 6, 0.2);
     color: #fff;

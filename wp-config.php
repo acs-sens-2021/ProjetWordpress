@@ -1,4 +1,10 @@
 <?php
+//Begin Really Simple SSL session cookie settings
+@ini_set('session.cookie_httponly', true);
+@ini_set('session.cookie_secure', true);
+@ini_set('session.use_only_cookies', true);
+//END Really Simple SSL
+
 /**
  * The base configuration for WordPress
  *
@@ -20,13 +26,13 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'e-commerce' );
+define( 'DB_NAME', 'pascalp_phonestore' );
 
 /** MySQL database username */
-define( 'DB_USER', 'root' );
+define( 'DB_USER', 'pascalp' );
 
 /** MySQL database password */
-define( 'DB_PASSWORD', '' );
+define( 'DB_PASSWORD', 'nF7X07oE1gzEnQ==' );
 
 /** MySQL hostname */
 define( 'DB_HOST', 'localhost' );

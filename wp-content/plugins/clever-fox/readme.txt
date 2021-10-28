@@ -4,7 +4,7 @@ Tags: demo, sections, customizer, widget, settings
 Requires at least: 4.0
 Tested up to: 5.8
 Requires PHP: 5.6
-Stable tag: 6.7
+Stable tag: 6.8
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -105,6 +105,9 @@ Clever Fox WordPress plugin is licensed under the GPL3 (https://www.gnu.org/lice
 
 
 == Changelog ==
+
+= 6.8 =
+* Text Domain Updated in Fiona News Theme
 
 = 6.7 =
 * Aravalli Theme Upsale Links Added

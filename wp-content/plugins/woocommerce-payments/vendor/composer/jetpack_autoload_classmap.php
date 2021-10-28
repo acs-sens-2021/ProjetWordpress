@@ -10,6 +10,10 @@ return array(
 		'version' => '9999999-dev',
 		'path'    => $baseDir . '/includes/multi-currency/RestController.php'
 	),
+	'WCPay\\MultiCurrency\\SettingsOnboardCta' => array(
+		'version' => '9999999-dev',
+		'path'    => $baseDir . '/includes/multi-currency/SettingsOnboardCta.php'
+	),
 	'WCPay\\MultiCurrency\\Settings' => array(
 		'version' => '9999999-dev',
 		'path'    => $baseDir . '/includes/multi-currency/Settings.php'
