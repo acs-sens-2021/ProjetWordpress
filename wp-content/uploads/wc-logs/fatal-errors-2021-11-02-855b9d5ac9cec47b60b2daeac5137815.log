@@ -1,0 +1,33 @@
+2021-11-02T13:11:56+00:00 CRITICAL Uncaught TypeError: WCPay\MultiCurrency\MultiCurrency::get_default_currency(): Return value must be of type WCPay\MultiCurrency\Currency, null returned in C:\laragon\www\E-Commerce\wp-content\plugins\woocommerce-payments\includes\multi-currency\MultiCurrency.php:511
+Stack trace:
+#0 C:\laragon\www\E-Commerce\wp-content\plugins\woocommerce-payments\includes\multi-currency\Compatibility.php(299): WCPay\MultiCurrency\MultiCurrency->get_default_currency()
+#1 C:\laragon\www\E-Commerce\wp-includes\class-wp-hook.php(305): WCPay\MultiCurrency\Compatibility->convert_order_prices(Array)
+#2 C:\laragon\www\E-Commerce\wp-includes\plugin.php(189): WP_Hook->apply_filters(Array, Array)
+#3 C:\laragon\www\E-Commerce\wp-content\plugins\woocommerce\includes\class-wc-order-query.php(87): apply_filters('woocommerce_ord...', Array, Array)
+#4 C:\laragon\www\E-Commerce\wp-content\plugins\woocommerce\packages\woocommerce-admin\src\Notes\NewSalesRecord.php(44): WC_Order_Query->get_orders()
+#5 C:\laragon\www\E-Commerce\wp-content\plugins\woocommerce\packages\woocommerce-admin\src\Notes\NewSalesRecord.php(72): Automattic\WooCommerce\Admin\Notes\NewSalesRecord::sum_sales_for_date('2021-11-01')
+#6 C:\laragon\www\E-Commerce\wp-content\plugins\woocommerce\packages\woocommerce-admin\src\Events.php(112): Automattic\WooCommerce\Admin\Notes\NewSalesRecord::possibly_add_note()
+#7 C:\laragon\www\E-Commerce\wp-content\plugins\woocommerce\packages\woocommerce-admin\src\Events.php(96): Automattic\WooCommerce\Admin\Events->possibly_add_notes()
+#8 C:\laragon\www\E-Commerce\wp-includes\class-wp-hook.php(303): Automattic\WooCommerce\Admin\Events->do_wc_admin_daily()
+#9 C:\laragon\www\E-Commerce\wp-includes\class-wp-hook.php(327): WP_Hook->apply_filters('', Array)
+#10 C:\laragon\www\E-Commerce\wp-includes\plugin.php(518): WP_Hook->do_action(Array)
+#11 C:\laragon\www\E-Commerce\wp-cron.php(138): do_action_ref_array('wc_admin_daily', Array)
+#12 {main}
+  thrown dans C:\laragon\www\E-Commerce\wp-content\plugins\woocommerce-payments\includes\multi-currency\MultiCurrency.php à la ligne 511
+
+2021-11-02T13:14:35+00:00 CRITICAL Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "cmplz_update_json_files" not found or invalid function name in C:\laragon\www\E-Commerce\wp-includes\class-wp-hook.php:303
+Stack trace:
+#0 C:\laragon\www\E-Commerce\wp-includes\class-wp-hook.php(327): WP_Hook->apply_filters('', Array)
+#1 C:\laragon\www\E-Commerce\wp-includes\plugin.php(518): WP_Hook->do_action(Array)
+#2 C:\laragon\www\E-Commerce\wp-cron.php(138): do_action_ref_array('cmplz_every_wee...', Array)
+#3 {main}
+  thrown dans C:\laragon\www\E-Commerce\wp-includes\class-wp-hook.php à la ligne 303
+
+2021-11-02T13:18:44+00:00 CRITICAL Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "cmplz_update_json_files" not found or invalid function name in C:\laragon\www\E-Commerce\wp-includes\class-wp-hook.php:303
+Stack trace:
+#0 C:\laragon\www\E-Commerce\wp-includes\class-wp-hook.php(327): WP_Hook->apply_filters('', Array)
+#1 C:\laragon\www\E-Commerce\wp-includes\plugin.php(518): WP_Hook->do_action(Array)
+#2 C:\laragon\www\E-Commerce\wp-cron.php(138): do_action_ref_array('cmplz_every_wee...', Array)
+#3 {main}
+  thrown dans C:\laragon\www\E-Commerce\wp-includes\class-wp-hook.php à la ligne 303
+

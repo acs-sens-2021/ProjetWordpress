@@ -26,13 +26,13 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'pascalp_phonestore' );
+define( 'DB_NAME', 'E-Commerce' );
 
 /** MySQL database username */
-define( 'DB_USER', 'pascalp' );
+define( 'DB_USER', 'root' );
 
 /** MySQL database password */
-define( 'DB_PASSWORD', 'nF7X07oE1gzEnQ==' );
+define( 'DB_PASSWORD', '' );
 
 /** MySQL hostname */
 define( 'DB_HOST', 'localhost' );
